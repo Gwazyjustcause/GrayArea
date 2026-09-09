@@ -1,6 +1,11 @@
 name: Sync GZW field data
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/sync-data.mjs
+      - .github/workflows/sync-data.yml
   schedule:
     - cron: '25 7 * * *'
 permissions:

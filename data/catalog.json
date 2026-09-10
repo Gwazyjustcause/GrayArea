@@ -1442,7 +1442,7 @@
       "name": "Mechanix Wear - Original (Black)",
       "id": "mechanix-wear---original-(black)",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/32/Mechanix_Wear_-_Original_icon.png/revision/latest?cb=20250706113236",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -1611,7 +1611,7 @@
       "sold_by": "???",
       "manufacturer": "???",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/22/1911_Com_Ham_inspect.png/revision/latest?cb=20250727223559",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -2900,7 +2900,7 @@
       "magnification": "1xx",
       "sighting_range": "100m",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f2/OKP7_ingame_reticle.png/revision/latest?cb=20251114142042",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4649,7 +4649,7 @@
       "magnification": "???x",
       "sighting_range": "25m",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/1911_Com_Front_inspect.png/revision/latest?cb=20250727222800",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4665,7 +4665,7 @@
       "magnification": "???x",
       "sighting_range": "25m",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/1911_Com_Front_inspect.png/revision/latest?cb=20250727222800",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -5499,7 +5499,7 @@
       "name": "Mechanix Wear - Original (Black)",
       "id": "mechanix-wear---original-black",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/32/Mechanix_Wear_-_Original_icon.png/revision/latest?cb=20250706113236",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -6041,7 +6041,7 @@
       "recoil_control": "+4 %",
       "weapon_handling": "+6 %",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/1b/AK_MOE%28FDE%29_inspect.png/revision/latest?cb=20260306015614",
-      "image_source": "fandom-search"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -10984,7 +10984,9 @@
       "manufacturer": "Kalashnikov concern",
       "reload_speed": "+6 %",
       "size_change_vertical": "+1",
-      "caliber": "5.56x45mm NATO"
+      "caliber": "5.56x45mm NATO",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/93/AK12_Mag%2830_rnds%29_inspect.png/revision/latest?cb=20250617011648",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -11013,7 +11015,9 @@
       "manufacturer": "Pufgun",
       "reload_speed": "-16 %",
       "size_change_vertical": "+1",
-      "caliber": "5.45x39mm"
+      "caliber": "5.45x39mm",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/93/AK12_Mag%2830_rnds%29_inspect.png/revision/latest?cb=20250617011648",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -11113,7 +11117,9 @@
       "manufacturer": "Promag Industries",
       "reload_speed": "-10 %",
       "size_change_vertical": "+1",
-      "caliber": "9x19mm"
+      "caliber": "9x19mm",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/G17_Mag%2817_rnds%29_inspect.png/revision/latest?cb=20240509115145",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -11170,7 +11176,9 @@
       "manufacturer": "Accuracy International",
       "reload_speed": "-6 %",
       "size_change_vertical": "+1",
-      "caliber": "7.62x51mm NATO"
+      "caliber": "7.62x51mm NATO",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d0/M700_PMAG10_inspect.PNG/revision/latest?cb=20251106021545",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -13647,7 +13655,9 @@
       "weight": "0.040 kg",
       "sold_by": "???",
       "manufacturer": "Heckler & Koch",
-      "muzzle_device_efficiency": "+5 %"
+      "muzzle_device_efficiency": "+5 %",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/55/A2_FH_inspect.png/revision/latest?cb=20240507135421",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -14040,7 +14050,9 @@
       "manufacturer": "Daniel Defense",
       "recoil_control": "+5 %",
       "ergonomics": "+3 %",
-      "size_change_vertical": "+1"
+      "size_change_vertical": "+1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5b/DD_Grip%28MilSpec%29_inspect.png/revision/latest?cb=20260306024749",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -14131,7 +14143,9 @@
       "recoil_control": "???? %",
       "weapon_handling": "???? %",
       "ergonomics": "???? %",
-      "size_change_vertical": "+1"
+      "size_change_vertical": "+1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9d/MOE_Grip%28FDE%29_inspect.png/revision/latest?cb=20250620111242",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -14996,7 +15010,9 @@
       "buy_price": "$26",
       "manufacturer": "Kalashnikov concern",
       "magnification": "1x",
-      "sighting_range": "1,000m"
+      "sighting_range": "1,000m",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/46/AK12_Rear_inspect.png/revision/latest?cb=20250615190605",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -17592,7 +17608,9 @@
       "name": "Old Hard Disk Drive",
       "id": "old-hard-disk-drive",
       "weight": "???kg",
-      "grid_size": "???"
+      "grid_size": "???",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/EnHDD_inspect.png/revision/latest?cb=20260410165943",
+      "image_source": "fandom-search"
     }
   },
   {

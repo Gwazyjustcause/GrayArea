@@ -5,6 +5,9 @@ const excluded=new Set(['tasks','vendors','metadata','removed_content','upcoming
 const get=async url=>{const r=await fetch(url,{headers:{'user-agent':'GrayArea-sync/1.0'}});if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()};
 const key=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
 const chunks=(values,size)=>Array.from({length:Math.ceil(values.length/size)},(_,i)=>values.slice(i*size,(i+1)*size));
+const similarity=(a,b)=>{const A=new Set(key(a).split(' ').filter(Boolean)),B=new Set(key(b).split(' ').filter(Boolean));const shared=[...A].filter(x=>B.has(x)).length;return shared/Math.max(A.size,B.size,1)};
+await mkdir('data',{recursive:true});
+let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
 const version=await get(`${API}/version`);
 const names=(version.datasets||version.data?.datasets||[]).filter(n=>!n.startsWith('_')&&!excluded.has(n));
 if(names.length<20)throw new Error(`Dataset discovery returned only ${names.length} categories`);
@@ -28,6 +31,7 @@ const output=[...merged.values()];
 // Reuse images attached to the same item in another dataset before asking Fandom.
 const knownImages=new Map();
 for(const {raw} of output){if(raw.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
+for(const {raw} of old){if(raw?.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
 let reused=0;
 for(const {raw} of output){
   if(!raw.image){const image=knownImages.get(key(raw.id))||knownImages.get(key(raw.name));if(image){raw.image=image;raw.image_source='matched-wiki-record';reused++}}
@@ -46,9 +50,21 @@ for(const batch of chunks(missing,40)){
     for(const entry of batch){const title=key(entry.raw.name);const image=byTitle.get(title)||byTitle.get(redirects.get(title));if(image){entry.raw.image=image;entry.raw.image_source='fandom-page';wikiMatches++}}
   }catch(error){console.warn(`Fandom image lookup skipped: ${error.message}`)}
 }
+
+// Fuzzy fallback for titles that differ slightly from their wiki page. Limit the
+// daily work and retain matches in catalog.json, so coverage improves over time.
+const stillMissing=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???')).slice(0,160);
+const findWikiImage=async entry=>{
+  try{
+    const url=`${WIKI}?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=3&gsrsearch=${encodeURIComponent(`intitle:${entry.raw.name}`)}&prop=pageimages&piprop=original`;
+    const payload=await get(url);
+    const candidates=Object.values(payload.query?.pages||{}).filter(p=>p.original?.source).map(p=>({...p,score:similarity(entry.raw.name,p.title)})).sort((a,b)=>b.score-a.score);
+    if(candidates[0]?.score>=0.66){entry.raw.image=candidates[0].original.source;entry.raw.image_source='fandom-search';return 1}
+  }catch(error){console.warn(`Fandom search skipped for ${entry.raw.name}: ${error.message}`)}
+  return 0;
+};
+for(const batch of chunks(stillMissing,8))wikiMatches+=(await Promise.all(batch.map(findWikiImage))).reduce((a,b)=>a+b,0);
 if(output.length<300)throw new Error(`Safety check failed: only ${output.length} records`);
-await mkdir('data',{recursive:true});
-let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
 await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
 const withImages=output.filter(({raw})=>raw.image).length;
 await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:names.length,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches},null,2)+'\n');

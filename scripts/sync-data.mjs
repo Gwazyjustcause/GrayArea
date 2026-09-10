@@ -8,6 +8,7 @@ const chunks=(values,size)=>Array.from({length:Math.ceil(values.length/size)},(_
 const similarity=(a,b)=>{const A=new Set(key(a).split(' ').filter(Boolean)),B=new Set(key(b).split(' ').filter(Boolean));const shared=[...A].filter(x=>B.has(x)).length;return shared/Math.max(A.size,B.size,1)};
 await mkdir('data',{recursive:true});
 let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
+let oldVersion={};try{oldVersion=JSON.parse(await readFile('data/version.json','utf8'))}catch{}
 const version=await get(`${API}/version`);
 const names=(version.datasets||version.data?.datasets||[]).filter(n=>!n.startsWith('_')&&!excluded.has(n));
 if(names.length<20)throw new Error(`Dataset discovery returned only ${names.length} categories`);
@@ -53,7 +54,9 @@ for(const batch of chunks(missing,40)){
 
 // Fuzzy fallback for titles that differ slightly from their wiki page. Limit the
 // daily work and retain matches in catalog.json, so coverage improves over time.
-const stillMissing=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???')).slice(0,160);
+const fuzzyCandidates=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???'));
+const searchStart=Math.min(Number(oldVersion.imageSearchCursor)||160,Math.max(fuzzyCandidates.length-1,0));
+const stillMissing=[...fuzzyCandidates.slice(searchStart),...fuzzyCandidates.slice(0,searchStart)].slice(0,160);
 const findWikiImage=async entry=>{
   try{
     const url=`${WIKI}?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=3&gsrsearch=${encodeURIComponent(`intitle:${entry.raw.name}`)}&prop=pageimages&piprop=original`;
@@ -67,5 +70,6 @@ for(const batch of chunks(stillMissing,8))wikiMatches+=(await Promise.all(batch.
 if(output.length<300)throw new Error(`Safety check failed: only ${output.length} records`);
 await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
 const withImages=output.filter(({raw})=>raw.image).length;
-await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:names.length,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches},null,2)+'\n');
+const imageSearchCursor=fuzzyCandidates.length?(searchStart+stillMissing.length)%fuzzyCandidates.length:0;
+await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:names.length,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,imageSearchCursor},null,2)+'\n');
 console.log(`Synced ${output.length} records across ${names.length} categories; ${withImages} images (${(withImages/output.length*100).toFixed(1)}%)`);

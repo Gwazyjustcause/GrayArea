@@ -5,10 +5,8 @@ const excluded=new Set(['tasks','vendors','metadata','removed_content','upcoming
 const get=async url=>{const r=await fetch(url,{headers:{'user-agent':'GrayArea-sync/1.0'}});if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()};
 const key=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
 const chunks=(values,size)=>Array.from({length:Math.ceil(values.length/size)},(_,i)=>values.slice(i*size,(i+1)*size));
-const similarity=(a,b)=>{const A=new Set(key(a).split(' ').filter(Boolean)),B=new Set(key(b).split(' ').filter(Boolean));const shared=[...A].filter(x=>B.has(x)).length;return shared/Math.max(A.size,B.size,1)};
 await mkdir('data',{recursive:true});
 let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
-let oldVersion={};try{oldVersion=JSON.parse(await readFile('data/version.json','utf8'))}catch{}
 const version=await get(`${API}/version`);
 const names=(version.datasets||version.data?.datasets||[]).filter(n=>!n.startsWith('_')&&!excluded.has(n));
 if(names.length<20)throw new Error(`Dataset discovery returned only ${names.length} categories`);
@@ -27,12 +25,37 @@ for(const entry of imported){
   if(previous)previous.raw={...previous.raw,...entry.raw,image:entry.raw.image||previous.raw.image};
   else merged.set(recordKey,{dataset:entry.dataset,raw:{...entry.raw}});
 }
-const output=[...merged.values()];
+const datasetRecords=[...merged.values()];
+
+// Remove calibre/family headings emitted by wiki tables. They are not inventory
+// items and often carry the icon of one child variant (for example SP or AP).
+const namesByDataset=new Map();
+for(const entry of datasetRecords){const list=namesByDataset.get(entry.dataset)||[];list.push(key(entry.raw.name));namesByDataset.set(entry.dataset,list)}
+const isFamilyHeading=entry=>{
+  const raw=entry.raw,name=key(raw.name);
+  const useful=Object.entries(raw).filter(([field,value])=>!['id','name','image','image_source'].includes(field)&&value!==null&&value!==''&&value!==undefined);
+  return useful.length===0&&name&&(namesByDataset.get(entry.dataset)||[]).some(other=>other!==name&&other.startsWith(`${name} `));
+};
+const withoutFamilies=datasetRecords.filter(entry=>!isFamilyHeading(entry));
+const removedFamilies=datasetRecords.length-withoutFamilies.length;
+
+// Broad aggregate datasets repeat items already present in specific datasets.
+// Keep one canonical exact-name record, favouring richer and more specific data.
+const broad=new Set(['items','gear','provisions','weapon_parts','valuables','auxiliary']);
+const quality=entry=>Object.values(entry.raw).filter(v=>v!==null&&v!==''&&v!==undefined).length+(entry.raw.sell_price?5:0)+(entry.raw.image?3:0)-(broad.has(entry.dataset)?4:0);
+const canonical=new Map();
+for(const entry of withoutFamilies){
+  const identity=key(entry.raw.name||entry.raw.id);
+  const previous=canonical.get(identity);
+  if(!previous||quality(entry)>quality(previous))canonical.set(identity,entry);
+}
+const output=[...canonical.values()];
+const duplicatesRemoved=withoutFamilies.length-output.length;
 
 // Reuse images attached to the same item in another dataset before asking Fandom.
 const knownImages=new Map();
 for(const {raw} of output){if(raw.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
-for(const {raw} of old){if(raw?.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
+for(const {raw} of old){if(raw?.image&&raw.image_source!=='fandom-search'){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
 let reused=0;
 for(const {raw} of output){
   if(!raw.image){const image=knownImages.get(key(raw.id))||knownImages.get(key(raw.name));if(image){raw.image=image;raw.image_source='matched-wiki-record';reused++}}
@@ -52,24 +75,8 @@ for(const batch of chunks(missing,40)){
   }catch(error){console.warn(`Fandom image lookup skipped: ${error.message}`)}
 }
 
-// Fuzzy fallback for titles that differ slightly from their wiki page. Limit the
-// daily work and retain matches in catalog.json, so coverage improves over time.
-const fuzzyCandidates=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???'));
-const searchStart=Math.min(Number(oldVersion.imageSearchCursor)||160,Math.max(fuzzyCandidates.length-1,0));
-const stillMissing=[...fuzzyCandidates.slice(searchStart),...fuzzyCandidates.slice(0,searchStart)].slice(0,160);
-const findWikiImage=async entry=>{
-  try{
-    const url=`${WIKI}?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=3&gsrsearch=${encodeURIComponent(`intitle:${entry.raw.name}`)}&prop=pageimages&piprop=original`;
-    const payload=await get(url);
-    const candidates=Object.values(payload.query?.pages||{}).filter(p=>p.original?.source).map(p=>({...p,score:similarity(entry.raw.name,p.title)})).sort((a,b)=>b.score-a.score);
-    if(candidates[0]?.score>=0.66){entry.raw.image=candidates[0].original.source;entry.raw.image_source='fandom-search';return 1}
-  }catch(error){console.warn(`Fandom search skipped for ${entry.raw.name}: ${error.message}`)}
-  return 0;
-};
-for(const batch of chunks(stillMissing,8))wikiMatches+=(await Promise.all(batch.map(findWikiImage))).reduce((a,b)=>a+b,0);
 if(output.length<300)throw new Error(`Safety check failed: only ${output.length} records`);
 await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
 const withImages=output.filter(({raw})=>raw.image).length;
-const imageSearchCursor=fuzzyCandidates.length?(searchStart+stillMissing.length)%fuzzyCandidates.length:0;
-await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:names.length,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,imageSearchCursor},null,2)+'\n');
+await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:new Set(output.map(entry=>entry.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');
 console.log(`Synced ${output.length} records across ${names.length} categories; ${withImages} images (${(withImages/output.length*100).toFixed(1)}%)`);

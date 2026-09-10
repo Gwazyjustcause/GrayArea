@@ -36,6 +36,19 @@ const isFamilyHeading=entry=>{
   const useful=Object.entries(raw).filter(([field,value])=>!['id','name','image','image_source'].includes(field)&&value!==null&&value!==''&&value!==undefined);
   return useful.length===0&&name&&(namesByDataset.get(entry.dataset)||[]).some(other=>other!==name&&other.startsWith(`${name} `));
 };
+// Some family headings hold a child variant's icon. Move it only when the file
+// name explicitly contains one unique suffix such as SP, AP, FMJ or HP.
+let familyIconsMoved=0;
+for(const family of datasetRecords.filter(isFamilyHeading)){
+  if(!family.raw.image)continue;
+  const base=key(family.raw.name),imageKey=key(decodeURIComponent(family.raw.image));
+  const candidates=datasetRecords.filter(entry=>entry.dataset===family.dataset&&key(entry.raw.name).startsWith(`${base} `));
+  const matches=candidates.filter(entry=>{
+    const suffix=key(entry.raw.name).slice(base.length).trim().split(' ').filter(Boolean);
+    return suffix.length>0&&suffix.every(token=>imageKey.split(' ').includes(token));
+  });
+  if(matches.length===1&&!matches[0].raw.image){matches[0].raw.image=family.raw.image;matches[0].raw.image_source='wiki-family-variant';familyIconsMoved++}
+}
 const withoutFamilies=datasetRecords.filter(entry=>!isFamilyHeading(entry));
 const removedFamilies=datasetRecords.length-withoutFamilies.length;
 
@@ -78,5 +91,5 @@ for(const batch of chunks(missing,40)){
 if(output.length<300)throw new Error(`Safety check failed: only ${output.length} records`);
 await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
 const withImages=output.filter(({raw})=>raw.image).length;
-await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:new Set(output.map(entry=>entry.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');
+await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:new Set(output.map(entry=>entry.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,familyIconsMoved,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');
 console.log(`Synced ${output.length} records across ${names.length} categories; ${withImages} images (${(withImages/output.length*100).toFixed(1)}%)`);

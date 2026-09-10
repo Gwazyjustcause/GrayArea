@@ -1,13 +1,14 @@
 {
   "dataVersion": "2026-09-07T09:38:42.088995Z",
-  "syncedAt": "2026-09-10T07:12:39.818Z",
+  "syncedAt": "2026-09-10T07:15:01.406Z",
   "records": 1583,
   "categories": 74,
-  "previousRecords": 2105,
-  "images": 1085,
-  "imageCoverage": 68.5,
+  "previousRecords": 1583,
+  "images": 1087,
+  "imageCoverage": 68.7,
   "imagesReused": 42,
   "imagesFromFandom": 0,
+  "familyIconsMoved": 2,
   "duplicatesRemoved": 492,
   "nonItemFamiliesRemoved": 30
 }

@@ -42,7 +42,9 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "970 m/s",
       "accuracy_modifier": "-5 %",
-      "stopped_by_armor_class": "NIJ I"
+      "stopped_by_armor_class": "NIJ I",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f7/.222_Remington_SP_icon.png/revision/latest?cb=20260525140404",
+      "image_source": "wiki-family-variant"
     }
   },
   {
@@ -305,7 +307,9 @@
       "manufacturer": "General West",
       "sold_by": "Banshee R.4",
       "muzzle_velocity": "690 m/s",
-      "accuracy_modifier": "+0 %"
+      "accuracy_modifier": "+0 %",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/06/AP_SX_4.6x30_icon.png/revision/latest?cb=20250620165213",
+      "image_source": "wiki-family-variant"
     }
   },
   {

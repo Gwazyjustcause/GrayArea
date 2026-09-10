@@ -489,13 +489,6 @@
   {
     "dataset": "ammo",
     "raw": {
-      "name": "5.45x39mm Wolf",
-      "id": "5.45x39mm-wolf"
-    }
-  },
-  {
-    "dataset": "ammo",
-    "raw": {
       "name": "5.45x39mm WOLF",
       "id": "5.45x39mm-wolf",
       "type": "Round",
@@ -3666,7 +3659,9 @@
       "charges": "1",
       "effect": "Hydration: +24",
       "use_time": "5s",
-      "manufacturer": "Coco Jumbo"
+      "manufacturer": "Coco Jumbo",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/38/CDrink_icon.png/revision/latest?cb=20250502155148",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -3681,7 +3676,9 @@
       "charges": "1",
       "effect": "Energy: +5 Hydration: +20 Arm Stamina Boost: +15% Arm Stamina Boost Cap: +15% Arm Stamina Boost Duration: 90s Body Stamina Boost: +15% Body Stamina Boost Cap: +15% Body Stamina Boost Duration: 90s",
       "use_time": "5s",
-      "manufacturer": "Dark Star"
+      "manufacturer": "Dark Star",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/28/Coffee_icon.png/revision/latest?cb=20250621182737",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -3727,7 +3724,9 @@
       "charges": "1",
       "effect": "Hydration: +35 Energy: +10",
       "use_time": "5s",
-      "manufacturer": "Kaipo"
+      "manufacturer": "Kaipo",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/1f/Nectar_icon.png/revision/latest?cb=20250621182658",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -3853,7 +3852,9 @@
       "charges": "1",
       "effect": "Hydration: +33 Energy: +15",
       "use_time": "5s",
-      "manufacturer": "Sunrise"
+      "manufacturer": "Sunrise",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d0/Cola_icon.png/revision/latest?cb=20250621182739",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -3883,7 +3884,9 @@
       "charges": "1",
       "effect": "Hydration: +33 Energy: +5",
       "use_time": "5s",
-      "manufacturer": "Touchdown"
+      "manufacturer": "Touchdown",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2e/Soda_icon.png/revision/latest?cb=20250502155224",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4063,7 +4066,9 @@
       "grid_size": "1x1",
       "charges": "1",
       "effect": "Energy: +25 Arm Stamina Boost: +25% Arm Stamina Boost Cap: +25% Arm Stamina Boost Duration: 90s Body Stamina Boost: +25% Body Stamina Boost Cap: +25% Body Stamina Boost Duration: 90s",
-      "manufacturer": "Berg"
+      "manufacturer": "Berg",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/44/ChBar4_icon.png/revision/latest?cb=20250610042853",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4078,7 +4083,9 @@
       "charges": "1",
       "effect": "Energy: +40 Hydration: -10",
       "use_time": "11s",
-      "manufacturer": "Kraken"
+      "manufacturer": "Kraken",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/fd/Tuna_icon.png/revision/latest?cb=20250610053427",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4124,7 +4131,9 @@
       "charges": "1",
       "effect": "Energy: +14 Arm Stamina Boost: +30% Arm Stamina Boost Cap: +30% Arm Stamina Boost Duration: 20s Body Stamina Boost: +30% Body Stamina Boost Cap: +30% Body Stamina Boost Duration: +20s",
       "use_time": "5s",
-      "manufacturer": "Power"
+      "manufacturer": "Power",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/94/EBar_icon.png/revision/latest?cb=20250502142245",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4137,7 +4146,9 @@
       "sold_by": "Loot only",
       "grid_size": "1x2",
       "charges": "1",
-      "effect": "Energy: +75"
+      "effect": "Energy: +75",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/54/HDR_icon.png/revision/latest?cb=20250610053132",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4152,7 +4163,9 @@
       "charges": "1",
       "effect": "Energy: +13",
       "use_time": "5s",
-      "manufacturer": "Kasem"
+      "manufacturer": "Kasem",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d2/Wafers_icon.png/revision/latest?cb=20250610042619",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4185,7 +4198,9 @@
       "charges": "1",
       "effect": "Energy: +26 Hydration: +10",
       "use_time": "11s",
-      "manufacturer": "Topo"
+      "manufacturer": "Topo",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/Lychee_icon.png/revision/latest?cb=20250610053931",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4200,7 +4215,9 @@
       "charges": "1",
       "effect": "Energy: +60 Hydration: -10",
       "use_time": "11s",
-      "manufacturer": "ThaLao"
+      "manufacturer": "ThaLao",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2e/Mackerel_icon.png/revision/latest?cb=20250610053549",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4215,7 +4232,9 @@
       "charges": "1",
       "effect": "Energy: +25",
       "use_time": "11s",
-      "manufacturer": "Clearspring"
+      "manufacturer": "Clearspring",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d3/Tofu_icon.png/revision/latest?cb=20250610053001",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4228,7 +4247,9 @@
       "sold_by": "Loot only",
       "grid_size": "1x2",
       "charges": "1",
-      "effect": "Energy: +70 Hydration: -10"
+      "effect": "Energy: +70 Hydration: -10",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/39/LMeat2_icon.png/revision/latest?cb=20250610052339",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4241,7 +4262,9 @@
       "sold_by": "Lab Rat R.3",
       "grid_size": "1x2",
       "charges": "1",
-      "effect": "Energy: +60 Hydration: -10"
+      "effect": "Energy: +60 Hydration: -10",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/LMeat_icon.png/revision/latest?cb=20250530080109",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4256,7 +4279,9 @@
       "charges": "1",
       "effect": "Energy: +10 /charge",
       "use_time": "5s",
-      "manufacturer": "Snip Snap"
+      "manufacturer": "Snip Snap",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/ChBar1_icon.png/revision/latest?cb=20250610042711",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4287,7 +4312,9 @@
       "charges": "1",
       "effect": "Energy: +20 Arm Stamina Boost: +10% Arm Stamina Boost Cap: +10% Arm Stamina Boost Duration: 90s Body Stamina Boost: +10% Body Stamina Boost Cap: +10% Body Stamina Boost Duration: 90s",
       "use_time": "5s",
-      "manufacturer": "TamTam"
+      "manufacturer": "TamTam",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/71/ChBar3_icon.png/revision/latest?cb=20250610042828",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -4302,7 +4329,9 @@
       "charges": "1",
       "effect": "Energy: +16 Arm Stamina Boost: +60% Arm Stamina Boost Cap: +60% Arm Stamina Boost Duration: 20s Body Stamina Boost: +60% Body Stamina Boost Cap: +60% Body Stamina Boost Duration: 20s",
       "use_time": "5s",
-      "manufacturer": "Windmill"
+      "manufacturer": "Windmill",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/ChBar2_icon.png/revision/latest?cb=20250610042744",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -7029,7 +7058,9 @@
       "type": "Military Material",
       "weight": "0.061kg",
       "grid_size": "1x2",
-      "sell_price": "$42"
+      "sell_price": "$42",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/Aramid_Cloth_icon.png/revision/latest?cb=20260402235156",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -7223,7 +7254,9 @@
       "type": "Household Item",
       "weight": "0.453kg",
       "grid_size": "1x2",
-      "sell_price": "$31"
+      "sell_price": "$31",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d7/Propane_Bottle_icon.png/revision/latest?cb=20260403075825",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -7259,7 +7292,9 @@
       "type": "Household Item",
       "weight": "0.013kg",
       "grid_size": "1x1",
-      "sell_price": "$5"
+      "sell_price": "$5",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c9/Tahirs_Cigarettes_icon.png/revision/latest?cb=20260402214909",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -7494,7 +7529,9 @@
       "weight": "0.170kg",
       "grid_size": "1x1",
       "manufacturer": "Luminox",
-      "sell_price": "$1,450"
+      "sell_price": "$1,450",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/71/Master_Carbon_SEAL_Automatic_Watch_icon.png/revision/latest?cb=20260402051640",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -9229,7 +9266,9 @@
       "type": "Laboratory Supplies",
       "weight": "0.057kg",
       "grid_size": "1x1",
-      "sell_price": "$1"
+      "sell_price": "$1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/18/Thermal_Blanket_icon.png/revision/latest?cb=20260403200545",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12301,7 +12340,9 @@
       "type": "Military Equipment",
       "weight": "0.720kg",
       "grid_size": "1x2",
-      "sell_price": "$825"
+      "sell_price": "$825",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ef/AZART_P1_Radio_icon.png/revision/latest?cb=20260404223341",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12312,7 +12353,9 @@
       "type": "Military Equipment",
       "weight": "0.008kg",
       "grid_size": "1x1",
-      "sell_price": "$1,950"
+      "sell_price": "$1,950",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/1c/Biometric_Access_Card_icon.png/revision/latest?cb=20260402043728",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12323,7 +12366,9 @@
       "type": "Military Equipment",
       "weight": "0.004kg",
       "grid_size": "1x1",
-      "sell_price": "$1,875"
+      "sell_price": "$1,875",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/ca/Biometric_Thumb_Drive_icon.png/revision/latest?cb=20260403092909",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12358,7 +12403,9 @@
       "type": "Military Equipment",
       "weight": "2.0kg",
       "grid_size": "1x1",
-      "sell_price": "$712"
+      "sell_price": "$712",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/eb/Handheld_ECM_Jammer_icon.png/revision/latest?cb=20260402044213",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12405,7 +12452,9 @@
       "type": "Military Equipment",
       "weight": "0,300kg",
       "grid_size": "1x1",
-      "sell_price": "$1,100"
+      "sell_price": "$1,100",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/57/NPI-2_Navigation_Receiver_icon.png/revision/latest?cb=20260402045946",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12428,7 +12477,9 @@
       "type": "Military Equipment",
       "weight": "0.180kg",
       "grid_size": "1x1",
-      "sell_price": "$4,875"
+      "sell_price": "$4,875",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d8/Operation_Data_Encrypted_Hard_Disk_icon.png/revision/latest?cb=20260411164244",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -12487,7 +12538,9 @@
       "type": "Military Equipment",
       "weight": "1,400kg",
       "grid_size": "1x2",
-      "sell_price": "$4650"
+      "sell_price": "$4650",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/fc/STRELETS-M_Tablet_icon.png/revision/latest?cb=20260404034623",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -20392,7 +20445,9 @@
       "id": "sample-collection-kit",
       "type": "Tool",
       "weight": "?kg",
-      "grid_size": "1x1"
+      "grid_size": "1x1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4c/Sample_Collection_Kit_icon.png/revision/latest?cb=20240508091140",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -21117,7 +21172,9 @@
       "type": "Vices",
       "weight": "???kg",
       "grid_size": "1x1",
-      "sell_price": "$335"
+      "sell_price": "$335",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/96/Heavenly_Perfume_Bottle_icon.png/revision/latest?cb=20260402235001",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -21128,7 +21185,9 @@
       "type": "Vices",
       "weight": "0.020kg",
       "grid_size": "1x1",
-      "sell_price": "$139"
+      "sell_price": "$139",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/Hyperborea_Cigarettes_icon.png/revision/latest?cb=20260402042858",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -21139,7 +21198,9 @@
       "type": "Vices",
       "weight": "???kg",
       "grid_size": "1x1",
-      "sell_price": "$282"
+      "sell_price": "$282",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/Lambert_Cigars_icon.png/revision/latest?cb=20260402071045",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -25962,7 +26023,9 @@
       "type": "Workshop Supplies",
       "weight": "0.312kg",
       "grid_size": "1x2",
-      "sell_price": "$6"
+      "sell_price": "$6",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/17/Broken_Carpentry_Hammer_icon.png/revision/latest?cb=20260331075234",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -25985,7 +26048,9 @@
       "type": "Workshop Supplies",
       "weight": "2.000kg",
       "grid_size": "2x1",
-      "sell_price": "$55"
+      "sell_price": "$55",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e3/Broken_Jigsaw_icon.png/revision/latest?cb=20260403234749",
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -25996,7 +26061,9 @@
       "type": "Workshop Supplies",
       "weight": "2.500kg",
       "grid_size": "2x2",
-      "sell_price": "$75"
+      "sell_price": "$75",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7d/Broken_Nailgun_icon.png/revision/latest?cb=20260404004748",
+      "image_source": "matched-wiki-record"
     }
   },
   {

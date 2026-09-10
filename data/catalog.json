@@ -1440,7 +1440,9 @@
     "dataset": "apparel_items",
     "raw": {
       "name": "Mechanix Wear - Original (Black)",
-      "id": "mechanix-wear---original-(black)"
+      "id": "mechanix-wear---original-(black)",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/32/Mechanix_Wear_-_Original_icon.png/revision/latest?cb=20250706113236",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -1607,7 +1609,9 @@
       "type": "Auxiliary",
       "weight": "??? kg",
       "sold_by": "???",
-      "manufacturer": "???"
+      "manufacturer": "???",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/22/1911_Com_Ham_inspect.png/revision/latest?cb=20250727223559",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -2894,7 +2898,9 @@
       "buy_price": "$578",
       "manufacturer": "Vortex optics",
       "magnification": "1xx",
-      "sighting_range": "100m"
+      "sighting_range": "100m",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f2/OKP7_ingame_reticle.png/revision/latest?cb=20251114142042",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -4641,7 +4647,9 @@
       "manufacturer": "???",
       "weapon_handling": "??? %",
       "magnification": "???x",
-      "sighting_range": "25m"
+      "sighting_range": "25m",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/1911_Com_Front_inspect.png/revision/latest?cb=20250727222800",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -4655,7 +4663,9 @@
       "manufacturer": "???",
       "weapon_handling": "??? %",
       "magnification": "???x",
-      "sighting_range": "25m"
+      "sighting_range": "25m",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/1911_Com_Front_inspect.png/revision/latest?cb=20250727222800",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -5487,7 +5497,9 @@
     "dataset": "gloves",
     "raw": {
       "name": "Mechanix Wear - Original (Black)",
-      "id": "mechanix-wear---original-black"
+      "id": "mechanix-wear---original-black",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/32/Mechanix_Wear_-_Original_icon.png/revision/latest?cb=20250706113236",
+      "image_source": "fandom-search"
     }
   },
   {
@@ -6027,7 +6039,9 @@
       "sold_by": "Loot only",
       "manufacturer": "Magpul",
       "recoil_control": "+4 %",
-      "weapon_handling": "+6 %"
+      "weapon_handling": "+6 %",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/1b/AK_MOE%28FDE%29_inspect.png/revision/latest?cb=20260306015614",
+      "image_source": "fandom-search"
     }
   },
   {

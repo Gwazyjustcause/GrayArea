@@ -1,12 +1,13 @@
 {
   "dataVersion": "2026-09-07T09:38:42.088995Z",
-  "syncedAt": "2026-09-10T06:22:42.950Z",
-  "records": 2105,
-  "categories": 78,
+  "syncedAt": "2026-09-10T07:12:39.818Z",
+  "records": 1583,
+  "categories": 74,
   "previousRecords": 2105,
-  "images": 1425,
-  "imageCoverage": 67.7,
-  "imagesReused": 44,
-  "imagesFromFandom": 9,
-  "imageSearchCursor": 320
+  "images": 1085,
+  "imageCoverage": 68.5,
+  "imagesReused": 42,
+  "imagesFromFandom": 0,
+  "duplicatesRemoved": 492,
+  "nonItemFamiliesRemoved": 30
 }

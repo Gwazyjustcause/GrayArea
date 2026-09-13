@@ -68,7 +68,7 @@ function render(){
   document.querySelectorAll('.item-card').forEach(c=>c.onclick=()=>openDetail(items.find(i=>i.id===c.dataset.id)));
 }
 function openDetail(i){
-  if(!i)return;const skip=new Set(['image','image_url','imageUrl','icon','thumbnail','description','name','title']);
+  if(!i)return;const skip=new Set(['image','image_url','imageUrl','icon','thumbnail','description','name','title','sell_price','buy_price','sold_by','image_source']);
   const fields=Object.entries(i.raw).filter(([k,v])=>!skip.has(k)&&['string','number','boolean'].includes(typeof v)&&String(v).length<100).slice(0,16);
   $('#detailContent').innerHTML=`<article class="detail"><div class="detail-top"><div class="detail-image">${i.image?`<img src="${esc(i.image)}" alt="${esc(i.name)}">`:'<span class="image-fallback">GA</span>'}</div><div><span class="tag">${esc(clean(i.dataset))}</span><h2>${esc(i.name)}</h2><p>${esc(i.description||'Priced field loot.')}</p></div></div><div class="detail-grid"><div class="detail-stat"><small>Regular trader pays</small><b>${money(i.value)}</b></div><div class="detail-stat"><small>Value / slot</small><b>${money(i.perSlot)}</b></div><div class="detail-stat"><small>Pickup rating</small><b>${esc(i.decision)}</b></div></div><div class="seller-advice"><b>Best cash:</b> any regular trader — choose the reputation you want to raise.${i.hvl?`<br><b>Vulture:</b> ${money(i.value/2)} (50%) and Vulture reputation.`:''}${i.availableFrom?`<br><b>Available to buy from:</b> ${esc(i.availableFrom)}.`:''}</div><div class="raw-fields">${fields.map(([k,v])=>`<div class="raw-field"><span>${esc(clean(k))}</span><b>${esc(v)}</b></div>`).join('')}</div></article>`;
   $('#detailDialog').showModal();

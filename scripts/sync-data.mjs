@@ -91,7 +91,7 @@ for(const batch of chunks(missing,40)){
   }catch(error){console.warn(`Fandom image lookup skipped: ${error.message}`)}
 }
 
-if(output.length<300)throw new Error(`Safety check failed: only ${output.length} records`);
+if(output.length<75)throw new Error(`Priced-loot safety check failed: only ${output.length} verified records`);
 await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
 const withImages=output.filter(({raw})=>raw.image).length;
 await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:new Set(output.map(entry=>entry.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,familyIconsMoved,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');

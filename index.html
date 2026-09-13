@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A searchable field guide for every findable Gray Zone Warfare item, weapon and attachment.">
+  <meta name="description" content="A Gray Zone Warfare loot value and value-per-slot guide.">
   <title>Gray Area — GZW Field Index</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loot.css">
 </head>
 <body>
   <header class="topbar">
@@ -20,16 +21,16 @@
     <section class="hero">
       <p class="eyebrow">LAMANG FIELD INTELLIGENCE</p>
       <h1>Know what to <em>take.</em><br>Know what to <span>leave.</span></h1>
-      <p class="intro">Weapons, ammunition, attachments, equipment, keys, mission items and every piece of loot you can find in Gray Zone Warfare.</p>
+      <p class="intro">A fast loot-value guide for deciding what deserves space in your backpack. Every listed price is a verified player resale value.</p>
       <label class="search-shell" for="search">
         <span class="search-icon">⌕</span>
-        <input id="search" type="search" autocomplete="off" placeholder="Search AK-12, keycard, morphine…">
+        <input id="search" type="search" autocomplete="off" placeholder="Search phone, gold ring, drill…">
         <kbd>/</kbd>
       </label>
       <div class="quick-stats">
-        <span><b id="itemCount">—</b> records</span>
-        <span><b id="categoryCount">—</b> categories</span>
-        <span>Updated automatically</span>
+        <span><b id="itemCount">—</b> priced items</span>
+        <span><b id="categoryCount">—</b> loot categories</span>
+        <span>Verified sell prices</span>
       </div>
     </section>
 
@@ -44,13 +45,14 @@
           <div><p class="eyebrow">DATABASE</p><h2 id="resultTitle">All field items</h2></div>
           <label class="sort-label">SORT
             <select id="sort">
-              <option value="name">Name A–Z</option>
+              <option value="value-slot">Best value per slot</option>
               <option value="value-desc">Highest value</option>
-              <option value="value-slot">Value per slot</option>
+              <option value="name">Name A–Z</option>
               <option value="category">Category</option>
             </select>
           </label>
         </div>
+        <div class="trader-note"><b>WHO SHOULD YOU SELL TO?</b><span>Regular traders pay the displayed market price — use the one whose reputation you want to raise. Vulture accepts high-value loot but pays only 50% in exchange for Vulture reputation.</span></div>
         <div id="status" class="status">Loading field data…</div>
         <div id="grid" class="item-grid"></div>
         <button id="loadMore" class="load-more" type="button" hidden>LOAD MORE</button>

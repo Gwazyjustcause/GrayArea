@@ -1,9 +1,10 @@
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 const API='https://gzw-data.dev/api/v1';
 const WIKI='https://gray-zone-warfare.fandom.com/api.php';
-const excluded=new Set(['tasks','vendors','metadata','removed_content','upcoming_content','cleanup','contracts','loot_containers']);
+const excluded=new Set(['tasks','task_items','hidden_task','main_task','contract','contracts','squad_strike_missions_item','reading_intel','intels','vendors','metadata','removed_content','upcoming_content','cleanup','loot_containers']);
 const get=async url=>{const r=await fetch(url,{headers:{'user-agent':'GrayArea-sync/1.0'}});if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()};
 const key=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
+const money=value=>{const text=String(value||'').replace(/[$€£\s]/g,'');const normalized=/^\d{1,3}([.,]\d{3})+$/.test(text)?text.replace(/[.,]/g,''):text.replace(/,/g,'');const amount=Number(normalized.replace(/[^0-9.-]/g,''));return Number.isFinite(amount)?amount:0};
 const chunks=(values,size)=>Array.from({length:Math.ceil(values.length/size)},(_,i)=>values.slice(i*size,(i+1)*size));
 await mkdir('data',{recursive:true});
 let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
@@ -62,7 +63,9 @@ for(const entry of withoutFamilies){
   const previous=canonical.get(identity);
   if(!previous||quality(entry)>quality(previous))canonical.set(identity,entry);
 }
-const output=[...canonical.values()];
+// Only records with a verified player resale price are useful for a pickup tool.
+// Vendor purchase prices and stock entries are deliberately excluded.
+const output=[...canonical.values()].filter(entry=>money(entry.raw.sell_price)>0);
 const duplicatesRemoved=withoutFamilies.length-output.length;
 
 // Reuse images attached to the same item in another dataset before asking Fandom.

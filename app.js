@@ -4,19 +4,20 @@ const preferred=['loot_items','weapons','ammo','keys','keycards','medical','back
 let items=[],filtered=[],shown=PAGE_SIZE,category='all';
 const $=s=>document.querySelector(s);
 const clean=s=>String(s??'').replaceAll('_',' ');
-const num=v=>{const n=Number(String(v??'').replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:0};
-const money=v=>num(v)?`$${num(v).toLocaleString()}`:'—';
+const num=v=>{const text=String(v??'').replace(/[$€£\s]/g,'');const normalized=/^\d{1,3}([.,]\d{3})+$/.test(text)?text.replace(/[.,]/g,''):text.replace(/,/g,'');const n=Number(normalized.replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:0};
+const money=v=>num(v)?`$${Math.round(num(v)).toLocaleString()}`:'—';
 const field=(o,names)=>{for(const n of names)if(o[n]!==undefined&&o[n]!==null&&o[n]!=='')return o[n];return null};
 function normalise(raw,dataset){
   const name=field(raw,['name','title','item_name','Name'])||clean(raw.id)||'Unknown item';
-  const value=num(field(raw,['sell_price','sellPrice','price','value','vendor_price','Price']));
-  const width=num(field(raw,['width','size_x','gridWidth']))||1,height=num(field(raw,['height','size_y','gridHeight']))||1;
+  const value=num(field(raw,['sell_price','sellPrice']));
+  const size=String(field(raw,['grid_size','gridSize'])||'').match(/(\d+)\s*[x×]\s*(\d+)/i);
+  const width=size?Number(size[1]):num(field(raw,['width','size_x','gridWidth']))||1,height=size?Number(size[2]):num(field(raw,['height','size_y','gridHeight']))||1;
   const image=field(raw,['image','image_url','imageUrl','icon','thumbnail']);
   const type=field(raw,['type','category','class'])||clean(dataset);
-  const text=JSON.stringify(raw).toLowerCase();
-  const mission=/task|quest|mission/.test(dataset)||/task item|quest item/.test(text);
-  const decision=mission?'mission':value>=500?'sell':/weapon|ammo|medical|key|armor|helmet|vest|night_vision/.test(dataset)?'keep':'inspect';
-  return {id:`${dataset}:${raw.id||name}`,name,value,slots:width*height,image,type,dataset,decision,description:field(raw,['description','short_description','details']),raw};
+  const slots=Math.max(width*height,1),perSlot=value/slots;
+  const decision=perSlot>=1500?'priority':perSlot>=300?'take':perSlot>=100?'decent':'low';
+  const hvl=['electronics','funds','jewellery','military_equipment','military_material','vices'].includes(dataset);
+  return {id:`${dataset}:${raw.id||name}`,name,value,slots,perSlot,image,type,dataset,decision,hvl,availableFrom:field(raw,['sold_by']),description:field(raw,['description','short_description','details']),raw};
 }
 async function json(url){const r=await fetch(url);if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()}
 async function load(){
@@ -32,7 +33,7 @@ async function load(){
     const available=version.datasets||version.data?.datasets||preferred;
     const selected=preferred.filter(x=>available.includes(x));
     const sets=await Promise.allSettled(selected.map(async d=>({d,p:await json(`${API}/${d}?all=true`)})));
-    items=sets.flatMap(x=>x.status==='fulfilled'?(x.value.p.data||[]).map(i=>normalise(i,x.value.d)):[]);
+    items=sets.flatMap(x=>x.status==='fulfilled'?(x.value.p.data||[]).filter(i=>num(i.sell_price)>0).map(i=>normalise(i,x.value.d)):[]);
     $('#dataVersion').textContent=(version.dataVersion||version.data?.dataVersion||'LIVE DATA').slice(0,10);
     renderAfterLoad();
   }catch(e){$('#status').innerHTML='Field data is temporarily unavailable. <button onclick="location.reload()">Try again</button>';console.error(e)}
@@ -53,11 +54,11 @@ function apply(){
   filtered=items.filter(i=>(category==='all'||i.dataset===category)&&(!q||`${i.name} ${i.type} ${i.dataset} ${i.description||''}`.toLowerCase().includes(q)));
   const sort=$('#sort').value;
   filtered.sort(sort==='value-desc'?(a,b)=>b.value-a.value:sort==='value-slot'?(a,b)=>(b.value/b.slots)-(a.value/a.slots):sort==='category'?(a,b)=>a.dataset.localeCompare(b.dataset)||a.name.localeCompare(b.name):(a,b)=>a.name.localeCompare(b.name));
-  $('#resultTitle').textContent=category==='all'?(q?`Search: ${q}`:'All field items'):clean(category);
+  $('#resultTitle').textContent=category==='all'?(q?`Search: ${q}`:'Priced field loot'):clean(category);
   render();
 }
 function esc(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function card(i){return `<button class="item-card" data-id="${esc(i.id)}"><span class="decision ${i.decision}">${i.decision}</span><div class="item-image">${i.image?`<img loading="lazy" src="${esc(i.image)}" alt="" onerror="this.parentNode.innerHTML='<span class=image-fallback>GA</span>'">`:'<span class="image-fallback">GA</span>'}</div><span class="tag">${esc(clean(i.dataset))}</span><h3>${esc(i.name)}</h3><div class="card-meta"><span>${i.slots} slot${i.slots===1?'':'s'}</span><span class="price">${money(i.value)}</span></div></button>`}
+function card(i){return `<button class="item-card" data-id="${esc(i.id)}"><span class="decision ${i.decision}">${i.decision}</span><div class="item-image">${i.image?`<img loading="lazy" src="${esc(i.image)}" alt="" onerror="this.parentNode.innerHTML='<span class=image-fallback>GA</span>'">`:'<span class="image-fallback">GA</span>'}</div><span class="tag">${esc(clean(i.dataset))}</span><h3>${esc(i.name)}</h3><div class="buyer-line">Sell to regular trader${i.hvl?' · Vulture pays 50%':''}</div><div class="card-meta"><span>${i.slots} slot${i.slots===1?'':'s'} · ${money(i.perSlot)}/slot</span><span class="price">${money(i.value)}</span></div></button>`}
 function render(){
   $('#status').hidden=filtered.length>0;
   $('#status').textContent=items.length?(filtered.length?'':'No field items match this search.'):'Loading field data…';
@@ -69,7 +70,7 @@ function render(){
 function openDetail(i){
   if(!i)return;const skip=new Set(['image','image_url','imageUrl','icon','thumbnail','description','name','title']);
   const fields=Object.entries(i.raw).filter(([k,v])=>!skip.has(k)&&['string','number','boolean'].includes(typeof v)&&String(v).length<100).slice(0,16);
-  $('#detailContent').innerHTML=`<article class="detail"><div class="detail-top"><div class="detail-image">${i.image?`<img src="${esc(i.image)}" alt="${esc(i.name)}">`:'<span class="image-fallback">GA</span>'}</div><div><span class="tag">${esc(clean(i.dataset))}</span><h2>${esc(i.name)}</h2><p>${esc(i.description||'No field description is currently available.')}</p></div></div><div class="detail-grid"><div class="detail-stat"><small>Sell value</small><b>${money(i.value)}</b></div><div class="detail-stat"><small>Inventory</small><b>${i.slots} slot${i.slots===1?'':'s'}</b></div><div class="detail-stat"><small>Value / slot</small><b>${money(i.value/i.slots)}</b></div></div><div class="raw-fields">${fields.map(([k,v])=>`<div class="raw-field"><span>${esc(clean(k))}</span><b>${esc(v)}</b></div>`).join('')}</div></article>`;
+  $('#detailContent').innerHTML=`<article class="detail"><div class="detail-top"><div class="detail-image">${i.image?`<img src="${esc(i.image)}" alt="${esc(i.name)}">`:'<span class="image-fallback">GA</span>'}</div><div><span class="tag">${esc(clean(i.dataset))}</span><h2>${esc(i.name)}</h2><p>${esc(i.description||'Priced field loot.')}</p></div></div><div class="detail-grid"><div class="detail-stat"><small>Regular trader pays</small><b>${money(i.value)}</b></div><div class="detail-stat"><small>Value / slot</small><b>${money(i.perSlot)}</b></div><div class="detail-stat"><small>Pickup rating</small><b>${esc(i.decision)}</b></div></div><div class="seller-advice"><b>Best cash:</b> any regular trader — choose the reputation you want to raise.${i.hvl?`<br><b>Vulture:</b> ${money(i.value/2)} (50%) and Vulture reputation.`:''}${i.availableFrom?`<br><b>Available to buy from:</b> ${esc(i.availableFrom)}.`:''}</div><div class="raw-fields">${fields.map(([k,v])=>`<div class="raw-field"><span>${esc(clean(k))}</span><b>${esc(v)}</b></div>`).join('')}</div></article>`;
   $('#detailDialog').showModal();
 }
 $('#search').addEventListener('input',()=>{shown=PAGE_SIZE;apply()});

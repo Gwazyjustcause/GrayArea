@@ -1,0 +1,10 @@
+{
+  "_instructions": "Add entries by normalized item ID or name. Manual prices override community and wiki data after review.",
+  "_example-item-id": {
+    "sell_price": 123,
+    "source": "In-game screenshot",
+    "source_url": "https://example.com/evidence",
+    "accepted_by": ["Handshake", "Gunny", "Lab Rat", "Artisan", "Turncoat", "Banshee"],
+    "preferred_trader": "Gunny"
+  }
+}

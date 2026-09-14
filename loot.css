@@ -9,6 +9,11 @@
   color: #aeb6ad;
   font-size: 11px;
 }
+.trader-note button,.contribute-button{border:1px solid var(--green);background:transparent;color:var(--green);font:700 11px 'Barlow Condensed',sans-serif;letter-spacing:.08em;padding:9px 13px;white-space:nowrap;cursor:pointer}.trader-note button:hover,.contribute-button:hover{background:var(--green);color:#101510}
+.result-controls{display:flex;align-items:center;gap:16px}.priced-toggle{color:#9aa49a;font-size:11px;white-space:nowrap}.priced-toggle input{accent-color:var(--green);vertical-align:middle;margin-right:5px}
+.trader-badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.trader-badges.compact{margin:1px 0 9px;gap:4px}.trader-badge{display:inline-grid;place-items:center;min-width:30px;height:25px;padding:0 6px;border:1px solid #3b473c;color:#6f796f;background:#111612;font:700 10px 'Barlow Condensed',sans-serif}.compact .trader-badge{min-width:22px;height:20px;font-size:8px}.trader-badge.accepts{border-color:#526e49;color:#aedb51;background:#172016}.trader-badge.preferred{box-shadow:0 0 0 2px #a9d94b;color:#e4ff9e}.trader-badge.vulture{border-color:#a97939;color:#e2ad61;background:#211b12}
+.price-source{display:block;margin:0 0 8px;color:#819080;font-size:9px;letter-spacing:.04em;text-transform:uppercase}.price-source.community{color:#d1a85a}.price-source.owner-verified,.price-source.verified{color:#8ebc6b}.price-source.missing{color:#df8a61}.decision.unpriced{color:#df8a61}.item-card .price{font-size:18px}.item-card .price:last-child{white-space:nowrap}.buyer-panel{margin-top:18px;padding:14px 16px;border:1px solid #344035;background:#111612}.buyer-panel>small{color:var(--green);font-weight:700;letter-spacing:.1em}.buyer-panel p{margin:8px 0 0;color:#9ca69c;font-size:11px}.buyer-panel b{color:var(--ink)}
+.contribution-form{width:min(620px,90vw);padding:26px}.contribution-form h2{margin:4px 0 8px}.contribution-form>p{color:#9ca69c}.contribution-form label{display:grid;gap:6px;margin:12px 0;color:#aeb8ae;font-size:11px;text-transform:uppercase;letter-spacing:.05em}.contribution-form input,.contribution-form textarea{box-sizing:border-box;width:100%;border:1px solid #394439;background:#0d110e;color:#e7ede5;padding:10px;font:inherit}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.contribution-form fieldset{border:1px solid #394439;margin:14px 0;padding:10px}.contribution-form legend{color:#aeb8ae;font-size:10px}.vendor-checks{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.vendor-checks label{display:block;margin:0;text-transform:none}.vendor-checks input{width:auto;margin-right:5px;accent-color:var(--green)}.contribution-form .contribute-button{width:100%;margin-top:8px}
 
 .trader-note b {
   color: var(--green);
@@ -43,4 +48,5 @@
 
 @media (max-width: 780px) {
   .trader-note { grid-template-columns: 1fr; gap: 6px; }
+  .results-head,.result-controls{align-items:flex-start;flex-direction:column}.form-row,.vendor-checks{grid-template-columns:1fr 1fr}
 }

@@ -1,0 +1,46 @@
+name: Item price contribution
+description: Add or correct a sell price or vendor match
+title: "[PRICE] "
+labels: ["price-contribution"]
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Item name
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: Sell price
+      description: Enter the exact price shown in game.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      placeholder: 0.4.x
+  - type: checkboxes
+    id: vendors
+    attributes:
+      label: Vendors tested
+      options:
+        - label: Handshake
+        - label: Gunny
+        - label: Lab Rat
+        - label: Artisan
+        - label: Turncoat
+        - label: Banshee
+        - label: Vulture
+  - type: input
+    id: best_vendor
+    attributes:
+      label: Best-paying vendor
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshot or evidence
+      description: Drag a screenshot here or paste a public URL. Include any durability or stack-size details that affect the price.
+    validations:
+      required: true

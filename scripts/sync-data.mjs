@@ -1,98 +1,28 @@
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
-const API='https://gzw-data.dev/api/v1';
-const WIKI='https://gray-zone-warfare.fandom.com/api.php';
-const excluded=new Set(['tasks','task_items','hidden_task','main_task','contract','contracts','squad_strike_missions_item','reading_intel','intels','containers','vendors','metadata','removed_content','upcoming_content','cleanup','loot_containers']);
-const get=async url=>{const r=await fetch(url,{headers:{'user-agent':'GrayArea-sync/1.0'}});if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()};
-const key=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
-const money=value=>{const text=String(value||'').replace(/[$€£\s]/g,'');const normalized=/^\d{1,3}([.,]\d{3})+$/.test(text)?text.replace(/[.,]/g,''):text.replace(/,/g,'');const amount=Number(normalized.replace(/[^0-9.-]/g,''));return Number.isFinite(amount)?amount:0};
-const chunks=(values,size)=>Array.from({length:Math.ceil(values.length/size)},(_,i)=>values.slice(i*size,(i+1)*size));
+const API='https://gzw-data.dev/api/v1',WIKI='https://gray-zone-warfare.fandom.com/api.php',COMMUNITY='https://raw.githubusercontent.com/ZioMark13/GZWItems-List/master/price-overrides.json';
+const excluded=new Set(['tasks','task_items','side_task','hidden_task','main_task','contract','contracts','squad_strike_missions','squad_strike_missions_item','reading_intel','intels','container','containers','loot_container','loot_containers','vendors','metadata','removed_content','upcoming_content','cleanup']);
+const get=async url=>{const r=await fetch(url,{headers:{'user-agent':'GrayArea-sync/2.0'}});if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json()};
+const key=v=>String(v||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
+const money=v=>{const t=String(v||'').replace(/[$€£\s]/g,''),n=/^\d{1,3}([.,]\d{3})+$/.test(t)?t.replace(/[.,]/g,''):t.replace(/,/g,''),a=Number(n.replace(/[^0-9.-]/g,''));return Number.isFinite(a)?a:0};
+const chunks=(v,s)=>Array.from({length:Math.ceil(v.length/s)},(_,i)=>v.slice(i*s,(i+1)*s));
 await mkdir('data',{recursive:true});
 let old=[];try{old=JSON.parse(await readFile('data/catalog.json','utf8'))}catch{}
-const version=await get(`${API}/version`);
-const names=(version.datasets||version.data?.datasets||[]).filter(n=>!n.startsWith('_')&&!excluded.has(n));
+let manual={};try{manual=JSON.parse(await readFile('data/manual-prices.json','utf8'))}catch{}
+let community={};try{community=await get(COMMUNITY)}catch(error){console.warn(`Community overrides unavailable: ${error.message}`)}
+const version=await get(`${API}/version`),names=(version.datasets||version.data?.datasets||[]).filter(n=>!n.startsWith('_')&&!excluded.has(n));
 if(names.length<20)throw new Error(`Dataset discovery returned only ${names.length} categories`);
-const imported=[];
-for(const dataset of names){
-  try{const payload=await get(`${API}/${dataset}?all=true`);for(const raw of payload.data||[])imported.push({dataset,raw});}
-  catch(error){console.warn(`Skipped ${dataset}: ${error.message}`)}
-}
-// The wiki scraper sometimes emits a light image record and a separate detailed
-// record with the same ID. Merge them instead of discarding either half.
-const merged=new Map();
-for(const entry of imported){
-  const id=key(entry.raw.id||entry.raw.name);
-  const recordKey=`${entry.dataset}:${id}`;
-  const previous=merged.get(recordKey);
-  if(previous)previous.raw={...previous.raw,...entry.raw,image:entry.raw.image||previous.raw.image};
-  else merged.set(recordKey,{dataset:entry.dataset,raw:{...entry.raw}});
-}
-const datasetRecords=[...merged.values()];
-
-// Remove calibre/family headings emitted by wiki tables. They are not inventory
-// items and often carry the icon of one child variant (for example SP or AP).
-const namesByDataset=new Map();
-for(const entry of datasetRecords){const list=namesByDataset.get(entry.dataset)||[];list.push(key(entry.raw.name));namesByDataset.set(entry.dataset,list)}
-const isFamilyHeading=entry=>{
-  const raw=entry.raw,name=key(raw.name);
-  const useful=Object.entries(raw).filter(([field,value])=>!['id','name','image','image_source'].includes(field)&&value!==null&&value!==''&&value!==undefined);
-  return useful.length===0&&name&&(namesByDataset.get(entry.dataset)||[]).some(other=>other!==name&&other.startsWith(`${name} `));
-};
-// Some family headings hold a child variant's icon. Move it only when the file
-// name explicitly contains one unique suffix such as SP, AP, FMJ or HP.
-let familyIconsMoved=0;
-for(const family of datasetRecords.filter(isFamilyHeading)){
-  if(!family.raw.image)continue;
-  const base=key(family.raw.name),imageKey=key(decodeURIComponent(family.raw.image));
-  const candidates=datasetRecords.filter(entry=>entry.dataset===family.dataset&&key(entry.raw.name).startsWith(`${base} `));
-  const matches=candidates.filter(entry=>{
-    const suffix=key(entry.raw.name).slice(base.length).trim().split(' ').filter(Boolean);
-    return suffix.length>0&&suffix.every(token=>imageKey.split(' ').includes(token));
-  });
-  if(matches.length===1&&!matches[0].raw.image){matches[0].raw.image=family.raw.image;matches[0].raw.image_source='wiki-family-variant';familyIconsMoved++}
-}
-const withoutFamilies=datasetRecords.filter(entry=>!isFamilyHeading(entry));
-const removedFamilies=datasetRecords.length-withoutFamilies.length;
-
-// Broad aggregate datasets repeat items already present in specific datasets.
-// Keep one canonical exact-name record, favouring richer and more specific data.
-const broad=new Set(['items','gear','provisions','weapon_parts','valuables','auxiliary']);
-const quality=entry=>Object.values(entry.raw).filter(v=>v!==null&&v!==''&&v!==undefined).length+(entry.raw.sell_price?5:0)+(entry.raw.image?3:0)-(broad.has(entry.dataset)?4:0);
-const canonical=new Map();
-for(const entry of withoutFamilies){
-  const identity=key(entry.raw.name||entry.raw.id);
-  const previous=canonical.get(identity);
-  if(!previous||quality(entry)>quality(previous))canonical.set(identity,entry);
-}
-// Only records with a verified player resale price are useful for a pickup tool.
-// Vendor purchase prices and stock entries are deliberately excluded.
-const output=[...canonical.values()].filter(entry=>money(entry.raw.sell_price)>0);
-const duplicatesRemoved=withoutFamilies.length-output.length;
-
-// Reuse images attached to the same item in another dataset before asking Fandom.
-const knownImages=new Map();
-for(const {raw} of output){if(raw.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
-for(const {raw} of old){if(raw?.image&&raw.image_source!=='fandom-search'){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
-let reused=0;
-for(const {raw} of output){
-  if(!raw.image){const image=knownImages.get(key(raw.id))||knownImages.get(key(raw.name));if(image){raw.image=image;raw.image_source='matched-wiki-record';reused++}}
-}
-
-// Exact page-title lookups are batched to remain polite to the community wiki.
-const missing=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???'));
-let wikiMatches=0;
-for(const batch of chunks(missing,40)){
-  try{
-    const titles=batch.map(({raw})=>raw.name).join('|');
-    const url=`${WIKI}?action=query&format=json&redirects=1&prop=pageimages&piprop=original&titles=${encodeURIComponent(titles)}`;
-    const payload=await get(url);
-    const byTitle=new Map(Object.values(payload.query?.pages||{}).filter(p=>p.original?.source).map(p=>[key(p.title),p.original.source]));
-    const redirects=new Map((payload.query?.redirects||[]).map(r=>[key(r.from),key(r.to)]));
-    for(const entry of batch){const title=key(entry.raw.name);const image=byTitle.get(title)||byTitle.get(redirects.get(title));if(image){entry.raw.image=image;entry.raw.image_source='fandom-page';wikiMatches++}}
-  }catch(error){console.warn(`Fandom image lookup skipped: ${error.message}`)}
-}
-
-if(output.length<75)throw new Error(`Priced-loot safety check failed: only ${output.length} verified records`);
-await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
-const withImages=output.filter(({raw})=>raw.image).length;
-await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,categories:new Set(output.map(entry=>entry.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,familyIconsMoved,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');
-console.log(`Synced ${output.length} records across ${names.length} categories; ${withImages} images (${(withImages/output.length*100).toFixed(1)}%)`);
+const imported=[];for(const dataset of names){try{const payload=await get(`${API}/${dataset}?all=true`);for(const raw of payload.data||[])imported.push({dataset,raw})}catch(error){console.warn(`Skipped ${dataset}: ${error.message}`)}}
+const merged=new Map();for(const entry of imported){const recordKey=`${entry.dataset}:${key(entry.raw.id||entry.raw.name)}`,previous=merged.get(recordKey);if(previous)previous.raw={...previous.raw,...entry.raw,image:entry.raw.image||previous.raw.image};else merged.set(recordKey,{dataset:entry.dataset,raw:{...entry.raw}})}
+const datasetRecords=[...merged.values()],namesByDataset=new Map();for(const entry of datasetRecords){const list=namesByDataset.get(entry.dataset)||[];list.push(key(entry.raw.name));namesByDataset.set(entry.dataset,list)}
+const isFamilyHeading=entry=>{const raw=entry.raw,name=key(raw.name),useful=Object.entries(raw).filter(([f,v])=>!['id','name','image','image_source'].includes(f)&&v!==null&&v!==''&&v!==undefined);return useful.length===0&&name&&(namesByDataset.get(entry.dataset)||[]).some(other=>other!==name&&other.startsWith(`${name} `))};
+let familyIconsMoved=0;for(const family of datasetRecords.filter(isFamilyHeading)){if(!family.raw.image)continue;const base=key(family.raw.name),imageKey=key(decodeURIComponent(family.raw.image)),candidates=datasetRecords.filter(e=>e.dataset===family.dataset&&key(e.raw.name).startsWith(`${base} `)),matches=candidates.filter(e=>{const suffix=key(e.raw.name).slice(base.length).trim().split(' ').filter(Boolean);return suffix.length&&suffix.every(token=>imageKey.split(' ').includes(token))});if(matches.length===1&&!matches[0].raw.image){matches[0].raw.image=family.raw.image;matches[0].raw.image_source='wiki-family-variant';familyIconsMoved++}}
+const withoutFamilies=datasetRecords.filter(e=>!isFamilyHeading(e)),removedFamilies=datasetRecords.length-withoutFamilies.length,broad=new Set(['items','gear','provisions','weapon_parts','valuables','auxiliary']);
+const quality=e=>Object.values(e.raw).filter(v=>v!==null&&v!==''&&v!==undefined).length+(e.raw.sell_price?5:0)+(e.raw.image?3:0)-(broad.has(e.dataset)?4:0),canonical=new Map();
+for(const entry of withoutFamilies){const identity=key(entry.raw.name||entry.raw.id),previous=canonical.get(identity);if(!previous||quality(entry)>quality(previous))canonical.set(identity,entry)}
+const output=[...canonical.values()];let communityPrices=0,manualPrices=0,verifiedPrices=0;
+for(const entry of output){const raw=entry.raw,ids=[key(raw.id),key(raw.name)].filter(Boolean),match=(source)=>ids.map(id=>source[id]||source[id.replaceAll(' ','-')]).find(Boolean),communityMatch=match(community),manualMatch=match(manual);if(money(raw.sell_price)>0){raw.price_status='verified';raw.price_source='GZW wiki / game data';verifiedPrices++}else if(communityMatch&&money(communityMatch.price)>0){raw.sell_price=money(communityMatch.price);raw.price_status='community';raw.price_source='GZWItems community override';raw.price_source_url='https://github.com/ZioMark13/GZWItems-List';communityPrices++}if(communityMatch?.imageUrl&&!raw.image){raw.image=communityMatch.imageUrl;raw.image_source='gzwitems-community'}if(manualMatch&&money(manualMatch.sell_price||manualMatch.price)>0){raw.sell_price=money(manualMatch.sell_price||manualMatch.price);raw.price_status='owner-verified';raw.price_source=manualMatch.source||'Gray Area verified contribution';if(manualMatch.source_url)raw.price_source_url=manualMatch.source_url;if(manualMatch.accepted_by)raw.accepted_by=manualMatch.accepted_by;if(manualMatch.preferred_trader)raw.preferred_trader=manualMatch.preferred_trader;manualPrices++}}
+const duplicatesRemoved=withoutFamilies.length-output.length,knownImages=new Map();for(const {raw} of output){if(raw.image){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}for(const {raw} of old){if(raw?.image&&raw.image_source!=='fandom-search'){knownImages.set(key(raw.id),raw.image);knownImages.set(key(raw.name),raw.image)}}
+let reused=0;for(const {raw} of output){if(!raw.image){const image=knownImages.get(key(raw.id))||knownImages.get(key(raw.name));if(image){raw.image=image;raw.image_source='matched-wiki-record';reused++}}}
+const missing=output.filter(({raw})=>!raw.image&&raw.name&&!String(raw.name).includes('???'));let wikiMatches=0,wikiAvailable=true;for(const batch of chunks(missing,40)){if(!wikiAvailable)break;try{const titles=batch.map(({raw})=>raw.name).join('|'),payload=await get(`${WIKI}?action=query&format=json&redirects=1&prop=pageimages&piprop=original&titles=${encodeURIComponent(titles)}`),byTitle=new Map(Object.values(payload.query?.pages||{}).filter(p=>p.original?.source).map(p=>[key(p.title),p.original.source])),redirects=new Map((payload.query?.redirects||[]).map(r=>[key(r.from),key(r.to)]));for(const entry of batch){const title=key(entry.raw.name),image=byTitle.get(title)||byTitle.get(redirects.get(title));if(image){entry.raw.image=image;entry.raw.image_source='fandom-page';wikiMatches++}}}catch(error){wikiAvailable=false;console.warn(`Fandom image lookup paused after upstream error: ${error.message}`)}}
+if(output.length<400)throw new Error(`Sellable-item safety check failed: only ${output.length} records`);await writeFile('data/catalog.json',JSON.stringify(output,null,2)+'\n');
+const withImages=output.filter(({raw})=>raw.image).length,priced=output.filter(({raw})=>money(raw.sell_price)>0).length;await writeFile('data/version.json',JSON.stringify({dataVersion:version.dataVersion||version.data?.dataVersion||null,syncedAt:new Date().toISOString(),records:output.length,pricedRecords:priced,missingPrices:output.length-priced,verifiedPrices,communityPrices,manualPrices,categories:new Set(output.map(e=>e.dataset)).size,previousRecords:old.length,images:withImages,imageCoverage:Number((withImages/output.length*100).toFixed(1)),imagesReused:reused,imagesFromFandom:wikiMatches,familyIconsMoved,duplicatesRemoved,nonItemFamiliesRemoved:removedFamilies},null,2)+'\n');console.log(`Synced ${output.length} sellable records; ${priced} prices (${verifiedPrices} wiki, ${communityPrices} community, ${manualPrices} manual); ${withImages} images`);

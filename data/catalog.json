@@ -10,8 +10,7 @@
       "manufacturer": "General West",
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "970 m/s",
-      "accuracy_modifier": "+0 %",
-      "stopped_by_armor_class": "NIJ III"
+      "accuracy_modifier": "+0 %"
     }
   },
   {
@@ -26,8 +25,7 @@
       "sold_by": "Artisan R.2",
       "muzzle_velocity": "966 m/s",
       "accuracy_modifier": "-2 %",
-      "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ IIIA+"
+      "durability_modifier": "-15 %"
     }
   },
   {
@@ -42,7 +40,6 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "970 m/s",
       "accuracy_modifier": "-5 %",
-      "stopped_by_armor_class": "NIJ I",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f7/.222_Remington_SP_icon.png/revision/latest?cb=20260525140404",
       "image_source": "wiki-family-variant"
     }
@@ -58,8 +55,7 @@
       "manufacturer": "General West",
       "sold_by": "Artisan R.2",
       "muzzle_velocity": "970 m/s",
-      "accuracy_modifier": "-5 %",
-      "stopped_by_armor_class": "NIJ I"
+      "accuracy_modifier": "-5 %"
     }
   },
   {
@@ -96,7 +92,7 @@
       "muzzle_velocity": "853 m/s",
       "accuracy_modifier": "+1 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ III+",
+      "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/95/CQ_.300_BLK_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412075727"
     }
   },
@@ -112,7 +108,7 @@
       "sold_by": "Banshee R.1",
       "muzzle_velocity": "633 m/s",
       "accuracy_modifier": "+0 %",
-      "stopped_by_armor_class": "NIJ III",
+      "stopped_by_armor_class": "NIJ IIIA+",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/81/FMJ_.300_BLK_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412074247"
     }
   },
@@ -145,7 +141,7 @@
       "muzzle_velocity": "724 m/s",
       "accuracy_modifier": "+2 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ IIIA",
+      "stopped_by_armor_class": "NIJ IIIA+",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/70/VMAX_.300_BLK_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412074414"
     }
   },
@@ -160,7 +156,8 @@
       "sold_by": "Artisan R.3",
       "muzzle_velocity": "299 m/s",
       "accuracy_modifier": "+0 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/05/AP_.45_inspect.png/revision/latest/scale-to-width-down/268?cb=20250610112129"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/05/AP_.45_inspect.png/revision/latest/scale-to-width-down/268?cb=20250610112129",
+      "stopped_by_armor_class": "NIJ IIIA"
     }
   },
   {
@@ -175,7 +172,7 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "260 m/s",
       "accuracy_modifier": "+0 %",
-      "stopped_by_armor_class": "NIJ I++",
+      "stopped_by_armor_class": "NIJ IIA",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a2/FMJ_.45_inspect.png/revision/latest?cb=20260414111029"
     }
   },
@@ -192,7 +189,6 @@
       "muzzle_velocity": "274 m/s",
       "accuracy_modifier": "+0 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ I+",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/24/Hydra-Shok_inspect.png/revision/latest?cb=20260414113205"
     }
   },
@@ -208,7 +204,6 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "290 m/s",
       "accuracy_modifier": "-2 %",
-      "stopped_by_armor_class": "NIJ I",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/07/JHP_%2BP_.45_inspect.png/revision/latest?cb=20260414113246"
     }
   },
@@ -232,7 +227,6 @@
       "sold_by": "Gunny R.1",
       "muzzle_velocity": "370 m/s",
       "accuracy_modifier": "+38 %",
-      "stopped_by_armor_class": "NIJ I",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/53/00_12ga_inspect.png/revision/latest/scale-to-width-down/267?cb=20260414085636"
     }
   },
@@ -249,7 +243,7 @@
       "muzzle_velocity": "349 m/s",
       "accuracy_modifier": "+27 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ III",
+      "stopped_by_armor_class": "NIJ IIIA",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b9/12ga_FC_00_inspect.png/revision/latest/scale-to-width-down/267?cb=20260414090208"
     }
   },
@@ -266,7 +260,6 @@
       "muzzle_velocity": "420 m/s",
       "accuracy_modifier": "+42 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ I",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8c/Slug_12ga_inspect.png/revision/latest/scale-to-width-down/267?cb=20260414084822"
     }
   },
@@ -283,7 +276,7 @@
       "muzzle_velocity": "609 m/s",
       "accuracy_modifier": "+50 %",
       "durability_modifier": "-40 %",
-      "stopped_by_armor_class": "NIJ III+",
+      "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/51/SST_Slug_12ga_inspect.png/revision/latest/scale-to-width-down/267?cb=20260414085502"
     }
   },
@@ -298,7 +291,8 @@
       "sold_by": "Banshee R.2",
       "muzzle_velocity": "680 m/s",
       "accuracy_modifier": "+0 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e2/Action_SX_4.6x30_inspect.png/revision/latest/scale-to-width-down/267?cb=20250611220709"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e2/Action_SX_4.6x30_inspect.png/revision/latest/scale-to-width-down/267?cb=20250611220709",
+      "stopped_by_armor_class": "NIJ IIA+"
     }
   },
   {
@@ -312,6 +306,7 @@
       "sold_by": "Banshee R.4",
       "muzzle_velocity": "690 m/s",
       "accuracy_modifier": "+0 %",
+      "stopped_by_armor_class": "NIJ IIIA",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/06/AP_SX_4.6x30_icon.png/revision/latest?cb=20250620165213",
       "image_source": "wiki-family-variant"
     }
@@ -326,7 +321,8 @@
       "manufacturer": "General West",
       "sold_by": "Banshee R.2",
       "muzzle_velocity": "612 m/s",
-      "accuracy_modifier": "+0 %"
+      "accuracy_modifier": "+0 %",
+      "stopped_by_armor_class": "NIJ IIIA"
     }
   },
   {
@@ -339,7 +335,8 @@
       "manufacturer": "General West",
       "sold_by": "Banshee R.1",
       "muzzle_velocity": "290 m/s",
-      "accuracy_modifier": "+0 %"
+      "accuracy_modifier": "+0 %",
+      "stopped_by_armor_class": "NIJ IIIA"
     }
   },
   {
@@ -354,6 +351,7 @@
       "sold_by": "Loot only",
       "muzzle_velocity": "840 m/s",
       "accuracy_modifier": "-1 %",
+      "stopped_by_armor_class": "NIJ IV",
       "sell_price": 2,
       "price_status": "community",
       "price_source": "GZWItems community override",
@@ -371,7 +369,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "840 m/s",
-      "accuracy_modifier": "-6 %"
+      "accuracy_modifier": "-6 %",
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -385,7 +384,8 @@
       "manufacturer": "General East",
       "muzzle_velocity": "880 m/s",
       "accuracy_modifier": "-2 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/65/BT_5.45x39_inspect.png/revision/latest?cb=20240507130206"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/65/BT_5.45x39_inspect.png/revision/latest?cb=20240507130206",
+      "stopped_by_armor_class": "NIJ III+"
     }
   },
   {
@@ -400,7 +400,8 @@
       "sold_by": "Turncoat R.1",
       "muzzle_velocity": "884 m/s",
       "accuracy_modifier": "+0 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/08/FMJ_5.45x39_inspect.png/revision/latest?cb=20240503130831"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/08/FMJ_5.45x39_inspect.png/revision/latest?cb=20240503130831",
+      "stopped_by_armor_class": "NIJ IIIA+"
     }
   },
   {
@@ -414,7 +415,8 @@
       "manufacturer": "General East",
       "sold_by": "Turncoat R.1",
       "muzzle_velocity": "884 m/s",
-      "accuracy_modifier": "+6 %"
+      "accuracy_modifier": "+6 %",
+      "stopped_by_armor_class": "NIJ IIIA+"
     }
   },
   {
@@ -428,7 +430,8 @@
       "manufacturer": "General East",
       "sold_by": "Turncoat R.3",
       "muzzle_velocity": "880 m/s",
-      "accuracy_modifier": "-2 %"
+      "accuracy_modifier": "-2 %",
+      "stopped_by_armor_class": "NIJ III+"
     }
   },
   {
@@ -442,7 +445,8 @@
       "manufacturer": "General East",
       "muzzle_velocity": "880 m/s",
       "accuracy_modifier": "+2 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6f/PS_5.45x39_inspect.png/revision/latest?cb=20240507130207"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6f/PS_5.45x39_inspect.png/revision/latest?cb=20240507130207",
+      "stopped_by_armor_class": "NIJ III"
     }
   },
   {
@@ -455,7 +459,8 @@
       "grid_size": "1x1",
       "manufacturer": "General East",
       "muzzle_velocity": "304 m/s",
-      "accuracy_modifier": "+6 %"
+      "accuracy_modifier": "+6 %",
+      "stopped_by_armor_class": "NIJ IIIA"
     }
   },
   {
@@ -486,7 +491,7 @@
       "muzzle_velocity": "920 m/s",
       "accuracy_modifier": "+2 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ III+",
+      "stopped_by_armor_class": "NIJ III++",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2a/M855_5.56x45_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412073141"
     }
   },
@@ -503,7 +508,7 @@
       "muzzle_velocity": "970 m/s",
       "accuracy_modifier": "+7%",
       "durability_modifier": "-40%",
-      "stopped_by_armor_class": "NIJ III++",
+      "stopped_by_armor_class": "NIJ IV",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c2/M855A1_5.56x45_inspect.png/revision/latest?cb=20240505231241"
     }
   },
@@ -553,7 +558,7 @@
       "muzzle_velocity": "861 m/s",
       "accuracy_modifier": "-3 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ IIIA+",
+      "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/58/HPBT_5.56x45_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412072555"
     }
   },
@@ -594,7 +599,6 @@
       "sold_by": "Gunny R.1",
       "muzzle_velocity": "930 m/s",
       "accuracy_modifier": "-3 %",
-      "stopped_by_armor_class": "NIJ I",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/61/SP_5.56x45_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412070039"
     }
   },
@@ -611,7 +615,7 @@
       "muzzle_velocity": "917 m/s",
       "accuracy_modifier": "-3 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ III+",
+      "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/73/M856_5.56x45_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412073343"
     }
   },
@@ -625,7 +629,8 @@
       "grid_size": "1x1",
       "manufacturer": "General West",
       "muzzle_velocity": "970 m/s",
-      "accuracy_modifier": "-7 %"
+      "accuracy_modifier": "-7 %",
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -640,7 +645,8 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "415 m/s",
       "accuracy_modifier": "+2 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a5/FMJ_7.62x25mm_inspect.png/revision/latest/scale-to-width-down/268?cb=20250611224547"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a5/FMJ_7.62x25mm_inspect.png/revision/latest/scale-to-width-down/268?cb=20250611224547",
+      "stopped_by_armor_class": "NIJ IIA"
     }
   },
   {
@@ -692,7 +698,7 @@
       "muzzle_velocity": "740 m/s",
       "accuracy_modifier": "+2 %",
       "durability_modifier": "-100 %",
-      "stopped_by_armor_class": "NIJ IV"
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -706,7 +712,8 @@
       "manufacturer": "General East",
       "sold_by": "Artisan R.3",
       "muzzle_velocity": "725 m/s",
-      "dispersion": "-1 %"
+      "dispersion": "-1 %",
+      "stopped_by_armor_class": "NIJ III+"
     }
   },
   {
@@ -735,7 +742,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "725 m/s",
-      "accuracy_modifier": "+3 %"
+      "accuracy_modifier": "+3 %",
+      "stopped_by_armor_class": "NIJ III+"
     }
   },
   {
@@ -750,7 +758,8 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "310 m/s",
       "accuracy_modifier": "+6 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cd/US_7.62x39_inspect.png/revision/latest?cb=20240507130207"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cd/US_7.62x39_inspect.png/revision/latest?cb=20240507130207",
+      "stopped_by_armor_class": "NIJ IIIA"
     }
   },
   {
@@ -764,7 +773,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "838 m/s",
-      "accuracy_modifier": "-4 %"
+      "accuracy_modifier": "-4 %",
+      "stopped_by_armor_class": "NIJ IV"
     }
   },
   {
@@ -794,7 +804,8 @@
       "manufacturer": "General West",
       "sold_by": "Banshee R.3",
       "muzzle_velocity": "835 m/s",
-      "accuracy_modifier": "-3 %"
+      "accuracy_modifier": "-3 %",
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -808,7 +819,8 @@
       "manufacturer": "General East",
       "sold_by": "Banshee R.2",
       "muzzle_velocity": "800 m/s",
-      "dispersion": "-4 %"
+      "dispersion": "-4 %",
+      "stopped_by_armor_class": "NIJ III"
     }
   },
   {
@@ -830,7 +842,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "820 m/s",
-      "accuracy_modifier": "+4 %"
+      "accuracy_modifier": "+4 %",
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -852,7 +865,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "828 m/s",
-      "accuracy_modifier": "-2 %"
+      "accuracy_modifier": "-2 %",
+      "stopped_by_armor_class": "NIJ IV"
     }
   },
   {
@@ -867,6 +881,7 @@
       "sold_by": "Artisan R.1",
       "muzzle_velocity": "828 m/s",
       "accuracy_modifier": "-1 %",
+      "stopped_by_armor_class": "NIJ III+",
       "sell_price": 1,
       "price_status": "community",
       "price_source": "GZWItems community override",
@@ -884,7 +899,8 @@
       "manufacturer": "General East",
       "sold_by": "Loot only",
       "muzzle_velocity": "835 m/s",
-      "accuracy_modifier": "-5 %"
+      "accuracy_modifier": "-5 %",
+      "stopped_by_armor_class": "NIJ III++"
     }
   },
   {
@@ -898,7 +914,8 @@
       "manufacturer": "General East",
       "sold_by": "Artisan R.2",
       "muzzle_velocity": "830 m/s",
-      "accuracy_modifier": "+3%"
+      "accuracy_modifier": "+3%",
+      "stopped_by_armor_class": "NIJ III+"
     }
   },
   {
@@ -943,7 +960,8 @@
       "sold_by": "Loot only",
       "muzzle_velocity": "289 m/s",
       "accuracy_modifier": "+2 %",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/db/XD_7.65_B_inspect.png/revision/latest/scale-to-width-down/268?cb=20250612223159"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/db/XD_7.65_B_inspect.png/revision/latest/scale-to-width-down/268?cb=20250612223159",
+      "stopped_by_armor_class": "NIJ IIA"
     }
   },
   {
@@ -982,7 +1000,7 @@
       "sold_by": "Gunny R.1",
       "muzzle_velocity": "377 m/s",
       "accuracy_modifier": "-3 %",
-      "stopped_by_armor_class": "NIJ I++",
+      "stopped_by_armor_class": "NIJ IIA",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/86/HP_9x19_inspect.png/revision/latest?cb=20260414104120"
     }
   },
@@ -999,7 +1017,7 @@
       "muzzle_velocity": "700 m/s",
       "accuracy_modifier": "+0 %",
       "durability_modifier": "-40 %",
-      "stopped_by_armor_class": "NIJ III+",
+      "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a0/LS_9x19_inspect.png/revision/latest?cb=20260414105204",
       "sell_price": 1,
       "price_status": "community",
@@ -1036,7 +1054,7 @@
       "muzzle_velocity": "381 m/s",
       "accuracy_modifier": "+2 %",
       "durability_modifier": "-15 %",
-      "stopped_by_armor_class": "NIJ IIIA+",
+      "stopped_by_armor_class": "NIJ IIIA",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/78/Xp%2B9x19_inspect.png/revision/latest?cb=20260414104838"
     }
   },

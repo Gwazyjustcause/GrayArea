@@ -4233,7 +4233,7 @@
     }
   },
   {
-    "dataset": "vests",
+    "dataset": "gear",
     "raw": {
       "name": "Armor Vests",
       "id": "armor-vests",
@@ -12169,7 +12169,7 @@
     }
   },
   {
-    "dataset": "plate_carrier",
+    "dataset": "plate_carriers",
     "raw": {
       "name": "Specter",
       "id": "specter",
@@ -12178,7 +12178,20 @@
       "material": "Aramid",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2c/Specter_inspect.png/revision/latest/scale-to-width-down/268?cb=20240515140641"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2c/Specter_inspect.png/revision/latest/scale-to-width-down/268?cb=20240515140641",
+      "protection_rating": "P3"
+    }
+  },
+  {
+    "dataset": "plate_carriers",
+    "raw": {
+      "name": "Buran's Pantsir 2.0",
+      "id": "burans-pantsir-2.0",
+      "protection_rating": "R3",
+      "nij_class": "III++",
+      "material": "Ceramic",
+      "armor_locations": "Front, Back, Sides",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Buran%27s_Pantsir_2.0_icon.png/revision/latest/scale-to-width-down/180?cb=20260520233024"
     }
   },
   {
@@ -12194,7 +12207,8 @@
       "material": "UHMWPE",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2c/CGPC3_inspect.png/revision/latest/scale-to-width-down/268?cb=20240505170103"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2c/CGPC3_inspect.png/revision/latest/scale-to-width-down/268?cb=20240505170103",
+      "protection_rating": "P3"
     }
   },
   {
@@ -12211,7 +12225,8 @@
       "nij_class": "III",
       "armor_locations": "Front",
       "manufacturer": "Warrior Assault Systems",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c6/Elite_4_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421123815"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c6/Elite_4_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421123815",
+      "protection_rating": "R1"
     }
   },
   {
@@ -12227,7 +12242,8 @@
       "nij_class": "III",
       "armor_locations": "Front,Back",
       "manufacturer": "4M",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b8/Lancer_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421123616"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b8/Lancer_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421123616",
+      "protection_rating": "R1"
     }
   },
   {
@@ -12260,7 +12276,8 @@
       "material": "IHMWPE",
       "nij_class": "III",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cf/Lancer_UNLRA.png/revision/latest?cb=20250526034756"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cf/Lancer_UNLRA.png/revision/latest?cb=20250526034756",
+      "protection_rating": "R1"
     }
   },
   {
@@ -12275,7 +12292,8 @@
       "nij_class": "III++",
       "armor_locations": "Front,Back",
       "manufacturer": "LBT",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/96/LBT-6094_G3v2_inspect.png/revision/latest/scale-to-width-down/268?cb=20260331091951"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/96/LBT-6094_G3v2_inspect.png/revision/latest/scale-to-width-down/268?cb=20260331091951",
+      "protection_rating": "R3"
     }
   },
   {
@@ -12290,7 +12308,9 @@
       "material": "UHMWPE",
       "nij_class": "III",
       "manufacturer": "Condor Outdoor",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/83/LCS_inspect.png/revision/latest/scale-to-width-down/268?cb=20250618162902"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/83/LCS_inspect.png/revision/latest/scale-to-width-down/268?cb=20250618162902",
+      "protection_rating": "R1",
+      "armor_locations": "Front, back"
     }
   },
   {
@@ -12301,9 +12321,10 @@
       "weight": "7.640 kg",
       "sold_by": "Loot only",
       "material": "Ceramic",
-      "nij_class": "III+",
+      "nij_class": "III++",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/13/M2_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421122928"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/13/M2_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421122928",
+      "protection_rating": "R3"
     }
   },
   {
@@ -12319,7 +12340,8 @@
       "material": "UHMWPE",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back,Sides",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cf/MOC_II_inspect.png/revision/latest?cb=20250621182812"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cf/MOC_II_inspect.png/revision/latest?cb=20250621182812",
+      "protection_rating": "P3"
     }
   },
   {
@@ -12336,7 +12358,8 @@
       "nij_class": "III",
       "armor_locations": "Front,Back,Sides",
       "manufacturer": "SSO",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/75/Pantsir_2.0_inspect.png/revision/latest?cb=20260501125358"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/75/Pantsir_2.0_inspect.png/revision/latest?cb=20260501125358",
+      "protection_rating": "R1"
     }
   },
   {
@@ -12354,7 +12377,8 @@
       "nij_class": "III++",
       "armor_locations": "Front,Back,Sides",
       "manufacturer": "Raid Gear & MBC",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c8/Phantom_inspect.png/revision/latest?cb=20250531043617"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c8/Phantom_inspect.png/revision/latest?cb=20250531043617",
+      "protection_rating": "R3"
     }
   },
   {
@@ -12372,7 +12396,8 @@
       "nij_class": "III++",
       "armor_locations": "Front, Back",
       "manufacturer": "Blue Force Gear",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0b/Plate6_inspect.png/revision/latest/scale-to-width-down/268?cb=20260404185433"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0b/Plate6_inspect.png/revision/latest/scale-to-width-down/268?cb=20260404185433",
+      "protection_rating": "R3"
     }
   },
   {
@@ -12387,7 +12412,8 @@
       "nij_class": "III+",
       "armor_locations": "Front,Back",
       "manufacturer": "Warrior Assault Systems",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b7/RPC_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421122631"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b7/RPC_inspect.png/revision/latest/scale-to-width-down/268?cb=20250421122631",
+      "protection_rating": "R2"
     }
   },
   {
@@ -12420,7 +12446,8 @@
       "nij_class": "III++",
       "armor_locations": "Front, Back, Sides",
       "manufacturer": "SSO",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d4/Yen%27s_Pantsir_2.0_inspect.png/revision/latest?cb=20260501153731"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d4/Yen%27s_Pantsir_2.0_inspect.png/revision/latest?cb=20260501153731",
+      "protection_rating": "R3"
     }
   },
   {
@@ -15156,7 +15183,8 @@
       "nij_class": "III+",
       "armor_locations": "Front",
       "manufacturer": "Techincom",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/15/6B23-1%28Digital%29_inspect.png/revision/latest?cb=20250621182707"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/15/6B23-1%28Digital%29_inspect.png/revision/latest?cb=20250621182707",
+      "protection_rating": "R2"
     }
   },
   {
@@ -15171,7 +15199,9 @@
       "material": "Steel",
       "nij_class": "III+",
       "armor_locations": "Front",
-      "manufacturer": "Techincom"
+      "manufacturer": "Techincom",
+      "protection_rating": "R2",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/20/6B23-1%28Flora%29_icon.png/revision/latest?cb=20250608171911"
     }
   },
   {
@@ -15185,7 +15215,9 @@
       "sold_by": "Turncoat R.2 Looting",
       "material": "UHMWPE",
       "nij_class": "III",
-      "armor_locations": "Front / Back"
+      "armor_locations": "Front / Back",
+      "protection_rating": "R1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/68/ATBV_icon.png/revision/latest?cb=20250612023421"
     }
   },
   {
@@ -15215,7 +15247,9 @@
       "material": "UHMWPE",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
-      "manufacturer": "Safeguard Armor"
+      "manufacturer": "Safeguard Armor",
+      "protection_rating": "P3",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a4/Commander%28Black%29_icon.png/revision/latest?cb=20250609082307"
     }
   },
   {
@@ -15231,7 +15265,8 @@
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
       "manufacturer": "Safeguard Armor",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c7/Commander%28Navy%29_inspect.png/revision/latest?cb=20260304175540"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c7/Commander%28Navy%29_inspect.png/revision/latest?cb=20260304175540",
+      "protection_rating": "P3"
     }
   },
   {
@@ -15246,7 +15281,9 @@
       "material": "UHMWPE",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
-      "manufacturer": "Safeguard Armor"
+      "manufacturer": "Safeguard Armor",
+      "protection_rating": "P3",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/1f/Commander%28Olive%29_icon.png/revision/latest?cb=20250608171825"
     }
   },
   {
@@ -15260,7 +15297,9 @@
       "sold_by": "Loot only",
       "material": "Aramid",
       "nij_class": "IIIA",
-      "armor_locations": "Front,Back"
+      "armor_locations": "Front,Back",
+      "protection_rating": "P3",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/35/Coolmax_icon.png/revision/latest?cb=20250608171454"
     }
   },
   {
@@ -15274,7 +15313,9 @@
       "sold_by": "Looting",
       "material": "UHMWPE",
       "nij_class": "III",
-      "armor_locations": "Front / Back"
+      "armor_locations": "Front / Back",
+      "protection_rating": "R1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/04/Covert_%28Police%29_icon.png/revision/latest?cb=20250608172030"
     }
   },
   {
@@ -15288,7 +15329,9 @@
       "sold_by": "Loot only",
       "material": "Steel",
       "nij_class": "III",
-      "armor_locations": "Front,Back"
+      "armor_locations": "Front,Back",
+      "protection_rating": "R1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/Covert_Woodland_icon.png/revision/latest?cb=20260501080902"
     }
   },
   {
@@ -15303,7 +15346,8 @@
       "material": "Aramid",
       "nij_class": "IIIA",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d2/Covert_%28UNLRA%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20240515142152"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d2/Covert_%28UNLRA%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20240515142152",
+      "protection_rating": "P3"
     }
   },
   {
@@ -15318,7 +15362,8 @@
       "material": "Ceramic",
       "nij_class": "III",
       "armor_locations": "Front,Back",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Hornet_inspect.png/revision/latest?cb=20250601042837"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Hornet_inspect.png/revision/latest?cb=20250601042837",
+      "protection_rating": "R1"
     }
   },
   {
@@ -15333,7 +15378,8 @@
       "material": "Steel",
       "nij_class": "III",
       "armor_locations": "Front",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0c/VIP_inspect.png/revision/latest?cb=20250621182702"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0c/VIP_inspect.png/revision/latest?cb=20250621182702",
+      "protection_rating": "R1"
     }
   },
   {
@@ -15349,7 +15395,8 @@
       "nij_class": "IIIA+",
       "armor_locations": "Front,Back",
       "manufacturer": "Crye-Precision",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/20/LVS_Overt_%28Ranger_Green%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20260331092143"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/20/LVS_Overt_%28Ranger_Green%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20260331092143",
+      "protection_rating": "P4"
     }
   },
   {
@@ -15365,7 +15412,8 @@
       "nij_class": "III++",
       "armor_locations": "Front, Back, Sides",
       "manufacturer": "Crye-Precision",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c5/LVS_Tactical_%28Multicam%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20260404182210"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c5/LVS_Tactical_%28Multicam%29_inspect.png/revision/latest/scale-to-width-down/268?cb=20260404182210",
+      "protection_rating": "R3"
     }
   },
   {
@@ -15396,7 +15444,8 @@
       "material": "Steel",
       "nij_class": "IIIA",
       "armor_locations": "Front",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/87/Molle_inspect.png/revision/latest?cb=20250621182814"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/87/Molle_inspect.png/revision/latest?cb=20250621182814",
+      "protection_rating": "P3"
     }
   },
   {
@@ -15410,7 +15459,9 @@
       "sold_by": "Turncoat R.2",
       "material": "UHMWPE",
       "nij_class": "III",
-      "armor_locations": "Front,Back"
+      "armor_locations": "Front,Back",
+      "protection_rating": "R1",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/SK-S_icon.png/revision/latest?cb=20250608171834"
     }
   },
   {

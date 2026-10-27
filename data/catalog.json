@@ -1489,7 +1489,11 @@
           "value": -4,
           "unit": "%"
         }
-      }
+      },
+      "sell_price": 28,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -6215,7 +6219,11 @@
           "value": 2,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 24,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -13946,7 +13954,11 @@
           "value": 0.01,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 90,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -14516,7 +14528,11 @@
           "value": 0.01,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 90,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -14610,7 +14626,11 @@
           "value": 0.01,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 90,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27551,7 +27571,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Digital Synthesis Engine",
-      "id": "digital-synthesis-engine"
+      "id": "digital-synthesis-engine",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8e/Digital_Synthesis_Engine_inspect.png/revision/latest?cb=20261026212133",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27628,7 +27650,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "High-Speed Digital Processor Board",
-      "id": "high-speed-digital-processor-board"
+      "id": "high-speed-digital-processor-board",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/63/High-Speed_Digital_Processor_Board_inspect.png/revision/latest?cb=20261026212129",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27733,7 +27757,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Oven-Controlled Crystal Oscillator",
-      "id": "oven-controlled-crystal-oscillator"
+      "id": "oven-controlled-crystal-oscillator",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c2/Oven-Controlled_Crystal_Oscillator_inspect.png/revision/latest?cb=20261026212131",
+      "image_source": "fandom-page"
     }
   },
   {

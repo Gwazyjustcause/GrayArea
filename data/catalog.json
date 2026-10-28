@@ -3850,7 +3850,9 @@
           "value": 1.27,
           "unit": "kg"
         }
-      }
+      },
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/M1050_LRF_View.png/revision/latest?cb=20261028021526",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27573,7 +27575,7 @@
       "name": "Digital Synthesis Engine",
       "id": "digital-synthesis-engine",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8e/Digital_Synthesis_Engine_inspect.png/revision/latest?cb=20261026212133",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27652,7 +27654,7 @@
       "name": "High-Speed Digital Processor Board",
       "id": "high-speed-digital-processor-board",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/63/High-Speed_Digital_Processor_Board_inspect.png/revision/latest?cb=20261026212129",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27759,7 +27761,7 @@
       "name": "Oven-Controlled Crystal Oscillator",
       "id": "oven-controlled-crystal-oscillator",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c2/Oven-Controlled_Crystal_Oscillator_inspect.png/revision/latest?cb=20261026212131",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {

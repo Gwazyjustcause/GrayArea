@@ -3852,7 +3852,7 @@
         }
       },
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/M1050_LRF_View.png/revision/latest?cb=20261028021526",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -5609,7 +5609,9 @@
         }
       },
       "price_status": "verified",
-      "price_source": "GZW wiki / game data"
+      "price_source": "GZW wiki / game data",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/35/Last_Line_Defense_Container_inspect.png/revision/latest?cb=20261028195624",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -5743,7 +5745,9 @@
         "Encryption Key Drive",
         "FPGA Module"
       ],
-      "outcome_text": "Encryption Key Drive, FPGA Module"
+      "outcome_text": "Encryption Key Drive, FPGA Module",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/19/Manpack_Tactical_Radio_inspect.png/revision/latest?cb=20261028195627",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -5776,7 +5780,9 @@
         "UNLRA Relief Manifest",
         "Multi-Bus Converter"
       ],
-      "outcome_text": "UNLRA Relief Manifest, Multi-Bus Converter"
+      "outcome_text": "UNLRA Relief Manifest, Multi-Bus Converter",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/UNLRA_Field_Terminal_inspect.png/revision/latest?cb=20261028195902",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27566,7 +27572,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Deep-Space Observation Data Drive",
-      "id": "deep-space-observation-data-drive"
+      "id": "deep-space-observation-data-drive",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27752,7 +27760,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Oscilloscope",
-      "id": "oscilloscope"
+      "id": "oscilloscope",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/Oscilloscope_inspect.png/revision/latest?cb=20261028195631",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27866,7 +27876,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Uplink Credentials Drive",
-      "id": "uplink-credentials-drive"
+      "id": "uplink-credentials-drive",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/Uplink_Credentials_Drive_inspect.png/revision/latest?cb=20261028195049",
+      "image_source": "fandom-page"
     }
   },
   {

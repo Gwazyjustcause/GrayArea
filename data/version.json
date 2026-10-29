@@ -1,6 +1,6 @@
 {
   "dataVersion": "2026-10-26T13:24:38.686073Z",
-  "syncedAt": "2026-10-28T14:08:31.094Z",
+  "syncedAt": "2026-10-29T14:29:52.886Z",
   "records": 1996,
   "pricedRecords": 283,
   "missingPrices": 1713,
@@ -9,10 +9,10 @@
   "manualPrices": 0,
   "categories": 79,
   "previousRecords": 1996,
-  "images": 885,
-  "imageCoverage": 44.3,
-  "imagesReused": 3,
-  "imagesFromFandom": 1,
+  "images": 891,
+  "imageCoverage": 44.6,
+  "imagesReused": 4,
+  "imagesFromFandom": 6,
   "familyIconsMoved": 2,
   "duplicatesRemoved": 513,
   "nonItemFamiliesRemoved": 19

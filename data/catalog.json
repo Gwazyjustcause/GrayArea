@@ -4493,7 +4493,9 @@
       "manufacturer": "General Local",
       "sell_price": "$90",
       "price_status": "verified",
-      "price_source": "GZW wiki / game data"
+      "price_source": "GZW wiki / game data",
+      "image": "https://i.imgur.com/gQ0RLRb.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -4592,7 +4594,9 @@
         }
       },
       "price_status": "verified",
-      "price_source": "GZW wiki / game data"
+      "price_source": "GZW wiki / game data",
+      "image": "https://i.ibb.co/B5GKQfvG/image.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -4729,7 +4733,9 @@
         }
       },
       "price_status": "verified",
-      "price_source": "GZW wiki / game data"
+      "price_source": "GZW wiki / game data",
+      "image": "https://i.ibb.co/gL27nSnP/image.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -5611,7 +5617,7 @@
       "price_status": "verified",
       "price_source": "GZW wiki / game data",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/35/Last_Line_Defense_Container_inspect.png/revision/latest?cb=20261028195624",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -5747,7 +5753,7 @@
       ],
       "outcome_text": "Encryption Key Drive, FPGA Module",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/19/Manpack_Tactical_Radio_inspect.png/revision/latest?cb=20261028195627",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -5782,7 +5788,7 @@
       ],
       "outcome_text": "UNLRA Relief Manifest, Multi-Bus Converter",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/UNLRA_Field_Terminal_inspect.png/revision/latest?cb=20261028195902",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -14598,7 +14604,11 @@
           "value": 0.01,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 59,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -15818,7 +15828,11 @@
           "value": 0.01,
           "unit": "kg"
         }
-      }
+      },
+      "sell_price": 90,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27509,7 +27523,11 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Acetic Anhydride",
-      "id": "acetic-anhydride"
+      "id": "acetic-anhydride",
+      "sell_price": 75,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27558,14 +27576,22 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Chemicals",
-      "id": "chemicals"
+      "id": "chemicals",
+      "sell_price": 90,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "CPU Card",
-      "id": "cpu-card"
+      "id": "cpu-card",
+      "sell_price": 600,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27574,7 +27600,7 @@
       "name": "Deep-Space Observation Data Drive",
       "id": "deep-space-observation-data-drive",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27597,7 +27623,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Encryption Key Drive",
-      "id": "encryption-key-drive"
+      "id": "encryption-key-drive",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/54/Encryption_Key_Drive_inspect.png/revision/latest?cb=20261031070040",
+      "image_source": "fandom-page"
     }
   },
   {
@@ -27704,7 +27732,13 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Laser Tube",
-      "id": "laser-tube"
+      "id": "laser-tube",
+      "sell_price": 150,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "image": "https://i.imgur.com/IGSkb3r.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -27739,7 +27773,13 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Multi-Bus Converter",
-      "id": "multi-bus-converter"
+      "id": "multi-bus-converter",
+      "sell_price": 600,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "image": "https://i.imgur.com/GqU9tjH.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -27761,8 +27801,12 @@
     "raw": {
       "name": "Oscilloscope",
       "id": "oscilloscope",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/Oscilloscope_inspect.png/revision/latest?cb=20261028195631",
-      "image_source": "fandom-page"
+      "sell_price": 150,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "image": "https://i.imgur.com/k2VveRE.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -27878,7 +27922,7 @@
       "name": "Uplink Credentials Drive",
       "id": "uplink-credentials-drive",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/Uplink_Credentials_Drive_inspect.png/revision/latest?cb=20261028195049",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {

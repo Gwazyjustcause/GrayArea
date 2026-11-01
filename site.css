@@ -130,13 +130,3 @@
 .tool-card small{font-size:10px;color:#9cba8d}
 @media(max-width:900px){.utility-tools{grid-template-columns:1fr}.utility-tool{min-height:215px}.utility-tool h2{margin-top:23px}.utility-hero{align-items:start}.tool-card-grid{grid-template-columns:1fr}.tool-metric-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.utility-hero{padding:45px 0 35px}.utility-hero-tag{display:none}.utility-strip{grid-template-columns:repeat(2,1fr)}.utility-bottom{display:block}.tool-metric-grid{grid-template-columns:1fr}.tool-header{padding-top:35px}.tool-table{font-size:11px}.tool-table th,.tool-table td{padding:10px 8px}}
-
-/* Tool-first paths: Armory, weapon hauling and weapon value links */
-.utility-armory,.armory-teaser,.money-armory-callout{display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(100deg,#1b301d,#112016);border:1px solid #65854e;padding:21px 25px;margin:16px 0 26px}
-.utility-armory small,.armory-teaser small,.money-armory-callout small{display:block;color:#b9e385;font-size:10px;font-weight:800;letter-spacing:.1em}
-.utility-armory h2,.money-armory-callout h2{font:700 31px 'Barlow Condensed',sans-serif;color:#e2efd8;margin:5px 0}
-.utility-armory p,.money-armory-callout p,.armory-teaser span{display:block;color:#a9c1a4;font-size:12px;line-height:1.5;margin:4px 0}
-.utility-armory a,.armory-teaser a,.money-armory-callout a{padding:12px 17px;border:1px solid #b1e17d;background:#a7d94a;color:#10200c;text-decoration:none;font-weight:800;font-size:11px;white-space:nowrap}
-.armory-teaser strong{display:block;color:#e2efd8;font:700 29px 'Barlow Condensed',sans-serif;margin:5px 0}
-.money-armory-callout{margin:0 0 24px}
-@media(max-width:640px){.utility-armory,.armory-teaser,.money-armory-callout{flex-direction:column;align-items:flex-start}.utility-armory a,.armory-teaser a,.money-armory-callout a{width:100%;text-align:center}}

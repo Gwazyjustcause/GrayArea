@@ -3,7 +3,7 @@
 const OWNER='Gwazyjustcause',REPO='GrayArea',BRANCH='main',FILE='data/admin-overrides.json';
 const $=id=>document.getElementById(id);
 const empty=()=>({version:2,updatedAt:null,items:{},added:[],trashed:[]});
-let token='',account='',remoteSha='',doc=empty(),catalog=[],selectedKey=null,edited=new Set(),images=new Map(),photo=null,limit=100,busy=false,showTrash=false;
+let token='',account='',remoteSha='',doc=empty(),catalog=[],selectedKey=null,edited=new Set(),images=new Map(),modelFiles=new Map(),photo=null,modelUpload=null,limit=100,busy=false,showTrash=false;
 const text=(id,msg)=>{$(id).textContent=msg;};
 function num(v){const n=Number(String(v??0).replace(/[$,\s]/g,''));return Number.isFinite(n)&&n>=0?n:0;}
 function dom(tag,txt,className){const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;if(className)e.className=className;return e;}
@@ -19,18 +19,18 @@ async function readRemote(){const file=await api(contentPath(FILE)+'?ref='+encod
 async function write(path,base64,sha,message){const body={message,branch:BRANCH,content:base64};if(sha)body.sha=sha;return api(contentPath(path),{method:'PUT',body});}
 function normal(x){const r=x.raw||x,dataset=String(x.dataset||r.dataset||r.category||'items'),name=String(r.name||r.title||r.item_name||r.id||'Unknown');const size=String(r.grid_size||r.gridSize||'').match(/(\d+)\s*[x×]\s*(\d+)/i);
 const slots=Math.max(1,size?Number(size[1])*Number(size[2]):(num(r.width||r.size_x||1)*num(r.height||r.size_y||1)));
-return {key:dataset+':'+String(r.id||name),id:String(r.id||name),dataset,name,category:String(r.category||dataset),price:num(r.sell_price??r.sellPrice??r.grayarea_price??0),slots,image:String(r.image||r.image_url||r.imageUrl||r.icon||''),description:String(r.description||r.short_description||''),custom:false};}
+return {key:dataset+':'+String(r.id||name),id:String(r.id||name),dataset,name,category:String(r.category||dataset),price:num(r.sell_price??r.sellPrice??r.grayarea_price??0),slots,image:String(r.image||r.image_url||r.imageUrl||r.icon||''),model3d:String(r.model3d||''),description:String(r.description||r.short_description||''),custom:false};}
 function recordList(){const out=catalog.map(r=>{const p=doc.items[r.key]||{};return {...r,...p,price:Object.prototype.hasOwnProperty.call(p,'sell_price')?num(p.sell_price):r.price,key:r.key,custom:false};});
-for(const x of doc.added){if(!x||typeof x.name!=='string')continue;out.push({key:(x.dataset||'custom')+':'+x.id,id:x.id,dataset:x.dataset||'custom',name:x.name,category:x.category||x.dataset||'custom',price:num(x.sell_price),slots:num(x.slots)||1,image:x.image||'',description:x.description||'',custom:true});}
+for(const x of doc.added){if(!x||typeof x.name!=='string')continue;out.push({key:(x.dataset||'custom')+':'+x.id,id:x.id,dataset:x.dataset||'custom',name:x.name,category:x.category||x.dataset||'custom',price:num(x.sell_price),slots:num(x.slots)||1,image:x.image||'',model3d:x.model3d||'',description:x.description||'',custom:true});}
 return out.map(r=>({...r,trashed:doc.trashed.includes(r.key)}));}
 function current(){return recordList().find(r=>r.key===selectedKey)||null;}
 function isStaged(key){return edited.has(key);}
 function imagePreview(path){const img=$('imagePreview');if(path){img.src=path;img.hidden=false;$('emptyPreview').hidden=true;img.onerror=()=>{img.hidden=true;$('emptyPreview').hidden=false;};}else{img.removeAttribute('src');img.hidden=true;$('emptyPreview').hidden=false;}}
-function fill(key){selectedKey=key;photo=null;$('itemImage').value='';$('itemForm').hidden=false;
-const fresh=key==='__new__',item=fresh?{name:'',category:'loot_items',dataset:'loot_items',price:0,slots:1,description:'',image:''}:current();
+function fill(key){selectedKey=key;photo=null;modelUpload=null;$('itemImage').value='';$('itemModel').value='';$('itemForm').hidden=false;
+const fresh=key==='__new__',item=fresh?{name:'',category:'loot_items',dataset:'loot_items',price:0,slots:1,description:'',image:'',model3d:''}:current();
 if(!item){$('itemForm').hidden=true;return;}
 text('formHeading',fresh?'ADD NEW ITEM':'EDIT ITEM');text('formSubheading',fresh?'Create a new public item.':'ID: '+key+(edited.has(key)?' · Pending changes':''));
-$('itemName').value=item.name;$('itemCategory').value=item.category;$('itemDataset').value=item.dataset;$('itemDataset').disabled=!fresh;$('itemPrice').value=String(item.price);$('itemSlots').value=String(item.slots);$('itemDescription').value=item.description;$('itemImageUrl').value=item.image||'';
+$('itemName').value=item.name;$('itemCategory').value=item.category;$('itemDataset').value=item.dataset;$('itemDataset').disabled=!fresh;$('itemPrice').value=String(item.price);$('itemSlots').value=String(item.slots);$('itemDescription').value=item.description;$('itemImageUrl').value=item.image||'';$('itemModelUrl').value=item.model3d||'';text('modelStatus',modelFiles.has(key)?'3D model queued for upload.':item.model3d?'Existing 3D model: '+item.model3d:'No model assigned. Generic preview will be used.');
 imagePreview(images.get(key)?.preview||item.image);
 $('deleteItem').hidden=fresh||item.trashed;$('restoreItem').hidden=fresh||!item.trashed;$('revertItem').hidden=fresh||item.custom||!doc.items[key];}
 function list(){const q=$('filter').value.trim().toLowerCase();const all=recordList().filter(r=>r.trashed===showTrash&&(r.name+' '+r.category+' '+r.dataset+' '+r.key).toLowerCase().includes(q)).sort((a,b)=>a.name.localeCompare(b.name));
@@ -50,29 +50,39 @@ const data=canvas.toDataURL('image/webp',.84);if(!data.startsWith('data:image/we
 return {base64:data.slice('data:image/webp;base64,'.length),preview:data};}finally{URL.revokeObjectURL(objectUrl);}}
 $('itemImage').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{photo=await compress(file);imagePreview(photo.preview);text('formSubheading','Image ready · click ADD TO CHANGES to queue it.');}catch(err){photo=null;alert(err.message);}});
 $('itemImageUrl').addEventListener('change',()=>{if(!photo)imagePreview($('itemImageUrl').value.trim());});
+function modelPathOK(value){return !value||(/^https:\/\/[^\s"'<>]+\.glb(?:\?[^\s"'<>]*)?$/i.test(value))||(/^admin-models\/[A-Za-z0-9._/-]+\.glb$/i.test(value)&&!value.includes('..'));}
+$('itemModel').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;
+if(!/\.glb$/i.test(file.name)){alert('3D models must be .glb files.');e.target.value='';return;}
+if(file.size>5*1024*1024){alert('3D model exceeds the 5 MB GitHub upload limit for this editor.');e.target.value='';return;}
+try{const bytes=new Uint8Array(await file.arrayBuffer());if(bytes.length<16||String.fromCharCode(...bytes.subarray(0,4))!=='glTF')throw Error('This is not a valid binary GLB file.');
+let encoded='';for(let i=0;i<bytes.length;i+=8192)encoded+=String.fromCharCode(...bytes.subarray(i,i+8192));
+modelUpload={base64:btoa(encoded),filename:file.name};text('modelStatus',file.name+' ready ('+(file.size/1024/1024).toFixed(2)+' MB). Click ADD TO CHANGES.');}
+catch(err){modelUpload=null;alert('Cannot prepare model: '+err.message);}});
 function validateImageUrl(value){if(!value)return true;if(/^https:\/\/[^\s]+$/i.test(value))return true;if(/^admin-images\/[A-Za-z0-9._/-]+$/.test(value)&&!value.includes('..'))return true;return false;}
-$('itemForm').addEventListener('submit',e=>{e.preventDefault();const name=$('itemName').value.trim(),category=$('itemCategory').value.trim(),dataset=$('itemDataset').value.trim().toLowerCase(),price=Number($('itemPrice').value),slots=Number($('itemSlots').value),description=$('itemDescription').value.trim(),imageURL=$('itemImageUrl').value.trim();if(!name||!category||!Number.isFinite(price)||price<0||!Number.isInteger(slots)||slots<1||slots>9999)return;
+$('itemForm').addEventListener('submit',e=>{e.preventDefault();const name=$('itemName').value.trim(),category=$('itemCategory').value.trim(),dataset=$('itemDataset').value.trim().toLowerCase(),price=Number($('itemPrice').value),slots=Number($('itemSlots').value),description=$('itemDescription').value.trim(),imageURL=$('itemImageUrl').value.trim(),modelURL=$('itemModelUrl').value.trim();if(!name||!category||!Number.isFinite(price)||price<0||!Number.isInteger(slots)||slots<1||slots>9999)return;
 if(selectedKey==='__new__'&&!/^[a-z0-9_]+$/.test(dataset)){alert('Dataset must use lowercase letters, numbers and underscores.');return;}
 if(!photo&&!validateImageUrl(imageURL)){alert('Image URL must start with https:// or be a path under admin-images/.');return;}
-const fresh=selectedKey==='__new__';let key=selectedKey,record;
-if(fresh){const itemId='editor-'+slug(name)+'-'+Date.now().toString(36)+'-'+crypto.randomUUID().slice(0,6);key=dataset+':'+itemId;record={id:itemId,dataset,name,category,sell_price:price,slots,description,image:imageURL};doc.added.push(record);}
-else{record={name,category,sell_price:price,slots,description,image:imageURL};const added=doc.added.find(x=>(x.dataset+':'+x.id)===key);if(added)Object.assign(added,record);else doc.items[key]=record;}
+if(!modelUpload&&!modelPathOK(modelURL)){alert('Use a .glb path under admin-models/ or a licensed HTTPS URL to a .glb file.');return;}const fresh=selectedKey==='__new__';let key=selectedKey,record;
+if(fresh){const itemId='editor-'+slug(name)+'-'+Date.now().toString(36)+'-'+crypto.randomUUID().slice(0,6);key=dataset+':'+itemId;record={id:itemId,dataset,name,category,sell_price:price,slots,description,image:imageURL,model3d:modelURL};doc.added.push(record);}
+else{record={name,category,sell_price:price,slots,description,image:imageURL,model3d:modelURL};const added=doc.added.find(x=>(x.dataset+':'+x.id)===key);if(added)Object.assign(added,record);else doc.items[key]=record;}
 if(photo){const path='admin-images/'+slug(name)+'-'+crypto.randomUUID().slice(0,10)+'.webp';record.image=path;images.set(key,{path,base64:photo.base64,preview:photo.preview});}
 else if(images.has(key)&&record.image!==images.get(key).path)images.delete(key);
+if(modelUpload){const path='admin-models/'+slug(name)+'-'+crypto.randomUUID().slice(0,10)+'.glb';record.model3d=path;modelFiles.set(key,{path,base64:modelUpload.base64});}
+else if(modelFiles.has(key)&&record.model3d!==modelFiles.get(key).path)modelFiles.delete(key);
 edited.add(key);fill(key);list();count();text('syncStatus','Draft updated · not published yet.');});
 $('newItem').addEventListener('click',()=>{fill('__new__');list();$('itemName').focus();});
-$('revertItem').addEventListener('click',()=>{if(!selectedKey||!doc.items[selectedKey]||!confirm('Remove this published item override after you publish?'))return;delete doc.items[selectedKey];images.delete(selectedKey);edited.add(selectedKey);const key=selectedKey;list();fill(key);count();});
+$('revertItem').addEventListener('click',()=>{if(!selectedKey||!doc.items[selectedKey]||!confirm('Remove this published item override after you publish?'))return;delete doc.items[selectedKey];images.delete(selectedKey);modelFiles.delete(selectedKey);edited.add(selectedKey);const key=selectedKey;list();fill(key);count();});
 $('deleteItem').addEventListener('click',()=>{const item=current();if(!item||item.trashed||!confirm('Move '+item.name+' to trash? It will be hidden from Money and Loot Prices after publishing. You can restore it later.'))return;
-if(!doc.trashed.includes(item.key))doc.trashed.push(item.key);images.delete(item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','MOVED TO TRASH');text('formSubheading','Publish changes to hide this item from the public website.');list();count();});
+if(!doc.trashed.includes(item.key))doc.trashed.push(item.key);images.delete(item.key);modelFiles.delete(item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','MOVED TO TRASH');text('formSubheading','Publish changes to hide this item from the public website.');list();count();});
 $('restoreItem').addEventListener('click',()=>{const item=current();if(!item||!item.trashed)return;doc.trashed=doc.trashed.filter(k=>k!==item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','ITEM RESTORED');text('formSubheading','Publish changes to show it on the public website again.');list();count();});
 $('showActive').addEventListener('click',()=>{showTrash=false;selectedKey=null;$('itemForm').hidden=true;$('showActive').classList.add('selected');$('showTrash').classList.remove('selected');limit=100;list();});
 $('showTrash').addEventListener('click',()=>{showTrash=true;selectedKey=null;$('itemForm').hidden=true;$('showTrash').classList.add('selected');$('showActive').classList.remove('selected');limit=100;list();});
 $('filter').addEventListener('input',()=>{limit=100;list();});
 $('loadMore').addEventListener('click',()=>{limit+=100;list();});
-$('discard').addEventListener('click',async()=>{if(edited.size&&!confirm('Discard all unpublished edits?'))return;try{await readRemote();edited.clear();images.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Reloaded published changes from GitHub.');}catch(e){alert(e.message);}});
-$('disconnect').addEventListener('click',()=>{token='';account='';doc=empty();edited.clear();images.clear();catalog=[];selectedKey=null;$('workspace').hidden=true;$('loginPanel').hidden=false;$('itemForm').hidden=true;text('syncStatus','Disconnected.');});
+$('discard').addEventListener('click',async()=>{if(edited.size&&!confirm('Discard all unpublished edits?'))return;try{await readRemote();edited.clear();images.clear();modelFiles.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Reloaded published changes from GitHub.');}catch(e){alert(e.message);}});
+$('disconnect').addEventListener('click',()=>{token='';account='';doc=empty();edited.clear();images.clear();modelFiles.clear();catalog=[];selectedKey=null;$('workspace').hidden=true;$('loginPanel').hidden=false;$('itemForm').hidden=true;text('syncStatus','Disconnected.');});
 async function load(){text('syncStatus','Loading published edits…');await readRemote();text('syncStatus','Loading item catalogue…');try{const resp=await fetch('data/catalog.json',{cache:'no-store'});if(!resp.ok)throw Error('HTTP '+resp.status);const data=await resp.json();if(!Array.isArray(data))throw Error('Invalid catalogue');const seen=new Set();catalog=[];for(const raw of data){const item=normal(raw);if(seen.has(item.key))continue;seen.add(item.key);catalog.push(item);}text('syncStatus',catalog.length+' wiki items loaded · '+doc.added.length+' admin-added items.');}catch(e){catalog=[];text('syncStatus','Catalogue unavailable, but you can add items and edit existing published additions.');console.warn(e);}
-edited.clear();images.clear();selectedKey=null;$('itemForm').hidden=true;list();count();}
+edited.clear();images.clear();modelFiles.clear();selectedKey=null;$('itemForm').hidden=true;list();count();}
 $('connectForm').addEventListener('submit',async e=>{e.preventDefault();const candidate=$('token').value.trim();if(!candidate)return;$('connectButton').disabled=true;text('connectButton','CONNECTING…');token=candidate;
 try{const user=await api('/user');if(String(user.login||'').toLowerCase()!==OWNER.toLowerCase())throw Error('This editor only permits the repository owner.');
 const repo=await api('/repos/'+OWNER+'/'+REPO);if(repo.permissions&&repo.permissions.push===false)throw Error('Your token cannot write to this repository. Grant Contents: Read and write for GrayArea.');
@@ -86,8 +96,9 @@ if(!stillUsed)continue;
 text('message','Uploading image '+(++uploaded)+' of '+images.size+'…');
 await write(file.path,file.base64,null,'Add Gray Area item image '+key);
 }
+for(const [key,file] of modelFiles){const used=(doc.items[key]&&doc.items[key].model3d===file.path)||doc.added.some(x=>(x.dataset+':'+x.id)===key&&x.model3d===file.path);if(!used)continue;text('message','Uploading licensed 3D model '+key+'…');await write(file.path,file.base64,null,'Add licensed Gray Area 3D model '+key);}
 doc.version=2;doc.updatedAt=new Date().toISOString();const result=await write(FILE,toBase64(JSON.stringify(doc,null,2)+'\n'),remoteSha,'Publish '+edited.size+' Gray Area item changes');
-remoteSha=result.content.sha;const published=edited.size;images.clear();edited.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Published '+published+' change(s) · GitHub commit '+result.commit.sha.slice(0,8));text('message','Saved to GitHub. The public website may take a short time to update.');}
+remoteSha=result.content.sha;const published=edited.size;images.clear();modelFiles.clear();edited.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Published '+published+' change(s) · GitHub commit '+result.commit.sha.slice(0,8));text('message','Saved to GitHub. The public website may take a short time to update.');}
 catch(err){text('message','Publish failed: '+err.message+'. Your draft is still available here.');alert('Could not publish: '+err.message+'\nYour unsaved edits are still in this open tab.');}
 finally{busy=false;count();}});
 })();

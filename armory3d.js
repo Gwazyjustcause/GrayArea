@@ -6,7 +6,7 @@ const holder=document.getElementById('arm3dViewport');
 const info=document.getElementById('arm3dMessage');
 const label=document.getElementById('modelType');
 const fallback=document.getElementById('weaponFallback');
-let renderer,scene,camera,controls,root=null,markers=[],procedural=[],active=null,preview='',wire=false,serial=0,ready=false;
+let renderer,scene,camera,controls,root=null,markers=[],procedural=[],active=null,preview='',wire=false,serial=0,ready=false,lastSignature='';
 const colors={steel:0x2c3532,dark:0x141b19,rail:0x38413c,polymer:0x282e27,metal:0x666d63,wood:0x604531,highlight:0xb3e66a};
 const mats={
 steel:new THREE.MeshStandardMaterial({color:colors.steel,metalness:.67,roughness:.39}),
@@ -78,7 +78,7 @@ label.textContent='3D MODEL · LICENSED / USER SUPPLIED';report('Actual 3D model
 }catch(e){if(current!==serial)return;report('3D file unavailable · showing generic 3D reference');proceduralScene();}}
 function proceduralScene(){wipe();const g=new THREE.Group();root.add(g);shape(g);const set=new Set(active?.parts||[]);for(const slot of set)if(slotPos[slot])moduleFor(g,slot);if(preview&&!set.has(preview)&&slotPos[preview])moduleFor(g,preview,'preview');addMarkers(g);
 label.textContent='GENERIC 3D DEMO · NOT IN-GAME MODEL';fallback.hidden=true;report('Drag to rotate · scroll to zoom · click green points to choose a part');}
-function show(data){active=data;preview='';if(!ready)return;if(!data?.name){wipe();label.textContent='3D PREVIEW';report('Select a weapon to begin');fallback.hidden=false;return;}
+function show(data){const sig=data?.name?data.id+'|'+(data.model3d||'')+'|'+(data.parts||[]).join(','):'none';if(sig===lastSignature&&ready)return;lastSignature=sig;active=data;preview='';if(!ready)return;if(!data?.name){wipe();label.textContent='3D PREVIEW';report('Select a weapon to begin');fallback.hidden=false;return;}
 wipe();if(typeof data.model3d==='string'&&(/^(https:\/\/|admin-models\/)/.test(data.model3d))){loadAsset(data.model3d,data.id);}else{serial++;proceduralScene();}
 cameraReset();}
 function onPreview(slot){if(!ready||!active?.name||active?.model3d)return;preview=slot||'';proceduralScene();}

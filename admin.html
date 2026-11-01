@@ -14,6 +14,12 @@
 <div class="editor-2"><label>SELL PRICE ($)<input id="itemPrice" type="number" min="0" step=".01" required></label><label>INVENTORY SLOTS<input id="itemSlots" type="number" min="1" max="9999" required></label></div>
 <label>DESCRIPTION<textarea id="itemDescription" rows="3" maxlength="1000" placeholder="Optional item notes"></textarea></label>
 <div class="editor-imagebox"><label>ITEM IMAGE<input id="itemImage" type="file" accept="image/png,image/jpeg,image/webp,image/gif"></label><div class="editor-preview"><img id="imagePreview" alt="Item image preview" hidden><span id="emptyPreview">No image</span></div><p>PNG, JPG, WebP or GIF. Images are resized and uploaded to the repository as WebP when you publish.</p><label>OR IMAGE URL<input id="itemImageUrl" type="text" placeholder="https://… or admin-images/…"></label></div>
+<div class="editor-modelbox"><strong>OPTIONAL 3D MODEL — GLB</strong>
+<label>UPLOAD 3D FILE (.GLB)<input id="itemModel" type="file" accept=".glb,model/gltf-binary,application/octet-stream"></label>
+<label>OR EXISTING MODEL PATH / LICENSED URL<input id="itemModelUrl" type="text" placeholder="admin-models/example.glb or https://…"></label>
+<p id="modelStatus">No 3D model assigned. The Armory will show an original, generic 3D reference.</p>
+<small>Upload only models you made or have permission to redistribute. Third-party website assets are not automatically reusable.</small>
+</div>
 <div class="editor-editactions"><button id="stageItem" type="submit">ADD TO CHANGES</button><button id="revertItem" type="button" hidden>REVERT PUBLISHED EDIT</button><button id="deleteItem" type="button" hidden>MOVE TO TRASH</button><button id="restoreItem" type="button" hidden>RESTORE ITEM</button></div></form>
 </section></div>
 <div id="publishBar" class="editor-publish"><div><strong id="changeCount">NO CHANGES</strong><small id="message">Edit or add an item, then click “Add to changes”.</small></div><button id="publish" type="button" disabled>PUBLISH TO WEBSITE</button></div>

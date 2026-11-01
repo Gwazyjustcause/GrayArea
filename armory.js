@@ -119,8 +119,10 @@ references=Array.isArray(refs.weapons)?refs.weapons:[];const raw=Array.isArray(c
 for(const entry of raw){const i=itemRecord(entry);if(!map.has(i.id)||(!map.get(i.id).value&&i.value))map.set(i.id,i);}
 items=applyPublished([...map.values()],published);
 const possible=items.filter(looksLikeWeapon);
+const hiddenIds=new Set(Array.isArray(published.trashed)?published.trashed:[]);
+const hiddenNames=new Set([...map.values()].filter(i=>hiddenIds.has(i.id)&&looksLikeWeapon(i)).map(i=>norm(i.name)));
 const matched=new Set();
-weapons=references.filter(x=>!Array.isArray(published.trashed)||!published.trashed.includes('weapons:'+x.name)).map(ref=>{const exact=possible.find(i=>norm(i.name)===norm(ref.name));if(exact)matched.add(exact.id);return{...ref,catalog:exact||null}});
+weapons=references.filter(x=>!hiddenNames.has(norm(x.name))&&!hiddenIds.has('weapons:'+x.name)).map(ref=>{const exact=possible.find(i=>norm(i.name)===norm(ref.name));if(exact)matched.add(exact.id);return{...ref,catalog:exact||null}});
 for(const extra of possible){if(matched.has(extra.id)||weapons.some(w=>norm(w.name)===norm(extra.name)))continue;weapons.push({name:extra.name,category:extra.category||'Weapon',caliber:stat(extra.raw,['caliber','calibre','ammo type'])||'',historicalRank:null,source:'Community item catalogue',catalog:extra})}
 weapons.sort((a,b)=>a.category.localeCompare(b.category)||a.name.localeCompare(b.name));
 parts=items.filter(looksLikePart).sort((a,b)=>a.name.localeCompare(b.name));$('weaponTotal').textContent=String(weapons.length);

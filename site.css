@@ -11,3 +11,53 @@
 @media(max-width:980px){.money-hero,.gear-hero{grid-template-columns:1fr}.jackpot-card,.gear-rule{margin-bottom:20px}.jackpot-grid{grid-template-columns:repeat(2,1fr)}.decision-flow{grid-template-columns:1fr}.decision-flow>i{display:none}.route-map{grid-template-columns:1fr 1fr}.route-map-line{display:none}.location-grid,.kit-grid,.optic-grid,.device-grid{grid-template-columns:1fr 1fr}.bag-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.jackpot-grid,.route-map,.location-grid,.packing-grid,.money-compare,.kit-grid,.gear-takeaway,.bag-grid,.optic-grid,.device-grid{grid-template-columns:1fr}.route-map p,.location-grid p,.kit-grid ul,.optic-grid p{min-height:0}.gear-takeaway article{grid-template-columns:90px 1fr}.kit-visual{height:145px}.bag-grid article{min-height:190px}}
 .decision-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+
+
+/* Rogue Ops 0.5 sitewide refresh */
+.site-header{grid-template-columns:auto minmax(0,1fr) auto;gap:18px}
+.site-header nav{gap:clamp(9px,1.2vw,23px);min-width:0}
+.site-header nav a{white-space:nowrap}
+.site-main .ops-banner{display:flex;gap:22px;align-items:center;justify-content:space-between;padding:16px 22px;margin-top:28px;background:#18251a;border:1px solid #567545}
+.ops-banner b{color:#b8e77c;font-size:11px;letter-spacing:.12em}
+.ops-banner p{margin:4px 0 0;color:#c2cfc0;font-size:12px}
+.ops-banner a{font-size:12px;color:#c7ef99;white-space:nowrap}
+.ops-hero{background:radial-gradient(circle at 80% 30%,rgba(126,164,62,.12),transparent 46%)}
+.ops-hero h1{font-size:clamp(72px,9vw,126px)}
+.ops-hero .hero-actions{margin-top:26px}
+.ops-alert{margin:20px 0;padding:18px 22px;background:#1a1a12;border-left:3px solid #df9b55}
+.ops-alert b{color:#e4ad69;font-size:11px;letter-spacing:.12em}
+.ops-alert p{margin:7px 0 0;color:#c4b8a0;font-size:12px;line-height:1.65}
+.ops-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ops-card{display:flex;flex-direction:column;min-height:214px;padding:24px;background:#111712;border:1px solid #2d3b2f}
+.ops-card small{color:#a7d94a;letter-spacing:.13em;font-size:10px;font-weight:700}
+.ops-card h3{font:700 28px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:13px 0 6px;color:#e8ede7}
+.ops-card p{color:#aab6a8;font-size:12px;line-height:1.7;margin:0 0 18px}
+.ops-card a{margin-top:auto;color:#b8e77c;font-size:11px;font-weight:700;text-decoration:none}
+.ops-roadmap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ops-roadmap article{padding:25px;background:#111712;border-top:2px solid #607f3f}
+.ops-roadmap span{font:700 38px 'Barlow Condensed',sans-serif;color:#a7d94a}
+.ops-roadmap h3{font:700 25px 'Barlow Condensed',sans-serif;color:#e8ede7;text-transform:uppercase;margin:13px 0}
+.ops-roadmap p{font-size:12px;color:#a5b0a5;line-height:1.7}
+.ops-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ops-compare article{padding:24px;background:#121b14;border:1px solid #2d3b2f}
+.ops-compare h3{font:700 28px 'Barlow Condensed',sans-serif;color:#e8ede7;margin:0 0 10px;text-transform:uppercase}
+.ops-compare p{font-size:12px;color:#a9b6a7;line-height:1.65}
+.ops-patches{border:1px solid #304331}
+.ops-patches>div{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:17px 24px;border-bottom:1px solid #304331;background:#111712;color:#b9c6b9;font-size:12px}
+.ops-patches>div:last-child{border-bottom:0}
+.ops-patches b{color:#a7d94a;font-size:11px}
+.ops-sources,.ops-disclaimer{font-size:12px;color:#a1aea0;line-height:2}
+.ops-sources a{color:#b6dd7d}
+.site-main .legacy-note{margin:24px 0;padding:18px 22px;border-left:3px solid #df9b55;background:#211b13;color:#ddc6a9;font-size:12px;line-height:1.7}
+.legacy-note a{color:#f0cd8f}
+.site-main .field-note{padding:15px 20px;background:#132016;border:1px solid #365136;color:#b2c7aa;font-size:12px;line-height:1.7}
+.field-note a{color:#c2e995}
+.ref-table{width:100%;border-collapse:collapse;color:#b5c2b3;font-size:12px;background:#121a13}
+.ref-table th,.ref-table td{border-bottom:1px solid #2c3b2e;padding:15px 17px;text-align:left;vertical-align:top}
+.ref-table th{color:#a7d94a;letter-spacing:.1em;font-size:10px}
+.ref-table td b{color:#e3ece1}
+.quick-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.quick-links a{padding:10px 15px;border:1px solid #4d6744;text-decoration:none;color:#bddb9b;font-size:11px;font-weight:700}
+.quick-links a:hover{background:#24351f}
+@media(max-width:1250px){.site-header{display:flex;gap:14px}.site-header nav{overflow-x:auto;justify-content:flex-start;flex:1;scrollbar-width:thin}.site-header nav a{padding:20px 0 17px}.site-header .header-cta{display:none}.ops-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ops-roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.site-header{align-items:center}.site-header nav{min-width:0}.ops-grid,.ops-roadmap,.ops-compare{grid-template-columns:1fr}.ops-patches>div{grid-template-columns:1fr;gap:5px}.site-main .ops-banner{align-items:flex-start;flex-direction:column}.ops-hero h1{font-size:68px}.ops-card{min-height:auto}.ref-table{display:block;overflow-x:auto}}

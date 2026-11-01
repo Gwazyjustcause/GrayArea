@@ -2,8 +2,8 @@
 'use strict';
 const OWNER='Gwazyjustcause',REPO='GrayArea',BRANCH='main',FILE='data/admin-overrides.json';
 const $=id=>document.getElementById(id);
-const empty=()=>({version:1,updatedAt:null,items:{},added:[]});
-let token='',account='',remoteSha='',doc=empty(),catalog=[],selectedKey=null,edited=new Set(),images=new Map(),photo=null,limit=100,busy=false;
+const empty=()=>({version:2,updatedAt:null,items:{},added:[],trashed:[]});
+let token='',account='',remoteSha='',doc=empty(),catalog=[],selectedKey=null,edited=new Set(),images=new Map(),photo=null,limit=100,busy=false,showTrash=false;
 const text=(id,msg)=>{$(id).textContent=msg;};
 function num(v){const n=Number(String(v??0).replace(/[$,\s]/g,''));return Number.isFinite(n)&&n>=0?n:0;}
 function dom(tag,txt,className){const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;if(className)e.className=className;return e;}
@@ -15,14 +15,14 @@ async function api(path,options={}){if(!token)throw Error('Connect to GitHub fir
 let data;try{data=await res.json()}catch(e){data={};}
 if(!res.ok)throw Error((data.message||'GitHub request failed')+' (HTTP '+res.status+')');return data;}
 const contentPath=path=>'/repos/'+OWNER+'/'+REPO+'/contents/'+path.split('/').map(encodeURIComponent).join('/');
-async function readRemote(){const file=await api(contentPath(FILE)+'?ref='+encodeURIComponent(BRANCH));remoteSha=file.sha;doc=JSON.parse(fromBase64(file.content));if(!doc||typeof doc!=='object')throw Error('Invalid editor data.');if(!doc.items||typeof doc.items!=='object')doc.items={};if(!Array.isArray(doc.added))doc.added=[];}
+async function readRemote(){const file=await api(contentPath(FILE)+'?ref='+encodeURIComponent(BRANCH));remoteSha=file.sha;doc=JSON.parse(fromBase64(file.content));if(!doc||typeof doc!=='object')throw Error('Invalid editor data.');if(!doc.items||typeof doc.items!=='object')doc.items={};if(!Array.isArray(doc.added))doc.added=[];if(!Array.isArray(doc.trashed))doc.trashed=[];}
 async function write(path,base64,sha,message){const body={message,branch:BRANCH,content:base64};if(sha)body.sha=sha;return api(contentPath(path),{method:'PUT',body});}
 function normal(x){const r=x.raw||x,dataset=String(x.dataset||r.dataset||r.category||'items'),name=String(r.name||r.title||r.item_name||r.id||'Unknown');const size=String(r.grid_size||r.gridSize||'').match(/(\d+)\s*[x×]\s*(\d+)/i);
 const slots=Math.max(1,size?Number(size[1])*Number(size[2]):(num(r.width||r.size_x||1)*num(r.height||r.size_y||1)));
 return {key:dataset+':'+String(r.id||name),id:String(r.id||name),dataset,name,category:String(r.category||dataset),price:num(r.sell_price??r.sellPrice??r.grayarea_price??0),slots,image:String(r.image||r.image_url||r.imageUrl||r.icon||''),description:String(r.description||r.short_description||''),custom:false};}
-function recordList(){const out=catalog.map(r=>({...r,...(doc.items[r.key]||{}),key:r.key,custom:false}));
+function recordList(){const out=catalog.map(r=>{const p=doc.items[r.key]||{};return {...r,...p,price:Object.prototype.hasOwnProperty.call(p,'sell_price')?num(p.sell_price):r.price,key:r.key,custom:false};});
 for(const x of doc.added){if(!x||typeof x.name!=='string')continue;out.push({key:(x.dataset||'custom')+':'+x.id,id:x.id,dataset:x.dataset||'custom',name:x.name,category:x.category||x.dataset||'custom',price:num(x.sell_price),slots:num(x.slots)||1,image:x.image||'',description:x.description||'',custom:true});}
-return out;}
+return out.map(r=>({...r,trashed:doc.trashed.includes(r.key)}));}
 function current(){return recordList().find(r=>r.key===selectedKey)||null;}
 function isStaged(key){return edited.has(key);}
 function imagePreview(path){const img=$('imagePreview');if(path){img.src=path;img.hidden=false;$('emptyPreview').hidden=true;img.onerror=()=>{img.hidden=true;$('emptyPreview').hidden=false;};}else{img.removeAttribute('src');img.hidden=true;$('emptyPreview').hidden=false;}}
@@ -32,13 +32,13 @@ if(!item){$('itemForm').hidden=true;return;}
 text('formHeading',fresh?'ADD NEW ITEM':'EDIT ITEM');text('formSubheading',fresh?'Create a new public item.':'ID: '+key+(edited.has(key)?' · Pending changes':''));
 $('itemName').value=item.name;$('itemCategory').value=item.category;$('itemDataset').value=item.dataset;$('itemDataset').disabled=!fresh;$('itemPrice').value=String(item.price);$('itemSlots').value=String(item.slots);$('itemDescription').value=item.description;$('itemImageUrl').value=item.image||'';
 imagePreview(images.get(key)?.preview||item.image);
-$('deleteItem').hidden=!(item.custom&&!fresh);$('revertItem').hidden=fresh||item.custom||!doc.items[key];}
-function list(){const q=$('filter').value.trim().toLowerCase();const all=recordList().filter(r=>(r.name+' '+r.category+' '+r.dataset+' '+r.key).toLowerCase().includes(q)).sort((a,b)=>a.name.localeCompare(b.name));
-const root=$('itemList');root.replaceChildren();text('totalCount',all.length.toLocaleString('en-US'));
+$('deleteItem').hidden=fresh||item.trashed;$('restoreItem').hidden=fresh||!item.trashed;$('revertItem').hidden=fresh||item.custom||!doc.items[key];}
+function list(){const q=$('filter').value.trim().toLowerCase();const all=recordList().filter(r=>r.trashed===showTrash&&(r.name+' '+r.category+' '+r.dataset+' '+r.key).toLowerCase().includes(q)).sort((a,b)=>a.name.localeCompare(b.name));
+const root=$('itemList');root.replaceChildren();text('totalCount',all.length.toLocaleString('en-US'));text('trashCount',String(doc.trashed.length));
 for(const item of all.slice(0,limit)){const btn=dom('button',undefined,'editor-item'+(item.key===selectedKey?' selected':''));btn.type='button';const picture=item.image?dom('img'):dom('span','GA','no-image');
 if(item.image){picture.src=images.get(item.key)?.preview||item.image;picture.alt='';picture.loading='lazy';picture.onerror=()=>{picture.replaceWith(dom('span','GA','no-image'));};}
 const info=dom('div');info.append(dom('strong',item.name),dom('small',item.category+' · $'+Math.round(item.price).toLocaleString('en-US')));
-if(edited.has(item.key))info.append(dom('small','UNPUBLISHED EDIT','changed'));btn.append(picture,info);btn.addEventListener('click',()=>{fill(item.key);list();});root.append(btn);}
+if(item.trashed)info.append(dom('small','IN TRASH','changed'));if(edited.has(item.key))info.append(dom('small','UNPUBLISHED EDIT','changed'));btn.append(picture,info);btn.addEventListener('click',()=>{fill(item.key);list();});root.append(btn);}
 $('loadMore').hidden=all.length<=limit;}
 function count(){const n=edited.size;const uploading=images.size;text('changeCount',n?n+' PENDING CHANGE'+(n===1?'':'S'):'NO CHANGES');
 text('message',n?'Publish to make '+n+' edit'+(n===1?'':'s')+' visible to everyone.'+(uploading?' '+uploading+' image(s) queued.':''):'Edit an item or add a new one to begin.');
@@ -62,7 +62,11 @@ else if(images.has(key)&&record.image!==images.get(key).path)images.delete(key);
 edited.add(key);fill(key);list();count();text('syncStatus','Draft updated · not published yet.');});
 $('newItem').addEventListener('click',()=>{fill('__new__');list();$('itemName').focus();});
 $('revertItem').addEventListener('click',()=>{if(!selectedKey||!doc.items[selectedKey]||!confirm('Remove this published item override after you publish?'))return;delete doc.items[selectedKey];images.delete(selectedKey);edited.add(selectedKey);const key=selectedKey;list();fill(key);count();});
-$('deleteItem').addEventListener('click',()=>{const item=current();if(!item||!item.custom||!confirm('Remove '+item.name+' from the public catalogue when you publish?'))return;doc.added=doc.added.filter(x=>(x.dataset+':'+x.id)!==item.key);images.delete(item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','ITEM REMOVED FROM DRAFT');text('formSubheading','Publish to apply this removal.');list();count();});
+$('deleteItem').addEventListener('click',()=>{const item=current();if(!item||item.trashed||!confirm('Move '+item.name+' to trash? It will be hidden from Money and Loot Prices after publishing. You can restore it later.'))return;
+if(!doc.trashed.includes(item.key))doc.trashed.push(item.key);images.delete(item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','MOVED TO TRASH');text('formSubheading','Publish changes to hide this item from the public website.');list();count();});
+$('restoreItem').addEventListener('click',()=>{const item=current();if(!item||!item.trashed)return;doc.trashed=doc.trashed.filter(k=>k!==item.key);edited.add(item.key);selectedKey=null;$('itemForm').hidden=true;text('formHeading','ITEM RESTORED');text('formSubheading','Publish changes to show it on the public website again.');list();count();});
+$('showActive').addEventListener('click',()=>{showTrash=false;selectedKey=null;$('itemForm').hidden=true;$('showActive').classList.add('selected');$('showTrash').classList.remove('selected');limit=100;list();});
+$('showTrash').addEventListener('click',()=>{showTrash=true;selectedKey=null;$('itemForm').hidden=true;$('showTrash').classList.add('selected');$('showActive').classList.remove('selected');limit=100;list();});
 $('filter').addEventListener('input',()=>{limit=100;list();});
 $('loadMore').addEventListener('click',()=>{limit+=100;list();});
 $('discard').addEventListener('click',async()=>{if(edited.size&&!confirm('Discard all unpublished edits?'))return;try{await readRemote();edited.clear();images.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Reloaded published changes from GitHub.');}catch(e){alert(e.message);}});
@@ -82,7 +86,7 @@ if(!stillUsed)continue;
 text('message','Uploading image '+(++uploaded)+' of '+images.size+'…');
 await write(file.path,file.base64,null,'Add Gray Area item image '+key);
 }
-doc.version=1;doc.updatedAt=new Date().toISOString();const result=await write(FILE,toBase64(JSON.stringify(doc,null,2)+'\n'),remoteSha,'Publish '+edited.size+' Gray Area item changes');
+doc.version=2;doc.updatedAt=new Date().toISOString();const result=await write(FILE,toBase64(JSON.stringify(doc,null,2)+'\n'),remoteSha,'Publish '+edited.size+' Gray Area item changes');
 remoteSha=result.content.sha;const published=edited.size;images.clear();edited.clear();selectedKey=null;$('itemForm').hidden=true;list();count();text('syncStatus','Published '+published+' change(s) · GitHub commit '+result.commit.sha.slice(0,8));text('message','Saved to GitHub. The public website may take a short time to update.');}
 catch(err){text('message','Publish failed: '+err.message+'. Your draft is still available here.');alert('Could not publish: '+err.message+'\nYour unsaved edits are still in this open tab.');}
 finally{busy=false;count();}});

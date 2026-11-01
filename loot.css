@@ -50,3 +50,5 @@
   .trader-note { grid-template-columns: 1fr; gap: 6px; }
   .results-head,.result-controls{align-items:flex-start;flex-direction:column}.form-row,.vendor-checks{grid-template-columns:1fr 1fr}
 }
+
+.price-source.legacy{color:#e6bd72}.decision.reference{color:#e6bd72;background:#242017}.catalog-page .legacy-note{max-width:none;color:#e6c7a2}

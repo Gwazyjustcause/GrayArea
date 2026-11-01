@@ -27624,8 +27624,12 @@
     "raw": {
       "name": "Encryption Key Drive",
       "id": "encryption-key-drive",
+      "sell_price": 9600,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/54/Encryption_Key_Drive_inspect.png/revision/latest?cb=20261031070040",
-      "image_source": "fandom-page"
+      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27674,7 +27678,13 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "HEPA Filter",
-      "id": "hepa-filter"
+      "id": "hepa-filter",
+      "sell_price": 150,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "image": "https://i.imgur.com/9NlShnj.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -27711,7 +27721,11 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Incriminating Phone Logs",
-      "id": "incriminating-phone-logs"
+      "id": "incriminating-phone-logs",
+      "sell_price": 6400,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27878,7 +27892,11 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Spoofing ASIC Module",
-      "id": "spoofing-asic-module"
+      "id": "spoofing-asic-module",
+      "sell_price": 600,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {

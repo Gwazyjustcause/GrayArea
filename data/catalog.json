@@ -2898,7 +2898,7 @@
       "type": "Backpack",
       "weight": "2.400kg",
       "grid_size": "5x5",
-      "sold_by": "Handshake R.4",
+      "sold_by": "Handshake R.4 Looting",
       "slots": "25",
       "manufacturer": "5.11",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/07/Rush_inspect.png/revision/latest/scale-to-width-down/268?cb=20240509054757",
@@ -3842,17 +3842,17 @@
       "id": "m1050-lrf-rangefinder",
       "type": "Rangefinder",
       "weight": "1.270kg",
-      "grid_size": "???",
       "sold_by": "???",
+      "slots": "1x2",
       "manufacturer": "Safran Group",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/M1050_LRF_View.png/revision/latest/scale-to-width-down/200?cb=20261028021526",
       "numeric_values": {
         "weight": {
           "value": 1.27,
           "unit": "kg"
         }
       },
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/M1050_LRF_View.png/revision/latest?cb=20261028021526",
-      "image_source": "matched-wiki-record"
+      "grid_size": "???"
     }
   },
   {
@@ -5097,7 +5097,7 @@
       "id": "aimpoint-micro-h-2",
       "type": "Collimator",
       "weight": "0.093 kg",
-      "sold_by": "Loot only",
+      "sold_by": "Gunny R3",
       "manufacturer": "Aimpoint",
       "magnification": "1x",
       "sighting_range": "300m",
@@ -5120,12 +5120,21 @@
       "name": "Aimpoint Micro T-2",
       "id": "aimpoint-micro-t-2",
       "type": "Collimator",
-      "weight": "??? kg",
-      "sold_by": "???",
-      "manufacturer": "???",
-      "weapon_handling": "??? %",
-      "magnification": "???x",
-      "sighting_range": "???m"
+      "weight": "0.084 kg",
+      "sold_by": "Banshee R2",
+      "manufacturer": "Aimpoint",
+      "magnification": "1x",
+      "sighting_range": "300m",
+      "numeric_values": {
+        "weight": {
+          "value": 0.084,
+          "unit": "kg"
+        },
+        "sighting_range": {
+          "value": 300,
+          "unit": "m"
+        }
+      }
     }
   },
   {
@@ -5482,6 +5491,26 @@
   {
     "dataset": "crafting_material",
     "raw": {
+      "name": "Digital Synthesis Engine",
+      "id": "digital-synthesis-engine",
+      "type": "Crafting Material",
+      "weight": "0.010kg",
+      "grid_size": "1x1",
+      "sell_price": "$1,200",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8e/Digital_Synthesis_Engine_inspect.png/revision/latest?cb=20261026212133",
+      "numeric_values": {
+        "weight": {
+          "value": 0.01,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "crafting_material",
+    "raw": {
       "name": "Empty Autoinjector",
       "id": "empty-autoinjector",
       "type": "Crafting Material",
@@ -5522,6 +5551,26 @@
   {
     "dataset": "crafting_material",
     "raw": {
+      "name": "High-Speed Digital Processor Board",
+      "id": "high-speed-digital-processor-board",
+      "type": "Crafting Material",
+      "weight": "0.100kg",
+      "grid_size": "2x1",
+      "sell_price": "$1,200",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/63/High-Speed_Digital_Processor_Board_inspect.png/revision/latest/scale-to-width-down/268?cb=20261026212129",
+      "numeric_values": {
+        "weight": {
+          "value": 0.1,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "crafting_material",
+    "raw": {
       "name": "Human Growth Hormone",
       "id": "human-growth-hormone",
       "type": "Crafting Material",
@@ -5532,6 +5581,46 @@
       "numeric_values": {
         "weight": {
           "value": 0.05,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "crafting_material",
+    "raw": {
+      "name": "Multi-Bus Converter",
+      "id": "multi-bus-converter",
+      "type": "Crafting Material",
+      "weight": "0.252kg",
+      "grid_size": "1x1",
+      "sell_price": "$600",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e8/Multi-Bus_Converter_inspect.png/revision/latest?cb=20261102054420",
+      "numeric_values": {
+        "weight": {
+          "value": 0.252,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "crafting_material",
+    "raw": {
+      "name": "Oven-Controlled Crystal Oscillator",
+      "id": "oven-controlled-crystal-oscillator",
+      "type": "Crafting Material",
+      "weight": "0.010kg",
+      "grid_size": "1x1",
+      "sell_price": "$1,200",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c2/Oven-Controlled_Crystal_Oscillator_inspect.png/revision/latest?cb=20261026212131",
+      "numeric_values": {
+        "weight": {
+          "value": 0.01,
           "unit": "kg"
         }
       },
@@ -5608,6 +5697,7 @@
       "weight": "8.000kg",
       "grid_size": "3x2",
       "sell_price": "$15,000",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/35/Last_Line_Defense_Container_inspect.png/revision/latest/scale-to-width-down/268?cb=20261028195624",
       "numeric_values": {
         "weight": {
           "value": 8,
@@ -5615,9 +5705,28 @@
         }
       },
       "price_status": "verified",
-      "price_source": "GZW wiki / game data",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/35/Last_Line_Defense_Container_inspect.png/revision/latest?cb=20261028195624",
-      "image_source": "matched-wiki-record"
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "disassembly_material",
+    "raw": {
+      "name": "Manpack Tactical Radio",
+      "id": "manpack-tactical-radio",
+      "type": "Disassembly Material",
+      "weight": "4.980kg",
+      "grid_size": "2x3",
+      "manufacturer": "General Local",
+      "sell_price": "$3,000",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/19/Manpack_Tactical_Radio_inspect.png/revision/latest/scale-to-width-down/268?cb=20261028195627",
+      "numeric_values": {
+        "weight": {
+          "value": 4.98,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5744,21 +5853,6 @@
   {
     "dataset": "disassembly_recipes",
     "raw": {
-      "name": "Manpack Tactical Radio",
-      "id": "manpack-tactical-radio",
-      "duration": "12 hours",
-      "outcome": [
-        "Encryption Key Drive",
-        "FPGA Module"
-      ],
-      "outcome_text": "Encryption Key Drive, FPGA Module",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/19/Manpack_Tactical_Radio_inspect.png/revision/latest?cb=20261028195627",
-      "image_source": "matched-wiki-record"
-    }
-  },
-  {
-    "dataset": "disassembly_recipes",
-    "raw": {
       "name": "Radioisotope Fuel Cell",
       "id": "radioisotope-fuel-cell",
       "duration": "12 hours",
@@ -5773,22 +5867,19 @@
     "raw": {
       "name": "ST1122 Storage Computer",
       "id": "st1122-storage-computer",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7c/ST1122_Storage_Computer_Midnight_Sapphire_MSH_Supply_Closet_Room_Spawn.png/revision/latest/scale-to-width-down/200?cb=20261025183832"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7c/ST1122_Storage_Computer_Midnight_Sapphire_MSH_Supply_Closet_Room_Spawn.png/revision/latest/scale-to-width-down/200?cb=20261025183832",
+      "sell_price": 3000,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
-    "dataset": "disassembly_recipes",
+    "dataset": "uncategorized",
     "raw": {
       "name": "UNLRA Field Terminal",
       "id": "unlra-field-terminal",
-      "duration": "12 hours",
-      "outcome": [
-        "UNLRA Relief Manifest",
-        "Multi-Bus Converter"
-      ],
-      "outcome_text": "UNLRA Relief Manifest, Multi-Bus Converter",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/UNLRA_Field_Terminal_inspect.png/revision/latest?cb=20261028195902",
-      "image_source": "matched-wiki-record"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/UNLRA_Field_Terminal_inspect.png/revision/latest?cb=20261028195902"
     }
   },
   {
@@ -6283,6 +6374,26 @@
   {
     "dataset": "electronics",
     "raw": {
+      "name": "Encryption Key Drive",
+      "id": "encryption-key-drive",
+      "type": "Tech",
+      "weight": "0.110kg",
+      "grid_size": "1x1",
+      "sell_price": "$9,600",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/54/Encryption_Key_Drive_inspect.png/revision/latest/scale-to-width-down/268?cb=20261031070040",
+      "numeric_values": {
+        "weight": {
+          "value": 0.11,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "electronics",
+    "raw": {
       "name": "Expensive Smartphone",
       "id": "expensive-smartphone",
       "type": "Electronics",
@@ -6325,6 +6436,26 @@
   {
     "dataset": "electronics",
     "raw": {
+      "name": "Missile Guidance Circuit",
+      "id": "missile-guidance-circuit",
+      "type": "Electronics",
+      "weight": "0.010kg",
+      "grid_size": "1x1",
+      "sell_price": "$15,000",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/62/Missile_Guidance_Circuit_inspect.png/revision/latest/scale-to-width-down/268?cb=20261024183805",
+      "numeric_values": {
+        "weight": {
+          "value": 0.01,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "electronics",
+    "raw": {
       "name": "Motorbike Battery",
       "id": "motorbike-battery",
       "type": "Household Item",
@@ -6356,6 +6487,26 @@
       "numeric_values": {
         "weight": {
           "value": 0.1,
+          "unit": "kg"
+        }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "electronics",
+    "raw": {
+      "name": "UNLRA Relief Manifest",
+      "id": "unlra-relief-manifest",
+      "type": "Tech",
+      "weight": "0.240kg",
+      "grid_size": "1x1",
+      "sell_price": "$6,400",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c7/UNLRA_Relief_Manifest_inspect.png/revision/latest?cb=20261102054525",
+      "numeric_values": {
+        "weight": {
+          "value": 0.24,
           "unit": "kg"
         }
       },
@@ -7427,7 +7578,7 @@
       "name": "Lamang Army Forces",
       "id": "lamang-army-forces",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9e/LAF_Faction_icon.png/revision/latest/scale-to-width-down/268?cb=20250619131649",
-      "description": "The Lamang Armed Forces (LAF) is the country's national military force. Since the Event, the LAF were ordered to stay behind and guard high-value targets while also engaging in skirmishes with different armed groups such as Lamang Liberation Army , Bandits and PMC contractors. Most LAF personnel are mostly soldier grunts to commanders at officer ranks from its Army branch."
+      "description": "The Lamang Armed Forces (LAF) is the country's national military force and under command by its president. Since the Event, the LAF were ordered to stay behind and guard high-value targets while also engaging in skirmishes with different armed organizations both foreign and domestic such as Lamang Liberation Army insurgents , Bandits and private military companies . Most LAF personnel are mostly soldier grunts to officer rank commanders from its Army branch."
     }
   },
   {
@@ -10047,6 +10198,28 @@
   {
     "dataset": "handguards",
     "raw": {
+      "name": "Benelli M4 Handguard",
+      "id": "benelli-m4-handguard",
+      "type": "Handguard",
+      "weight": "0.022 kg",
+      "manufacturer": "Benelli",
+      "reload_speed": "+3 %",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/17/M1014_HG_Inspect.png/revision/latest?cb=20261031205028",
+      "numeric_values": {
+        "weight": {
+          "value": 0.022,
+          "unit": "kg"
+        },
+        "reload_speed": {
+          "value": 3,
+          "unit": "%"
+        }
+      }
+    }
+  },
+  {
+    "dataset": "handguards",
+    "raw": {
       "name": "CQ A1 Carbine Handguard",
       "id": "cq-a1-carbine-handguard",
       "type": "Handguard",
@@ -12005,8 +12178,8 @@
     "raw": {
       "name": "Hideout",
       "id": "hideout",
-      "content": "The Hideout in Gray Zone Warfare is the players's personal workspace. It consists of several rooms, each dedicated to creating different types of items. To make full use of the Hideout, the player needs to build and upgrade stations within its rooms. These stations expand the capabilities of individual rooms and allow the player to perform more complex pipelines. The player also needs to acquire recipes, which provide the knowledge needed to create specific items in the Hideout. / Heat Source Extraction Vessel Reaction Vessel Filtration Analysis Glassware Laboratory Storage Equipment Safety Level Requirements Function 1 3 Steel 2 Construction Material 1 Wood + x Heat control 2 4 Steel 2 Plumbing Parts 3 Construction Material 1 Burner Head 10 Steel 5 Plumbing Parts 5 Construction Material 2 Burner Head 2 Mechanical Parts $40,000 Dollars + 2 Heat control 1 Steel 1 Copper 1 Plumbing Parts 1 Analog Indicator + x Extraction & Reaction 5 Copper 1 Water Pump 2 Plastics 1 Construction Material 1 Silicone Sealant 2 Chemicals 1 Zinc Electrode 3 12 Steel 3 Stainless Steel Sheet 6 Mechanical Parts $45,000 Dollars 2 Wood 4 Fabrics + 1 Filtration & Processing 3 Fine Metal Mesh 1 Electrical Parts 1 Circuit Board + x Analysis & Precision 4 Electrical Parts 3 Circuit Board 1 Vapor Lamp 1 Crystal Prism $35,000 Dollars 1 Glass 1 Plastics 1 Laboratory Flask 2 Glass 1 Mechanical Pipette Storage Equipment 1 Refrigerant + 2 Storage Capacity 3 Glass 6 Steel 5 Glass 2 Refrigerant 2 Electrical Parts 2 Circuit Board 2 PC Fan + x Safety 5 Electrical Parts 3 PC Fan 1 HEPA Filter Hardware Software Micro Electronics Machine Tools RF Sensors Workshop Storage Equipment 1 Motherboard 1 Graphics Card 1 CPU 1 PC Fan 1 RAM 1 Power Supply + x Compute Capacity 1 Server CPU 4 RAM + 2 Compute Capacity 3 Civilian Software 1 Military Software 6 Civilian Software 2 Military Software 1 Soldering Iron 1 Multimeter 1 Toolset 1 Woods + 1 Electronics Capability 2 Soldering Iron 1 Oscilloscope + 2 Electronics Capability 1 Microscope + 3 Electronics Capability + 1 Mechanical Engineering 1 Tooling Coolant 1 CNC Drill Bits + 2 Mechanical Engineering 1 Signal Generator + 1 Sensor and RF Processing 1 Laser Tube $30,000 Dollars + 2 Sensor and RF Processing 1 Mechanical Parts 9 Steel 3 Mechanical Parts 4 Stainless Steel Sheet Generator 1 Motor Oil 1 Dynamo + 9 Available Power 2 Steel Disassembly is a specialized pipeline that allows the player to dismantle complex devices into their components.To disassemble an item, the player must move it from their Locker into the disassembly grid. Items in the grid are disassembled sequentially, with priority given to those closest to the top-left corner. The time required to disassemble each item is displayed on the disassembly button.\\n\\nMoving an item within the grid or returning it to the Locker resets its disassembly time.Items obtained through disassembly are stored in the Electronics Workshop storage space.Disassembly continues even while the player is offline. Recipes Disassembled item Duration Outcome File:Artillery Ballistic Calculator icon.png Artillery Ballistic Calculator → 12 hours File:LAF Artillery Data Logs icon.png LAF Artillery Data Logs Baget-53-31 Onboard Computer File:Flight Data Drive icon.png Flight Data Drive + File:Avionics Processor Board icon.png Avionics Processor Board File:Chemical Munitions Container icon.png Chemical Munitions Container File:Sarin Canister icon.png Sarin Canister File:Counter IED/Jammer Unit icon.png Counter IED/Jammer Unit Electronic Warfare Configuration Drive + File:Digital Synthesis Engine icon.png Digital Synthesis Engine File:Drone Interceptor icon.png Drone Interceptor AI Targeting Module File:IMSI Catcher icon.png IMSI Catcher File:Incriminating Phone Logs icon.png Incriminating Phone Logs + File:Spoofing ASIC Module icon.png Spoofing ASIC Module File:Last Line Defense Container icon.png Last Line Defense Container File:Nerve Gas Canister icon.png Nerve Gas Canister File:Manpack Tactical Radio icon.png Manpack Tactical Radio Encryption Key Drive + FPGA Module File:Chemical Containment Container icon.png Chemical Containment Container File:Biohazard Canister icon.png Biohazard Canister Portable SATCOM Terminal File:Uplink Credentials Drive icon.png Uplink Credentials Drive + File:Oven-Controlled Crystal Oscillator icon.png Oven-Controlled Crystal Oscillator Radar Signal Processor File:Deep-Space Observation Data Drive icon.png Deep-Space Observation Data Drive + File:High-Speed Digital Processor Board icon.png High-Speed Digital Processor Board Missile Seeker Head Missile Guidance Circuit ST1122 Storage Computer Incriminating Data Drive + Server RAM Module File:Radioisotope Fuel Cell icon.png Radioisotope Fuel Cell File:Plutonium Canister icon.png Plutonium Canister File:UNLRA Field Terminal icon.png UNLRA Field Terminal File:UNLRA Relief Manifest icon.png UNLRA Relief Manifest + File:Multi-Bus Converter icon.png Multi-Bus Converter",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/Portable_SATCOM_Terminal_icon.png/revision/latest?cb=20261026020129"
+      "content": "The Hideout in Gray Zone Warfare is the players's personal workspace. It consists of several rooms, each dedicated to creating different types of items. To make full use of the Hideout, the player needs to build and upgrade stations within its rooms. These stations expand the capabilities of individual rooms and allow the player to perform more complex pipelines. The player also needs to acquire recipes, which provide the knowledge needed to create specific items in the Hideout. / Heat Source Extraction Vessel Reaction Vessel Filtration Analysis Glassware Storage Equipment Safety Level Requirements Function 1 3 Steel 2 Construction Material 1 Wood + x Heat control 2 4 Steel 2 Plumbing Parts 3 Construction Material 1 Burner Head 10 Steel 5 Plumbing Parts 5 Construction Material 2 Burner Head 2 Mechanical Parts $40,000 Dollars + 2 Heat control 1 Steel 1 Copper 1 Plumbing Parts 1 Analog Indicator + x Extraction & Reaction 5 Copper 1 Water Pump 2 Plastics 1 Construction Material 1 Silicone Sealant 2 Chemicals 1 Zinc Electrode 3 12 Steel 3 Stainless Steel Sheet 6 Mechanical Parts $45,000 Dollars 2 Wood 4 Fabrics + 1 Filtration & Processing 3 Fine Metal Mesh 1 Electrical Parts 1 Circuit Board 1 Complex Glass Electrode + x Analysis & Precision 4 Electrical Parts 3 Circuit Board 1 Vapor Lamp 1 Crystal Prism $35,000 Dollars 1 Glass 1 Plastics 1 Laboratory Flask 2 Glass 1 Mechanical Pipette 1 Refrigerant + 2 Storage Capacity 3 Glass 6 Steel 5 Glass 2 Refrigerant 2 Electrical Parts 2 Circuit Board 2 PC Fan + x Safety 5 Electrical Parts 3 PC Fan 1 HEPA Filter Hardware Software Micro Electronics Machine Tools RF Sensors 1 Motherboard 1 Graphics Card 1 CPU 1 PC Fan 1 RAM 1 Power Supply + x Compute Capacity 3 RAM 1 Server CPU 4 RAM + 2 Compute Capacity 3 Civilian Software 1 Military Software 6 Civilian Software 2 Military Software 1 Soldering Iron 1 Multimeter 1 Toolset + 1 Electronics Capability 2 Soldering Iron 1 Oscilloscope + 2 Electronics Capability 1 Microscope + 3 Electronics Capability 1 Woods + 1 Mechanical Engineering 1 Tooling Coolant 1 CNC Drill Bits + 2 Mechanical Engineering 1 Signal Generator + 1 Sensor and RF Processing 1 Laser Tube $30,000 Dollars + 2 Sensor and RF Processing 1 Mechanical Parts 9 Steel 3 Mechanical Parts 4 Stainless Steel Sheet Generator 1 Motor Oil 1 Dynamo + 9 Available Power 2 Steel Disassembly is a specialized pipeline that allows the player to dismantle complex devices into their components.To disassemble an item, the player must move it from their Locker into the disassembly grid. Items in the grid are disassembled sequentially, with priority given to those closest to the top-left corner. The time required to disassemble each item is displayed on the disassembly button.\\n\\nMoving an item within the grid or returning it to the Locker resets its disassembly time.Items obtained through disassembly are stored in the Electronics Workshop storage space.Disassembly continues even while the player is offline. Recipes Disassembled item Duration Outcome File:Artillery Ballistic Calculator icon.png Artillery Ballistic Calculator → 12 hours File:LAF Artillery Data Logs icon.png LAF Artillery Data Logs Baget-53-31 Onboard Computer File:Flight Data Drive icon.png Flight Data Drive + File:Avionics Processor Board icon.png Avionics Processor Board File:Chemical Munitions Container icon.png Chemical Munitions Container File:Sarin Canister icon.png Sarin Canister Counter IED/Jammer Unit Electronic Warfare Configuration Drive + Digital Synthesis Engine Drone Interceptor AI Targeting Module File:IMSI Catcher icon.png IMSI Catcher File:Incriminating Phone Logs icon.png Incriminating Phone Logs + File:Spoofing ASIC Module icon.png Spoofing ASIC Module Last Line Defense Container File:Nerve Gas Canister icon.png Nerve Gas Canister Manpack Tactical Radio Encryption Key Drive + FPGA Module File:Chemical Containment Container icon.png Chemical Containment Container File:Biohazard Canister icon.png Biohazard Canister Portable SATCOM Terminal Uplink Credentials Drive + Oven-Controlled Crystal Oscillator Radar Signal Processor Deep-Space Observation Data Drive + High-Speed Digital Processor Board Missile Seeker Head Missile Guidance Circuit ST1122 Storage Computer Incriminating Data Drive + Server RAM Module File:Radioisotope Fuel Cell icon.png Radioisotope Fuel Cell File:Plutonium Canister icon.png Plutonium Canister UNLRA Field Terminal UNLRA Relief Manifest + Multi-Bus Converter",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/04/Drone_Interceptor_icon.png/revision/latest/scale-to-width-down/200?cb=20261027170909"
     }
   },
   {
@@ -12029,9 +12202,13 @@
         {
           "name": "Circuit Board",
           "quantity": 1
+        },
+        {
+          "name": "Complex Glass Electrode",
+          "quantity": 1
         }
       ],
-      "requirements_text": "2 Plastics, 1 Electrical Parts, 1 Circuit Board",
+      "requirements_text": "2 Plastics, 1 Electrical Parts, 1 Circuit Board, 1 Complex Glass Electrode",
       "function": "+ x Analysis & Precision"
     }
   },
@@ -12370,14 +12547,14 @@
         },
         {
           "name": "RAM",
-          "quantity": 1
+          "quantity": 3
         },
         {
           "name": "Power Supply",
           "quantity": 1
         }
       ],
-      "requirements_text": "1 Motherboard, 1 Graphics Card, 1 CPU, 2 Plumbing Parts, 1 RAM, 1 Power Supply",
+      "requirements_text": "1 Motherboard, 1 Graphics Card, 1 CPU, 2 Plumbing Parts, 3 RAM, 1 Power Supply",
       "function": "+ x Compute Capacity"
     }
   },
@@ -12553,6 +12730,10 @@
           "quantity": 3
         },
         {
+          "name": "Mechanical Parts",
+          "quantity": 2
+        },
+        {
           "name": "Electrical Parts",
           "quantity": 1
         },
@@ -12565,7 +12746,7 @@
           "quantity": 1
         }
       ],
-      "requirements_text": "3 Steel, 1 Electrical Parts, 1 Tooling Coolant, 1 CNC Drill Bits",
+      "requirements_text": "3 Steel, 2 Mechanical Parts, 1 Electrical Parts, 1 Tooling Coolant, 1 CNC Drill Bits",
       "function": "+ 2 Mechanical Engineering"
     }
   },
@@ -12595,11 +12776,11 @@
           "quantity": 1
         },
         {
-          "name": "Woods",
+          "name": "Wood",
           "quantity": 1
         }
       ],
-      "requirements_text": "1 Soldering Iron, 1 Multimeter, 1 Toolset, 1 Power Supply, 1 Woods",
+      "requirements_text": "1 Soldering Iron, 1 Multimeter, 1 Toolset, 1 Power Supply, 1 Wood",
       "function": "+ 1 Electronics Capability"
     }
   },
@@ -12663,6 +12844,10 @@
           "quantity": 1
         },
         {
+          "name": "Oscilloscope",
+          "quantity": 1
+        },
+        {
           "name": "Electrical Parts",
           "quantity": 5
         },
@@ -12671,7 +12856,7 @@
           "quantity": 35000
         }
       ],
-      "requirements_text": "1 Microscope, 1 Multimeter, 2 Circuit Board, 1 Power Supply, 5 Electrical Parts, 35000 Dollars",
+      "requirements_text": "1 Microscope, 1 Multimeter, 2 Circuit Board, 1 Power Supply, 1 Oscilloscope, 5 Electrical Parts, 35000 Dollars",
       "function": "+ 3 Electronics Capability"
     }
   },
@@ -12843,7 +13028,7 @@
       "level": 1,
       "requirements": [
         {
-          "name": "Mechanical Parts",
+          "name": "Electrical Parts",
           "quantity": 2
         },
         {
@@ -12855,7 +13040,7 @@
           "quantity": 2
         }
       ],
-      "requirements_text": "2 Mechanical Parts, 2 Plastics, 2 PC Fan",
+      "requirements_text": "2 Electrical Parts, 2 Plastics, 2 PC Fan",
       "function": "+ x Safety"
     }
   },
@@ -13076,10 +13261,10 @@
         },
         {
           "name": "Dollars",
-          "quantity": 45000
+          "quantity": 30000
         }
       ],
-      "requirements_text": "12 Steel, 6 Mechanical Parts, 4 Stainless Steel Sheet, 45000 Dollars",
+      "requirements_text": "12 Steel, 6 Mechanical Parts, 4 Stainless Steel Sheet, 30000 Dollars",
       "function": "+ 2 Storage Capacity"
     }
   },
@@ -27548,7 +27733,11 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Avionics Processor Board",
-      "id": "avionics-processor-board"
+      "id": "avionics-processor-board",
+      "sell_price": 900,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27599,17 +27788,7 @@
     "raw": {
       "name": "Deep-Space Observation Data Drive",
       "id": "deep-space-observation-data-drive",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051",
-      "image_source": "matched-wiki-record"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
-      "name": "Digital Synthesis Engine",
-      "id": "digital-synthesis-engine",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8e/Digital_Synthesis_Engine_inspect.png/revision/latest?cb=20261026212133",
-      "image_source": "matched-wiki-record"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051"
     }
   },
   {
@@ -27617,19 +27796,6 @@
     "raw": {
       "name": "Edetate Disodium",
       "id": "edetate-disodium"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
-      "name": "Encryption Key Drive",
-      "id": "encryption-key-drive",
-      "sell_price": 9600,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/54/Encryption_Key_Drive_inspect.png/revision/latest?cb=20261031070040",
-      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27692,15 +27858,6 @@
     "raw": {
       "name": "High-Quality Morphine Base",
       "id": "high-quality-morphine-base"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
-      "name": "High-Speed Digital Processor Board",
-      "id": "high-speed-digital-processor-board",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/63/High-Speed_Digital_Processor_Board_inspect.png/revision/latest?cb=20261026212129",
-      "image_source": "matched-wiki-record"
     }
   },
   {
@@ -27786,19 +27943,6 @@
   {
     "dataset": "uncategorized",
     "raw": {
-      "name": "Multi-Bus Converter",
-      "id": "multi-bus-converter",
-      "sell_price": 600,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
-      "image": "https://i.imgur.com/GqU9tjH.png",
-      "image_source": "gzwitems-community"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
       "name": "Nerve Gas Canister",
       "id": "nerve-gas-canister"
     }
@@ -27815,21 +27959,11 @@
     "raw": {
       "name": "Oscilloscope",
       "id": "oscilloscope",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/Oscilloscope_inspect.png/revision/latest/scale-to-width-down/268?cb=20261028195631",
       "sell_price": 150,
       "price_status": "community",
       "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
-      "image": "https://i.imgur.com/k2VveRE.png",
-      "image_source": "gzwitems-community"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
-      "name": "Oven-Controlled Crystal Oscillator",
-      "id": "oven-controlled-crystal-oscillator",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c2/Oven-Controlled_Crystal_Oscillator_inspect.png/revision/latest?cb=20261026212131",
-      "image_source": "matched-wiki-record"
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27930,17 +28064,9 @@
   {
     "dataset": "uncategorized",
     "raw": {
-      "name": "UNLRA Relief Manifest",
-      "id": "unlra-relief-manifest"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
       "name": "Uplink Credentials Drive",
       "id": "uplink-credentials-drive",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/Uplink_Credentials_Drive_inspect.png/revision/latest?cb=20261028195049",
-      "image_source": "matched-wiki-record"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/Uplink_Credentials_Drive_inspect.png/revision/latest?cb=20261028195049"
     }
   },
   {
@@ -28706,6 +28832,30 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "6B23-1(Flora) (Turncoat)",
+      "id": "turncoat-vests-6b23-1-flora",
+      "item": "6B23-1(Flora)",
+      "vendor": "Turncoat",
+      "rank": 3,
+      "category": "vests",
+      "type": "Ballistic Vest"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "6Sh104 (Turncoat)",
+      "id": "turncoat-rigs-6sh104",
+      "item": "6Sh104",
+      "vendor": "Turncoat",
+      "rank": 4,
+      "category": "rigs",
+      "type": "Tactical Rig"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "7.62x25mm FMJ (Artisan)",
       "id": "artisan-ammo-7-62x25mm-fmj",
       "item": "7.62x25mm FMJ",
@@ -29067,6 +29217,30 @@
       "category": "mounts",
       "type": "Mount",
       "buy_price": "$88"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Aimpoint Micro H-2 (Gunny)",
+      "id": "gunny-collimators-aimpoint-micro-h-2",
+      "item": "Aimpoint Micro H-2",
+      "vendor": "Gunny",
+      "rank": 3,
+      "category": "collimators",
+      "type": "Collimator"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Aimpoint Micro T-2 (Banshee)",
+      "id": "banshee-collimators-aimpoint-micro-t-2",
+      "item": "Aimpoint Micro T-2",
+      "vendor": "Banshee",
+      "rank": 2,
+      "category": "collimators",
+      "type": "Collimator"
     }
   },
   {
@@ -29953,6 +30127,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "ATBV Vest (Turncoat)",
+      "id": "turncoat-vests-atbv-vest",
+      "item": "ATBV Vest",
+      "vendor": "Turncoat",
+      "rank": 2,
+      "category": "vests",
+      "type": "Ballistic Vest"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "ATI S60 5.56x45mm/.300 BLK 60-Round Magazine (Gunny)",
       "id": "gunny-magazines-ati-s60-5-56x45mm-300-blk-60-round-magazine",
       "item": "ATI S60 5.56x45mm/.300 BLK 60-Round Magazine",
@@ -30119,6 +30305,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "Biker Chest Rig (Artisan)",
+      "id": "artisan-rigs-biker-chest-rig",
+      "item": "Biker Chest Rig",
+      "vendor": "Artisan",
+      "rank": 1,
+      "category": "rigs",
+      "type": "Tactical Rig"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "BM-1 AKM Accessory Mount (Artisan)",
       "id": "artisan-mounts-bm-1-akm-accessory-mount",
       "item": "BM-1 AKM Accessory Mount",
@@ -30182,6 +30380,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "CGPC3 TQS (Handshake)",
+      "id": "handshake-plate-carriers-cgpc3-tqs",
+      "item": "CGPC3 TQS",
+      "vendor": "Handshake",
+      "rank": 1,
+      "category": "plate_carriers",
+      "type": "Plate Carrier"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Chest Rig 901 Elite 4 (Handshake)",
       "id": "handshake-plate-carriers-chest-rig-901-elite-4",
       "item": "Chest Rig 901 Elite 4",
@@ -30201,6 +30411,30 @@
       "rank": 1,
       "category": "medical",
       "type": "Splint"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Civilian Leather Fanny Pack (Artisan)",
+      "id": "artisan-belts-civilian-leather-fanny-pack",
+      "item": "Civilian Leather Fanny Pack",
+      "vendor": "Artisan",
+      "rank": 1,
+      "category": "belts",
+      "type": "Belt"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Civilian Sport Fanny Pack (Artisan)",
+      "id": "artisan-belts-civilian-sport-fanny-pack",
+      "item": "Civilian Sport Fanny Pack",
+      "vendor": "Artisan",
+      "rank": 1,
+      "category": "belts",
+      "type": "Belt"
     }
   },
   {
@@ -30242,9 +30476,33 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "Commander (Black) (Handshake)",
+      "id": "handshake-vests-commander-black",
+      "item": "Commander (Black)",
+      "vendor": "Handshake",
+      "rank": 1,
+      "category": "vests",
+      "type": "Armor vest"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Commander (Navy) (Handshake)",
       "id": "handshake-vests-commander-navy",
       "item": "Commander (Navy)",
+      "vendor": "Handshake",
+      "rank": 1,
+      "category": "vests",
+      "type": "Armor vest"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Commander (Olive) (Handshake)",
+      "id": "handshake-vests-commander-olive",
+      "item": "Commander (Olive)",
       "vendor": "Handshake",
       "rank": 1,
       "category": "vests",
@@ -30381,6 +30639,18 @@
       "rank": 2,
       "category": "belts",
       "type": "Belt"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "CZ VIP (Black) (Handshake)",
+      "id": "handshake-vests-cz-vip-black",
+      "item": "CZ VIP (Black)",
+      "vendor": "Handshake",
+      "rank": 2,
+      "category": "vests",
+      "type": "Ballistic Vest"
     }
   },
   {
@@ -31327,6 +31597,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "LCS Sentry (Handshake)",
+      "id": "handshake-plate-carriers-lcs-sentry",
+      "item": "LCS Sentry",
+      "vendor": "Handshake",
+      "rank": 2,
+      "category": "plate_carriers",
+      "type": "Plate Carrier"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Leafy Boonie (Camo) (Handshake)",
       "id": "handshake-helmets-leafy-boonie-camo",
       "item": "Leafy Boonie (Camo)",
@@ -31445,6 +31727,18 @@
       "rank": 2,
       "category": "food",
       "type": "Food"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "LVS Tactical (Multicam) (Handshake)",
+      "id": "handshake-vests-lvs-tactical-multicam",
+      "item": "LVS Tactical (Multicam)",
+      "vendor": "Handshake",
+      "rank": 4,
+      "category": "vests",
+      "type": "Ballistic Vest"
     }
   },
   {
@@ -32382,6 +32676,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "Molle Vest (Artisan)",
+      "id": "artisan-vests-molle-vest",
+      "item": "Molle Vest",
+      "vendor": "Artisan",
+      "rank": 1,
+      "category": "vests",
+      "type": "Ballistic Vest"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Morphine (Lab Rat)",
       "id": "lab-rat-medical-morphine",
       "item": "Morphine",
@@ -33030,6 +33336,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "Phantom Type 2 (Turncoat)",
+      "id": "turncoat-plate-carriers-phantom-type-2",
+      "item": "Phantom Type 2",
+      "vendor": "Turncoat",
+      "rank": 4,
+      "category": "plate_carriers",
+      "type": "Plate Carrier"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Picatinny Dust Cover (Turncoat)",
       "id": "turncoat-upper-receivers-picatinny-dust-cover",
       "item": "Picatinny Dust Cover",
@@ -33064,6 +33382,18 @@
       "category": "collimators",
       "type": "Collimator",
       "buy_price": "$386"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Plate6 Plate Carrier (Handshake)",
+      "id": "handshake-plate-carriers-plate6-plate-carrier",
+      "item": "Plate6 Plate Carrier",
+      "vendor": "Handshake",
+      "rank": 4,
+      "category": "plate_carriers",
+      "type": "Plate Carrier"
     }
   },
   {
@@ -33902,6 +34232,17 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "Specter (Handshake)",
+      "id": "handshake-plate-carriers-specter",
+      "item": "Specter",
+      "vendor": "Handshake",
+      "rank": 1,
+      "category": "plate_carriers"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "SpecterDR 1-4x Assault Scope (Gunny)",
       "id": "gunny-scopes-specterdr-1-4x-assault-scope",
       "item": "SpecterDR 1-4x Assault Scope",
@@ -34100,6 +34441,18 @@
   {
     "dataset": "vendor_stock",
     "raw": {
+      "name": "TacTec Chest Rig (Handshake)",
+      "id": "handshake-rigs-tactec-chest-rig",
+      "item": "TacTec Chest Rig",
+      "vendor": "Handshake",
+      "rank": 2,
+      "category": "rigs",
+      "type": "Tactical Rig"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
       "name": "Tactical Belt (Handshake)",
       "id": "handshake-belts-tactical-belt",
       "item": "Tactical Belt",
@@ -34244,6 +34597,18 @@
       "rank": 2,
       "category": "foregrips",
       "type": "Foregrip"
+    }
+  },
+  {
+    "dataset": "vendor_stock",
+    "raw": {
+      "name": "Universal Chest Bag (Artisan)",
+      "id": "artisan-rigs-universal-chest-bag",
+      "item": "Universal Chest Bag",
+      "vendor": "Artisan",
+      "rank": 1,
+      "category": "rigs",
+      "type": "Tactical Rig"
     }
   },
   {

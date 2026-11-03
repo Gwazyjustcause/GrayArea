@@ -27788,7 +27788,11 @@
     "raw": {
       "name": "Deep-Space Observation Data Drive",
       "id": "deep-space-observation-data-drive",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051"
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051",
+      "sell_price": 12000,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27816,14 +27820,22 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Flight Data Drive",
-      "id": "flight-data-drive"
+      "id": "flight-data-drive",
+      "sell_price": 9600,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Glucose",
-      "id": "glucose"
+      "id": "glucose",
+      "sell_price": 15,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
     }
   },
   {
@@ -27998,7 +28010,9 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Saline",
-      "id": "saline"
+      "id": "saline",
+      "image": "https://i.imgur.com/B1vlvIM.png",
+      "image_source": "gzwitems-community"
     }
   },
   {

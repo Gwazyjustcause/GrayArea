@@ -84,7 +84,7 @@
       "layoutFile": "3x4 Backpack.png",
       "source": "https://gray-zone-warfare.fandom.com/wiki/Backpacks",
       "unverified": true,
-      "notes": "English overview conflicts with item page (3x4); verify in 0.5"
+      "notes": "Individual item page says 3×4, category table says 3×2; verify in-game."
     },
     {
       "id": "bag-6",
@@ -110,7 +110,7 @@
       "layoutFile": "4x4 Backpack.png",
       "source": "https://gray-zone-warfare.fandom.com/wiki/Backpacks",
       "unverified": false,
-      "notes": ""
+      "notes": "Individual page confirms 4×4; separate sling listed on the backpack overview."
     },
     {
       "id": "bag-8",
@@ -162,7 +162,7 @@
       "layoutFile": "5x6 Backpack.png",
       "source": "https://gray-zone-warfare.fandom.com/wiki/Backpacks",
       "unverified": true,
-      "notes": "English overview gives 5x5; French wiki layout filename says 5x6"
+      "notes": "English wiki says 5×5, French version says 5×6; verify in-game."
     },
     {
       "id": "bag-12",
@@ -291,7 +291,8 @@
       "rows": 2,
       "sling": false,
       "source": "https://gray-zone-warfare.fandom.com/wiki/Plate_Carriers",
-      "unverified": false
+      "unverified": true,
+      "notes": "Category says inventory 5×2, individual page lists 5×2 Inventory and 4×3 external grid; this planner uses 5×2."
     },
     {
       "id": "carrier-9",
@@ -301,7 +302,8 @@
       "rows": 4,
       "sling": false,
       "source": "https://gray-zone-warfare.fandom.com/wiki/Plate_Carriers",
-      "unverified": false
+      "unverified": true,
+      "notes": "Category and item Properties say 4×4, individual page General Data says 3×4."
     },
     {
       "id": "carrier-10",
@@ -311,7 +313,8 @@
       "rows": 3,
       "sling": false,
       "source": "https://gray-zone-warfare.fandom.com/wiki/Plate_Carriers",
-      "unverified": false
+      "unverified": true,
+      "notes": "Category and General Data say 4×3; individual Properties say 3×4 (same number of cells)."
     },
     {
       "id": "carrier-11",
@@ -331,7 +334,8 @@
       "rows": 3,
       "sling": false,
       "source": "https://gray-zone-warfare.fandom.com/wiki/Plate_Carriers",
-      "unverified": false
+      "unverified": true,
+      "notes": "Category and General Data say 3×3, item Properties say 4×2; verify in-game."
     },
     {
       "id": "carrier-13",

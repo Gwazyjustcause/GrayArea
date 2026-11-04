@@ -17,6 +17,7 @@ function selected(){return byId.get(selectedId)||null}
 function currentGear(zone){return gear.find(g=>g.id===state.gear[zone])||gear.find(g=>g.kind===zone)||{id:'fallback-'+zone,name:'Unverified grid',cols:4,rows:4,sling:false,kind:zone}}
 function value(item){return item?number(Object.prototype.hasOwnProperty.call(state.prices,item.id)?state.prices[item.id]:item.price):0}
 function sizes(item){return state.dims[item.id]||{w:item.w,h:item.h}}
+function shapeVerified(item){return !!(item&&(item.known||state.dims[item.id]))}
 function oriented(item,turn=false){const s=sizes(item);return{w:turn?s.h:s.w,h:turn?s.w:s.h}}
 function colliding(zone,x,y,w,h,ignore=null,arr=state.placements){return arr.filter(p=>p.zone===zone&&p.uid!==ignore&&x<p.x+p.w&&p.x<x+w&&y<p.y+p.h&&p.y<y+h)}
 function inBounds(zone,x,y,w,h){const g=currentGear(zone);return x>=0&&y>=0&&x+w<=g.cols&&y+h<=g.rows}
@@ -56,7 +57,7 @@ setGearWarn();}
 function renderZone(zone){const g=currentGear(zone),host=$(zone+'Grid');host.replaceChildren();host.style.setProperty('--cols',g.cols);host.style.setProperty('--rows',g.rows);
 const item=selected(),ignore=selectedUid;
 for(let y=0;y<g.rows;y++)for(let x=0;x<g.cols;x++){const cell=n('button','', 'raid-cell');cell.type='button';cell.dataset.x=x;cell.dataset.y=y;cell.setAttribute('aria-label',zone+' row '+(y+1)+' column '+(x+1));
-if(item){const loc=candidate(item,zone,x,y,rotated,ignore);if(loc)cell.classList.add(loc.swap.length?'blocked':'preview')}
+if(item&&shapeVerified(item)){const loc=candidate(item,zone,x,y,rotated,ignore);if(loc)cell.classList.add(loc.swap.length?'blocked':'preview')}
 cell.style.gridColumn=String(x+1);cell.style.gridRow=String(y+1);
 cell.addEventListener('click',()=>clickPlace(zone,x,y));cell.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move';});cell.addEventListener('drop',e=>{e.preventDefault();acceptDrop(zone,x,y)});host.append(cell)}
 for(const p of state.placements.filter(x=>x.zone===zone)){const data=byId.get(p.itemId);if(!data)continue;const card=n('button',undefined,'raid-placed'+(p.uid===selectedUid?' active':''));card.type='button';card.draggable=true;card.style.gridColumn=(p.x+1)+' / span '+p.w;card.style.gridRow=(p.y+1)+' / span '+p.h;card.style.zIndex='3';card.title=data.name+' · '+fmt(value(data))+' · '+p.w+'×'+p.h;card.append(imageNode(data),n('strong',data.name),n('small',fmt(value(data))));
@@ -77,16 +78,17 @@ $('haulValue').textContent=fmt(total);$('raidScore').textContent=fmt(cells?total
 function renderSelected(){const item=selected(),placement=state.placements.find(p=>p.uid===selectedUid);$('selectedName').textContent=item?.name||'Choose an item';
 $('selectedValue').textContent=item?fmt(value(item)):'—';$('selectedShape').textContent=item?oriented(item,rotated).w+'×'+oriented(item,rotated).h:'—';$('selectedDensity').textContent=item?fmt(value(item)/(sizes(item).w*sizes(item).h)):'—';
 const warning=$('shapeWarning');warning.hidden=!!(!item||item.known||state.dims[item.id]);warning.textContent=warning.hidden?'':'No confirmed item dimensions. Using a provisional '+sizes(item).w+'×'+sizes(item).h+' shape; use EDIT to set the real size.';
-const rec=item?recommendation(item,selectedUid):null;const advice=$('adviceLabel'),body=$('adviceText'),gain=$('adviceGain'),wrapper=advice.parentNode;
+const verified=shapeVerified(item);const rec=item&&verified?recommendation(item,selectedUid):null;const advice=$('adviceLabel'),body=$('adviceText'),gain=$('adviceGain'),wrapper=advice.parentNode;
 wrapper.classList.remove('swap','leave');
 if(!item){advice.textContent='READY';body.textContent='Choose an item to see if it physically fits.';gain.textContent='';}
+else if(item&&!verified&&!placement){advice.textContent='VERIFY SIZE';body.textContent='No confirmed width × height for this item. Use EDIT to set the real in-game dimensions before packing.';gain.textContent='';}
 else if(placement){advice.textContent='PACKED';body.textContent='Already in '+(placement.zone==='sling'?'weapon sling':placement.zone)+'. Click a free cell to move it.';gain.textContent=fmt(value(item))+' carried';}
 else if(rec){advice.textContent=rec.status;body.textContent=rec.zone==='sling'?'Fits in the dedicated weapon sling.':rec.status==='SWAP'?'Replace '+rec.swap.length+' item(s), giving up '+fmt(rec.lost)+'.':'Fits in the '+rec.zone+' at '+(rec.x+1)+','+(rec.y+1)+'.';
 gain.textContent=rec.status==='SWAP'?'+'+fmt(rec.gain)+' extra value':fmt(value(item))+' added';if(rec.status==='SWAP')wrapper.classList.add('swap');}
 else{advice.textContent='LEAVE';body.textContent='No room or profitable swap at the current sale value. You can still replace loot manually.';gain.textContent='';wrapper.classList.add('leave')}
-$('autoPack').disabled=!item||!!placement||!rec;$('rotateItem').disabled=!item||!!placement&&placement.zone==='sling';$('removeItem').disabled=!placement;$('editItem').disabled=!item;}
+$('autoPack').disabled=!item||!verified||!!placement||!rec;$('rotateItem').disabled=!item||!!placement&&placement.zone==='sling';$('removeItem').disabled=!placement;$('editItem').disabled=!item;}
 function renderAll(){lootList();renderZone('bag');renderZone('carrier');renderSling();renderSelected();renderStats();}
-function attemptPlace(zone,x,y){const item=selected();if(!item)return info('Choose an item first.');
+function attemptPlace(zone,x,y){const item=selected();if(!item)return info('Choose an item first.');if(!shapeVerified(item))return info('Confirm the real width and height with EDIT before packing this item.');
 const p=state.placements.find(p=>p.uid===selectedUid);const location=candidate(item,zone,x,y,rotated,selectedUid);if(!location){info(zone==='sling'?'Weapon sling accepts weapons only.':'That shape does not fit at this position. Try rotating the item.');return}
 if(location.swap.length){const lost=location.lost;if(!confirm('Replace '+location.swap.length+' item(s) worth '+fmt(lost)+' with '+item.name+' worth '+fmt(value(item))+'?'))return;}
 checkpoint();
@@ -117,7 +119,7 @@ for(const x of (Array.isArray(catalogue)?catalogue:[])){const item=parseItem(x);
 const trashed=new Set(Array.isArray(patch.trashed)?patch.trashed:[]);items=[...unique.values()].filter(x=>!trashed.has(x.id));
 for(const item of items){const change=patch.items?.[item.id];if(!change)continue;if(typeof change.name==='string'&&change.name.trim())item.name=change.name;
 if(typeof change.category==='string')item.category=change.category;if(Object.prototype.hasOwnProperty.call(change,'sell_price'))item.price=number(change.sell_price);
-if(Object.prototype.hasOwnProperty.call(change,'slots')&&(!item.known))item.h=Math.min(15,Math.max(1,number(change.slots)));if(typeof change.image==='string')item.image=change.image;item.source='ADMIN EDIT'}
+if(Object.prototype.hasOwnProperty.call(change,'slots')&&(!item.known))item.h=Math.min(15,Math.max(1,number(change.slots)));if(typeof change.image==='string')item.image=change.image;if(Number.isInteger(Number(change.width))&&Number.isInteger(Number(change.height))&&Number(change.width)>0&&Number(change.height)>0){item.w=Math.min(15,Number(change.width));item.h=Math.min(15,Number(change.height));item.known=true;}item.source='ADMIN EDIT'}
 for(const r of Array.isArray(patch.added)?patch.added:[]){if(!r?.name||trashed.has((r.dataset||'custom')+':'+r.id))continue;const i=parseItem({dataset:r.dataset||'custom',raw:r});if(r.slots&&!i.known)i.h=Math.min(15,Math.max(1,number(r.slots)));items.push(i)}
 const old=localStorage.getItem(LEGACY);if(!localStorage.getItem(STORE)&&old){try{const previous=JSON.parse(old);state.manual=(Array.isArray(previous.custom)?previous.custom:[]).map(i=>({id:i.id,name:i.name,price:number(i.price),category:i.category||'MY ITEMS',dataset:i.category||'personal',image:i.image||'',w:1,h:Math.max(1,Math.min(15,number(i.slots)||1)),known:false}));
 state.prices={...previous.prices};refreshRecordMap();let migrated=0,unpacked=0;for(const zone of ['bag','carrier'])for(const [itemId,quantity]of Object.entries(previous[zone]||{})){const item=byId.get(itemId);if(!item)continue;for(let k=0;k<Math.min(100,quantity);k++){const plan=placementsFor(item).find(p=>p.zone===zone&&!p.swap.length);if(!plan){unpacked++;continue}state.placements.push({uid:uid(),itemId,zone,x:plan.x,y:plan.y,w:plan.w,h:plan.h,turn:plan.turn});migrated++}}

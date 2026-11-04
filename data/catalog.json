@@ -137,6 +137,8 @@
       "durability_modifier": "-100 %",
       "stopped_by_armor_class": "NIJ IV",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a5/AP_.300_BLK_inspect.png/revision/latest/scale-to-width-down/268?cb=20260412080042",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.015,
@@ -155,10 +157,8 @@
           "unit": "%"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -666,6 +666,8 @@
       "muzzle_velocity": "840 m/s",
       "accuracy_modifier": "-1 %",
       "stopped_by_armor_class": "NIJ IV",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
@@ -680,10 +682,8 @@
           "unit": "%"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -1476,6 +1476,8 @@
       "muzzle_velocity": "838 m/s",
       "accuracy_modifier": "-4 %",
       "stopped_by_armor_class": "NIJ IV",
+      "sell_price": "$28",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.024,
@@ -1490,10 +1492,8 @@
           "unit": "%"
         }
       },
-      "sell_price": 28,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -1671,6 +1671,8 @@
       "muzzle_velocity": "828 m/s",
       "accuracy_modifier": "-1 %",
       "stopped_by_armor_class": "NIJ III+",
+      "sell_price": "$1",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
@@ -1685,10 +1687,8 @@
           "unit": "%"
         }
       },
-      "sell_price": 1,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -1922,6 +1922,8 @@
       "durability_modifier": "-40 %",
       "stopped_by_armor_class": "NIJ III",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a0/LS_9x19_inspect.png/revision/latest?cb=20260414105204",
+      "sell_price": "$1",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.007,
@@ -1940,10 +1942,8 @@
           "unit": "%"
         }
       },
-      "sell_price": 1,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5834,7 +5834,11 @@
       "outcome": [
         "AI Targeting Module"
       ],
-      "outcome_text": "AI Targeting Module"
+      "outcome_text": "AI Targeting Module",
+      "sell_price": "$10,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5847,7 +5851,11 @@
         "Incriminating Phone Logs",
         "Spoofing ASIC Module"
       ],
-      "outcome_text": "Incriminating Phone Logs, Spoofing ASIC Module"
+      "outcome_text": "Incriminating Phone Logs, Spoofing ASIC Module",
+      "sell_price": "$1,500",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5859,7 +5867,13 @@
       "outcome": [
         "Plutonium Canister"
       ],
-      "outcome_text": "Plutonium Canister"
+      "outcome_text": "Plutonium Canister",
+      "sell_price": 15000,
+      "price_status": "community",
+      "price_source": "GZWItems community override",
+      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "image": "https://i.ibb.co/KxxKRtzy/image.png",
+      "image_source": "gzwitems-community"
     }
   },
   {
@@ -5868,10 +5882,10 @@
       "name": "ST1122 Storage Computer",
       "id": "st1122-storage-computer",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7c/ST1122_Storage_Computer_Midnight_Sapphire_MSH_Supply_Closet_Room_Spawn.png/revision/latest/scale-to-width-down/200?cb=20261025183832",
-      "sell_price": 3000,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$3,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5895,16 +5909,16 @@
       "effect": "Hydration: +33",
       "manufacturer": "Aques",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/01/Water1_inspect.png/revision/latest/scale-to-width-down/268?cb=20250530084550",
+      "sell_price": "$16",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 1,
           "unit": "kg"
         }
       },
-      "sell_price": 16,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5920,16 +5934,16 @@
       "effect": "Hydration: +33",
       "manufacturer": "Aques",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5c/Water2_inspect.png/revision/latest/scale-to-width-down/268?cb=20250601001425",
+      "sell_price": "$16",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 1.5,
           "unit": "kg"
         }
       },
-      "sell_price": 16,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5945,16 +5959,16 @@
       "effect": "Hydration: +24",
       "use_time": "5s",
       "manufacturer": "Coco Jumbo",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.24,
           "unit": "kg"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5970,16 +5984,16 @@
       "effect": "Energy: +5 Hydration: +20 Arm Stamina Boost: +15% Arm Stamina Boost Cap: +15% Arm Stamina Boost Duration: 90s Body Stamina Boost: +15% Body Stamina Boost Cap: +15% Body Stamina Boost Duration: 90s",
       "use_time": "5s",
       "manufacturer": "Dark Star",
+      "sell_price": "$6",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.2,
           "unit": "kg"
         }
       },
-      "sell_price": 6,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -5996,16 +6010,16 @@
       "use_time": "5s",
       "manufacturer": "GRAY",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/10/Gray_inspect.png/revision/latest/scale-to-width-down/268?cb=20250530090230",
+      "sell_price": "$21",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.4,
           "unit": "kg"
         }
       },
-      "sell_price": 21,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6021,16 +6035,16 @@
       "effect": "Energy: +5 Hydration: +27",
       "manufacturer": "Infinity",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8f/IDrink_inspect.png/revision/latest/scale-to-width-down/268?cb=20250601005416",
+      "sell_price": "$4",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.33,
           "unit": "kg"
         }
       },
-      "sell_price": 4,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6046,16 +6060,16 @@
       "effect": "Hydration: +35 Energy: +10",
       "use_time": "5s",
       "manufacturer": "Kaipo",
+      "sell_price": "$3",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.4,
           "unit": "kg"
         }
       },
-      "sell_price": 3,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6072,16 +6086,16 @@
       "use_time": "6s",
       "manufacturer": "Maknav",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/23/IcedTea_inspect.png/revision/latest/scale-to-width-down/268?cb=20250601003900",
+      "sell_price": "$11",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.95,
           "unit": "kg"
         }
       },
-      "sell_price": 11,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6098,16 +6112,16 @@
       "use_time": "6s",
       "manufacturer": "Noakon",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0c/Water3_inspect.png/revision/latest/scale-to-width-down/268?cb=20250530083541",
+      "sell_price": "$6",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.6,
           "unit": "kg"
         }
       },
-      "sell_price": 6,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6145,16 +6159,16 @@
       "use_time": "6 seconds",
       "manufacturer": "Noakon",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/61/Water5_inspect.png/revision/latest/scale-to-width-down/268?cb=20250530083049",
+      "sell_price": "$16",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 1.5,
           "unit": "kg"
         }
       },
-      "sell_price": 16,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6171,16 +6185,16 @@
       "use_time": "6s",
       "manufacturer": "NuKlear",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b6/EDrink2_inspect.png/revision/latest/scale-to-width-down/268?cb=20250530081504",
+      "sell_price": "$10",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.34,
           "unit": "kg"
         }
       },
-      "sell_price": 10,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6219,16 +6233,16 @@
       "use_time": "6",
       "manufacturer": "Riminda",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/38/Riminda_Green_Bubbly_Bliss_inspect.png/revision/latest/scale-to-width-down/268?cb=20260603022056",
+      "sell_price": "$28",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 2.08,
           "unit": "kg"
         }
       },
-      "sell_price": 28,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6244,16 +6258,16 @@
       "effect": "Hydration: +33 Energy: +15",
       "use_time": "5s",
       "manufacturer": "Sunrise",
+      "sell_price": "$3",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.3,
           "unit": "kg"
         }
       },
-      "sell_price": 3,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6269,16 +6283,16 @@
       "effect": "Hydration: +38",
       "manufacturer": "Sunrise",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/93/Cola2_inspect.png/revision/latest/scale-to-width-down/268?cb=20250601193130",
+      "sell_price": "$3",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 2,
           "unit": "kg"
         }
       },
-      "sell_price": 3,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6294,16 +6308,16 @@
       "effect": "Hydration: +33 Energy: +5",
       "use_time": "5s",
       "manufacturer": "Touchdown",
+      "sell_price": "$3",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.38,
           "unit": "kg"
         }
       },
-      "sell_price": 3,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -6319,16 +6333,16 @@
       "effect": "Hydration: +33",
       "manufacturer": "White Orchid",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2c/Water6_inspect.png/revision/latest/scale-to-width-down/267?cb=20250530082550",
+      "sell_price": "$24",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 2,
           "unit": "kg"
         }
       },
-      "sell_price": 24,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7587,7 +7601,7 @@
       "name": "Lamang Liberation Army",
       "id": "lamang-liberation-army",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0e/LLA_icon.png/revision/latest/scale-to-width-down/268?cb=20260329191522",
-      "description": "Local anti-government armed insurgency group."
+      "description": "Local anti-government armed insurgency group AKA rebel militia group."
     }
   },
   {
@@ -7669,16 +7683,16 @@
       "effect": "Energy: +15 Hydration: +5",
       "use_time": "11s",
       "manufacturer": "Lucky Panda",
+      "sell_price": "$3",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.6,
           "unit": "kg"
         }
       },
-      "sell_price": 3,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data",
       "image": "https://i.ibb.co/C5yXQBvf/Bamboo-Shoots.png",
       "image_source": "gzwitems-community"
     }
@@ -7695,16 +7709,16 @@
       "charges": "1",
       "effect": "Energy: +25 Arm Stamina Boost: +25% Arm Stamina Boost Cap: +25% Arm Stamina Boost Duration: 90s Body Stamina Boost: +25% Body Stamina Boost Cap: +25% Body Stamina Boost Duration: 90s",
       "manufacturer": "Berg",
+      "sell_price": "$22",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.07,
           "unit": "kg"
         }
       },
-      "sell_price": 22,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7720,16 +7734,16 @@
       "effect": "Energy: +40 Hydration: -10",
       "use_time": "11s",
       "manufacturer": "Kraken",
+      "sell_price": "$7",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.17,
           "unit": "kg"
         }
       },
-      "sell_price": 7,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7746,16 +7760,16 @@
       "use_time": "15s",
       "manufacturer": "Combat Meal Star",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/25/CRP_inspect.png/revision/latest?cb=20250502143156",
+      "sell_price": "$21",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.6,
           "unit": "kg"
         }
       },
-      "sell_price": 21,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7772,16 +7786,16 @@
       "use_time": "11s",
       "manufacturer": "Cowboy",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/1/11/Beans_inspect.png/revision/latest/scale-to-width-down/268?cb=20260614123159",
+      "sell_price": "$11",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.425,
           "unit": "kg"
         }
       },
-      "sell_price": 11,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7796,16 +7810,16 @@
       "effect": "Energy: +14 Arm Stamina Boost: +30% Arm Stamina Boost Cap: +30% Arm Stamina Boost Duration: 20s Body Stamina Boost: +30% Body Stamina Boost Cap: +30% Body Stamina Boost Duration: +20s",
       "use_time": "5s",
       "manufacturer": "Power",
+      "sell_price": "$6",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.04,
           "unit": "kg"
         }
       },
-      "sell_price": 6,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7819,16 +7833,16 @@
       "grid_size": "1x2",
       "charges": "1",
       "effect": "Energy: +75",
+      "sell_price": "$22",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.85,
           "unit": "kg"
         }
       },
-      "sell_price": 22,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7844,16 +7858,16 @@
       "effect": "Energy: +13",
       "use_time": "5s",
       "manufacturer": "Kasem",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7872,12 +7886,16 @@
       "hydratation_per_charge": "-5",
       "manufacturer": "Lucky",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/36/P%C3%A2t%C3%A9_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502143331",
+      "sell_price": "$8",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.13,
           "unit": "kg"
         }
-      }
+      },
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7893,16 +7911,16 @@
       "effect": "Energy: +26 Hydration: +10",
       "use_time": "11s",
       "manufacturer": "Topo",
+      "sell_price": "$9",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.565,
           "unit": "kg"
         }
       },
-      "sell_price": 9,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7918,16 +7936,16 @@
       "effect": "Energy: +60 Hydration: -10",
       "use_time": "11s",
       "manufacturer": "ThaLao",
+      "sell_price": "$14",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.2,
           "unit": "kg"
         }
       },
-      "sell_price": 14,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7943,16 +7961,16 @@
       "effect": "Energy: +25",
       "use_time": "11s",
       "manufacturer": "Clearspring",
+      "sell_price": "$5",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.2,
           "unit": "kg"
         }
       },
-      "sell_price": 5,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7966,16 +7984,16 @@
       "grid_size": "1x2",
       "charges": "1",
       "effect": "Energy: +70 Hydration: -10",
+      "sell_price": "$19",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.4,
           "unit": "kg"
         }
       },
-      "sell_price": 19,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -7989,16 +8007,16 @@
       "grid_size": "1x2",
       "charges": "1",
       "effect": "Energy: +60 Hydration: -10",
+      "sell_price": "$15",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.34,
           "unit": "kg"
         }
       },
-      "sell_price": 15,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -8014,16 +8032,16 @@
       "effect": "Energy: +10 /charge",
       "use_time": "5s",
       "manufacturer": "Snip Snap",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.038,
           "unit": "kg"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -8040,16 +8058,16 @@
       "use_time": "15s",
       "manufacturer": "Thai Army",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4f/CMeal_inspect.png/revision/latest?cb=20250502143236",
+      "sell_price": "$17",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.8,
           "unit": "kg"
         }
       },
-      "sell_price": 17,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -8065,16 +8083,16 @@
       "effect": "Energy: +20 Arm Stamina Boost: +10% Arm Stamina Boost Cap: +10% Arm Stamina Boost Duration: 90s Body Stamina Boost: +10% Body Stamina Boost Cap: +10% Body Stamina Boost Duration: 90s",
       "use_time": "5s",
       "manufacturer": "TamTam",
+      "sell_price": "$10",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.2,
           "unit": "kg"
         }
       },
-      "sell_price": 10,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -8090,16 +8108,16 @@
       "effect": "Energy: +16 Arm Stamina Boost: +60% Arm Stamina Boost Cap: +60% Arm Stamina Boost Duration: 20s Body Stamina Boost: +60% Body Stamina Boost Cap: +60% Body Stamina Boost Duration: 20s",
       "use_time": "5s",
       "manufacturer": "Windmill",
+      "sell_price": "$11",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.04,
           "unit": "kg"
         }
       },
-      "sell_price": 11,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14148,16 +14166,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Operations Room in Fort Narith Headquarters.",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2a/FN_OR_inspect.png/revision/latest/scale-to-width-down/268?cb=20260502075206",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14170,16 +14188,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Supply Closet in Midnight Sapphire Hotel",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6f/Keycard-Type2.png/revision/latest?cb=20250531203648",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14290,16 +14308,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door A103 in Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ac/Key-Type1.png/revision/latest?cb=20250528145533",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14312,16 +14330,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door A208 in Fort Narith barracks",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ac/Key-Type1.png/revision/latest?cb=20250528145533",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14334,16 +14352,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door A210 in Pha Lang",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ac/Key-Type1.png/revision/latest?cb=20250528145533",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14392,16 +14410,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Elder House in Ban Pa",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14414,16 +14432,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Elder Room in Pha Lang",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ac/Key-Type1.png/revision/latest?cb=20250528145533",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14436,16 +14454,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Fishing Hut in Ban Pa",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/Key-Type3.png/revision/latest?cb=20250528145150",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14458,16 +14476,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Warehouse in Ban Pa",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14552,16 +14570,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door C101 in Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ac/Key-Type1.png/revision/latest?cb=20250528145533",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14700,16 +14718,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door garage office in Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c1/Key-Type5.png/revision/latest?cb=20250528145207",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14722,16 +14740,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Archives in Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/34/Key-Type2.png/revision/latest?cb=20250528145142",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14762,16 +14780,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door ICU in Fort Narith infirmary",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/49/Key-Type4.png/revision/latest?cb=20250528145158",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14784,16 +14802,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door motel room nearby Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14824,16 +14842,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door shooting range office in Fort Narith",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c1/Key-Type5.png/revision/latest?cb=20250528145207",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -14882,16 +14900,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Hangar 03 in Pha Lang Airfield",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/49/Key-Type4.png/revision/latest?cb=20250528145158",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15031,10 +15049,10 @@
       "town": "Hunter's Paradise",
       "map_location": "160x168",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/53/Hunter%27s_Paradise_Weapon_Storage_Key.png/revision/latest/scale-to-width-down/268?cb=20240504043117",
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15065,16 +15083,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door storage shed in Inthavong farm",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/34/Key-Type2.png/revision/latest?cb=20250528145142",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15554,16 +15572,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door meeting room in Pha Lang Airfield",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15648,16 +15666,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Attic Storage in Pha Lang",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$29",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 29,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15724,16 +15742,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Attic Storage in Pha Lang",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$29",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 29,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15827,16 +15845,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door Sawmill Office in Sawmill",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c1/Key-Type5.png/revision/latest?cb=20250528145207",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -15885,16 +15903,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door toilets in Sawmill",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -16008,16 +16026,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door armory in Tiger Bay Central",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f5/Keycard-Type1.png/revision/latest?cb=20250531203658",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -16138,16 +16156,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door UNLRA quarantine container in Tiger Bay",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c1/Key-Type5.png/revision/latest?cb=20250528145207",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -16297,16 +16315,16 @@
       "grid_size": "1x1",
       "usage": "Unlocks door villa vongphet room on Lamang Island",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5f/Key-Type6.png/revision/latest?cb=20250528145215",
+      "sell_price": "$59",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.01,
           "unit": "kg"
         }
       },
-      "sell_price": 59,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -16696,15 +16714,15 @@
     }
   },
   {
-    "dataset": "workshop_supplies",
+    "dataset": "loot_items",
     "raw": {
       "name": "Acumulator Drill",
       "id": "acumulator-drill",
-      "type": "Workshop Supplies",
-      "weight": "1,180kg",
       "grid_size": "2x2",
+      "weight": "???kg",
       "sell_price": "$249",
-      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/03/Acumulator_Drill.png/revision/latest/scale-to-width-down/200?cb=20260419122005",
+      "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/90/Acumulator_Drill_icon.png/revision/latest?cb=20260420114742",
+      "sell_price_source": "gzwitems.com",
       "price_status": "verified",
       "price_source": "GZW wiki / game data"
     }
@@ -17488,16 +17506,16 @@
       "grid_size": "1x1",
       "buy_price": "$50",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9e/Pro_Multitool_inspect.png/revision/latest/scale-to-width-down/268?cb=20250427044634",
+      "sell_price": "$50",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.12,
           "unit": "kg"
         }
       },
-      "sell_price": 50,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18753,16 +18771,16 @@
       "effect": "Intoxication: -10",
       "manufacturer": "S.R. Hawkin",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d6/Charcoal_inspect.png/revision/latest?cb=20250502211847",
+      "sell_price": "$5",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.06,
           "unit": "kg"
         }
       },
-      "sell_price": 5,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18779,16 +18797,16 @@
       "use_time": "8 s",
       "manufacturer": "Henderson",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/aa/AdvFlexSplint.png/revision/latest?cb=20260408101540",
+      "sell_price": "$17",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.13,
           "unit": "kg"
         }
       },
-      "sell_price": 17,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18804,16 +18822,16 @@
       "effect": "Heals wounds",
       "manufacturer": "Henderson",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/50/Bandage_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502181823",
+      "sell_price": "$9",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.07,
           "unit": "kg"
         }
       },
-      "sell_price": 9,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18829,16 +18847,16 @@
       "use_time": "20s",
       "manufacturer": "US Army",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/cf/SurKit_inspect.png/revision/latest/scale-to-width-down/268?cb=20250501082435",
+      "sell_price": "$195",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.6,
           "unit": "kg"
         }
       },
-      "sell_price": 195,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18854,16 +18872,16 @@
       "effect": "Removes Limping effect",
       "manufacturer": "Narithcare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/32/CivilianSplint_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502211703",
+      "sell_price": "$4",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.15,
           "unit": "kg"
         }
       },
-      "sell_price": 4,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18878,16 +18896,16 @@
       "effect": "Heals wounds",
       "manufacturer": "Narithcare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/28/Gauze_inspect.png/revision/latest/scale-to-width-down/268?cb=20250504074656",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.02,
           "unit": "kg"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18903,16 +18921,16 @@
       "effect": "Stops heavy bleeding.",
       "manufacturer": "Henderson",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/66/CT_inspect.png/revision/latest/scale-to-width-down/268?cb=20250501090154",
+      "sell_price": "$24",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.09,
           "unit": "kg"
         }
       },
-      "sell_price": 24,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -18951,16 +18969,16 @@
       "use_time": "20s",
       "manufacturer": "Henderson",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/73/EKit_inspect.png/revision/latest?cb=20260404064048",
+      "sell_price": "$54",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.2,
           "unit": "kg"
         }
       },
-      "sell_price": 54,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19026,16 +19044,16 @@
       "duration": "3 min",
       "manufacturer": "General Local",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/de/Fenethyl_inspect.png/revision/latest?cb=20250621182751",
+      "sell_price": "$29",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 29,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19050,16 +19068,16 @@
       "charges": "4",
       "effect": "Removes Fracture",
       "manufacturer": "Henderson",
+      "sell_price": "$10",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.13,
           "unit": "kg"
         }
       },
-      "sell_price": 10,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19077,16 +19095,16 @@
       "duration": "4 minutes",
       "manufacturer": "Parasol Corp",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0c/HpR_3-S_inspect.png/revision/latest/scale-to-width-down/267?cb=20260428090404",
+      "sell_price": "$285",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.1,
           "unit": "kg"
         }
       },
-      "sell_price": 285,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19124,16 +19142,16 @@
       "effect": "150s Duration: Efficiency: +33%",
       "manufacturer": "Narithcare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6f/Ibalin_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502210313",
+      "sell_price": "$2",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 2,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19150,16 +19168,16 @@
       "use_time": "12",
       "manufacturer": "MedCare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/00/LargeBloodBag.png/revision/latest/scale-to-width-down/268?cb=20250501081851",
+      "sell_price": "$294",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 1,
           "unit": "kg"
         }
       },
-      "sell_price": 294,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19176,16 +19194,16 @@
       "use_time": "2",
       "manufacturer": "Rev Med X",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/95/LHem_inspect.png/revision/latest?cb=20260421080856",
+      "sell_price": "$63",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.15,
           "unit": "kg"
         }
       },
-      "sell_price": 63,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19201,16 +19219,16 @@
       "effect": "Stops one bleeding status: Severe Bleeding Medium Bleeding Light Bleeding",
       "manufacturer": "Pressing Medical",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/00/MFAT_inspect.png/revision/latest?cb=20250502211227",
+      "sell_price": "$19",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.08,
           "unit": "kg"
         }
       },
-      "sell_price": 19,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19235,16 +19253,16 @@
       "use_time": "12s",
       "manufacturer": "MedCare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9a/Screenshot_2026-04-03_235410.png/revision/latest/scale-to-width-down/268?cb=20260404065601",
+      "sell_price": "$225",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 1.6,
           "unit": "kg"
         }
       },
-      "sell_price": 225,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19260,16 +19278,16 @@
       "effect": "300s Duration: Remove pain effects",
       "manufacturer": "Jeremiah Pharmaceutical",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ae/Melox_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502211523",
+      "sell_price": "$4",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 4,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19308,16 +19326,16 @@
       "duration": "4 minutes",
       "manufacturer": "Parasol Corp",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/de/Morphine_inspect.png/revision/latest/scale-to-width-down/268?cb=20260428092328",
+      "sell_price": "$135",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.1,
           "unit": "kg"
         }
       },
-      "sell_price": 135,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19332,16 +19350,16 @@
       "charges": "4",
       "effect": "Intoxication: -25",
       "manufacturer": "MWunder Pharmaceutical",
+      "sell_price": "$37",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 37,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19405,16 +19423,16 @@
       "effect": "Removes Pain",
       "duration": "300s",
       "manufacturer": "Fernsby's Healthcare",
+      "sell_price": "$1",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 1,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19430,16 +19448,16 @@
       "effect": "Radiation: -4",
       "manufacturer": "S.R. Hawkins",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4f/Ki_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502210111",
+      "sell_price": "$36",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.05,
           "unit": "kg"
         }
       },
-      "sell_price": 36,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19453,10 +19471,10 @@
       "charges": "1",
       "effect": "Stops one bleeding status: Severe Bleeding Medium Bleeding Light Bleeding",
       "manufacturer": "Narithcare",
-      "sell_price": 7,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$7",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19472,16 +19490,16 @@
       "effect": "Heals 4 Wounds per Charge",
       "use_time": "3 seconds",
       "manufacturer": "SEAL Medical",
+      "sell_price": "$16",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.09,
           "unit": "kg"
         }
       },
-      "sell_price": 16,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19498,16 +19516,16 @@
       "use_time": "12s",
       "manufacturer": "MedCare",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/47/SBlood_inspect.png/revision/latest/scale-to-width-down/268?cb=20250502211339",
+      "sell_price": "$84",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.5,
           "unit": "kg"
         }
       },
-      "sell_price": 84,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19524,16 +19542,16 @@
       "use_time": "2",
       "manufacturer": "Rev Med X",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/77/SHem_inspect.png/revision/latest?cb=20260404062657",
+      "sell_price": "$39",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.06,
           "unit": "kg"
         }
       },
-      "sell_price": 39,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19549,16 +19567,16 @@
       "use_time": "20s",
       "manufacturer": "Henderson",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7f/SutKit_inspect.png/revision/latest/scale-to-width-down/268?cb=20250501090058",
+      "sell_price": "$81",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.35,
           "unit": "kg"
         }
       },
-      "sell_price": 81,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -19574,16 +19592,16 @@
       "effect": "Blocks Stamina Drain Drain arm stamina Increase intoxication Increase energy drain Gives pain",
       "duration": "1 min",
       "manufacturer": "Parasol Corp",
+      "sell_price": "$180",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.1,
           "unit": "kg"
         }
       },
-      "sell_price": 180,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -23143,16 +23161,16 @@
       "total_hydration_per_grid": "+40",
       "sold_by": "Lab Rat Lv.2",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/27/EDrink_icon.png/revision/latest?cb=20250502141947",
+      "sell_price": "$13",
+      "sell_price_source": "gzwitems.com",
       "numeric_values": {
         "weight": {
           "value": 0.47,
           "unit": "kg"
         }
       },
-      "sell_price": 13,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27701,7 +27719,11 @@
     "raw": {
       "name": "10% Morphine Solution",
       "id": "10%-morphine-solution",
-      "grid_size": "2x2"
+      "grid_size": "2x2",
+      "sell_price": "$4,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27709,24 +27731,32 @@
     "raw": {
       "name": "Acetic Anhydride",
       "id": "acetic-anhydride",
-      "sell_price": 75,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$75",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Ammonium Chloride",
-      "id": "ammonium-chloride"
+      "id": "ammonium-chloride",
+      "sell_price": "$45",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Aniline",
-      "id": "aniline"
+      "id": "aniline",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27734,10 +27764,10 @@
     "raw": {
       "name": "Avionics Processor Board",
       "id": "avionics-processor-board",
-      "sell_price": 900,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$900",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27751,14 +27781,22 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Bone Density Stimulant",
-      "id": "bone-density-stimulant"
+      "id": "bone-density-stimulant",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Bromopyridine",
-      "id": "bromopyridine"
+      "id": "bromopyridine",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27766,10 +27804,10 @@
     "raw": {
       "name": "Chemicals",
       "id": "chemicals",
-      "sell_price": 90,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27777,10 +27815,10 @@
     "raw": {
       "name": "CPU Card",
       "id": "cpu-card",
-      "sell_price": 600,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$600",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27789,7 +27827,18 @@
       "name": "Deep-Space Observation Data Drive",
       "id": "deep-space-observation-data-drive",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b4/Deep-Space_Observation_Data_Drive_inspect.png/revision/latest?cb=20261028195051",
-      "sell_price": 12000,
+      "sell_price": "$12,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
+    }
+  },
+  {
+    "dataset": "uncategorized",
+    "raw": {
+      "name": "Edetate Disodium",
+      "id": "edetate-disodium",
+      "sell_price": 75,
       "price_status": "community",
       "price_source": "GZWItems community override",
       "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
@@ -27798,22 +27847,23 @@
   {
     "dataset": "uncategorized",
     "raw": {
-      "name": "Edetate Disodium",
-      "id": "edetate-disodium"
-    }
-  },
-  {
-    "dataset": "uncategorized",
-    "raw": {
       "name": "Ether",
-      "id": "ether"
+      "id": "ether",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Ethyl Alcohol",
-      "id": "ethyl-alcohol"
+      "id": "ethyl-alcohol",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27821,10 +27871,10 @@
     "raw": {
       "name": "Flight Data Drive",
       "id": "flight-data-drive",
-      "sell_price": 9600,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$9,600",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27832,17 +27882,21 @@
     "raw": {
       "name": "Glucose",
       "id": "glucose",
-      "sell_price": 15,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$15",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Gray Heroin",
-      "id": "gray-heroin"
+      "id": "gray-heroin",
+      "sell_price": "$7,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27857,10 +27911,10 @@
     "raw": {
       "name": "HEPA Filter",
       "id": "hepa-filter",
-      "sell_price": 150,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "sell_price": "$150",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data",
       "image": "https://i.imgur.com/9NlShnj.png",
       "image_source": "gzwitems-community"
     }
@@ -27869,14 +27923,22 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "High-Quality Morphine Base",
-      "id": "high-quality-morphine-base"
+      "id": "high-quality-morphine-base",
+      "sell_price": "$3,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Hydrochloric Acid",
-      "id": "hydrochloric-acid"
+      "id": "hydrochloric-acid",
+      "sell_price": "$150",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27891,17 +27953,21 @@
     "raw": {
       "name": "Incriminating Phone Logs",
       "id": "incriminating-phone-logs",
-      "sell_price": 6400,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$6,400",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Iron Sucrose",
-      "id": "iron-sucrose"
+      "id": "iron-sucrose",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27916,10 +27982,10 @@
     "raw": {
       "name": "Laser Tube",
       "id": "laser-tube",
-      "sell_price": 150,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List",
+      "sell_price": "$150",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data",
       "image": "https://i.imgur.com/IGSkb3r.png",
       "image_source": "gzwitems-community"
     }
@@ -27935,21 +28001,33 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Low-Quality Morphine Base",
-      "id": "low-quality-morphine-base"
+      "id": "low-quality-morphine-base",
+      "sell_price": "$2,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Methylene Blue",
-      "id": "methylene-blue"
+      "id": "methylene-blue",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Methylparaben",
-      "id": "methylparaben"
+      "id": "methylparaben",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27972,10 +28050,10 @@
       "name": "Oscilloscope",
       "id": "oscilloscope",
       "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/Oscilloscope_inspect.png/revision/latest/scale-to-width-down/268?cb=20261028195631",
-      "sell_price": 150,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$150",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -27996,7 +28074,11 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "RAM",
-      "id": "ram"
+      "id": "ram",
+      "sell_price": "$90",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -28011,6 +28093,10 @@
     "raw": {
       "name": "Saline",
       "id": "saline",
+      "sell_price": "$15",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data",
       "image": "https://i.imgur.com/B1vlvIM.png",
       "image_source": "gzwitems-community"
     }
@@ -28019,14 +28105,22 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Sarin Canister",
-      "id": "sarin-canister"
+      "id": "sarin-canister",
+      "sell_price": "$12,000",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Sodium Carbonate",
-      "id": "sodium-carbonate"
+      "id": "sodium-carbonate",
+      "sell_price": "$36",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -28041,10 +28135,10 @@
     "raw": {
       "name": "Spoofing ASIC Module",
       "id": "spoofing-asic-module",
-      "sell_price": 600,
-      "price_status": "community",
-      "price_source": "GZWItems community override",
-      "price_source_url": "https://github.com/ZioMark13/GZWItems-List"
+      "sell_price": "$600",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -28058,21 +28152,33 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Stainless Steel Sheet",
-      "id": "stainless-steel-sheet"
+      "id": "stainless-steel-sheet",
+      "sell_price": "$45",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Theophylline",
-      "id": "theophylline"
+      "id": "theophylline",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Tooling Coolant",
-      "id": "tooling-coolant"
+      "id": "tooling-coolant",
+      "sell_price": "$75",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
@@ -28094,21 +28200,33 @@
     "dataset": "uncategorized",
     "raw": {
       "name": "Vapor Lamp",
-      "id": "vapor-lamp"
+      "id": "vapor-lamp",
+      "sell_price": "$150",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Vitamin B12",
-      "id": "vitamin-b12"
+      "id": "vitamin-b12",
+      "sell_price": "$30",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {
     "dataset": "uncategorized",
     "raw": {
       "name": "Water Pump",
-      "id": "water-pump"
+      "id": "water-pump",
+      "sell_price": "$450",
+      "sell_price_source": "gzwitems.com",
+      "price_status": "verified",
+      "price_source": "GZW wiki / game data"
     }
   },
   {

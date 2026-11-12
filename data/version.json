@@ -1,6 +1,6 @@
 {
   "dataVersion": "2026-11-10T02:04:50.634148Z",
-  "syncedAt": "2026-11-11T15:27:36.595Z",
+  "syncedAt": "2026-11-12T16:03:39.404Z",
   "records": 4079,
   "pricedRecords": 251,
   "missingPrices": 3828,
@@ -8,7 +8,7 @@
   "communityPrices": 4,
   "manualPrices": 0,
   "categories": 72,
-  "previousRecords": 4084,
+  "previousRecords": 4079,
   "images": 3263,
   "imageCoverage": 80,
   "imagesReused": 28,
